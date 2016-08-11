@@ -1,4 +1,5 @@
 import static org.junit.Assert.*;
+import java.util.*;
 import org.junit.*;
 import org.mockito.*;
 import static org.mockito.Mockito.*;
@@ -6,6 +7,7 @@ import Game.*;
 
 public class GameTest {
 
+  ArrayList expected;
   Cards cards;
   Player jeff;
 
@@ -35,12 +37,11 @@ public class GameTest {
     assertEquals( "Jeff", jeff.name() );
   }
 
-  // @Test
-  // public void hasCard() {
-  //   cards.deal();
-  //   jeff.takeCard( cards.dealtCards );
-  //   assertEquals( "A♠️", jeff.hand() );
-  // }
+  @Test
+  public void hasCard() {
+    jeff.takeCard(  cards.deal() );
+    assertEquals( "A♠️", jeff.seeHand().get(0) );
+  }
 
 
 }

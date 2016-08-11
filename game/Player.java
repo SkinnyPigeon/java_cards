@@ -16,4 +16,12 @@ public class Player {
     return this.name;
   }
 
+  public void takeCard( String card ) {
+    this.hand.add( card );
+  }
+
+  public ArrayList seeHand() {
+    return this.hand;
+  }
+
 }

@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Cards {
 
-  private String dealtCards;
+  private String dealtCard;
   private ArrayList< String > cards;
   private ArrayList< String > shuffledCards;
 
@@ -14,7 +14,7 @@ public class Cards {
     this.cards.add( "A♣️" );
     this.cards.add( "A♦️" );
 
-    this.dealtCards = dealtCards;
+    this.dealtCard = dealtCard;
   }
 
   public int cardLength() {
@@ -32,12 +32,12 @@ public class Cards {
   }
 
   public void pickCard() {
-    this.dealtCards = this.cards.remove(0); 
+    this.dealtCard = this.cards.remove(0); 
   }
 
   public String deal() {
     pickCard();
-    return this.dealtCards;
+    return this.dealtCard;
   }
 
 
