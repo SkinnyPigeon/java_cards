@@ -7,10 +7,12 @@ import Game.*;
 public class GameTest {
 
   Cards cards;
+  Player jeff;
 
   @Before
   public void before() {
     cards = new Cards();
+    jeff = new Player( "Jeff" );
   }
 
   @Test
@@ -28,5 +30,20 @@ public class GameTest {
     assertEquals( "A♠️", cards.deal() );
   }
 
+  @Test
+  public void hasName() {
+    assertEquals( "Jeff", jeff.name() );
+  }
+
+  // @Test
+  // public void hasCard() {
+  //   cards.deal();
+  //   jeff.takeCard( cards.dealtCards );
+  //   assertEquals( "A♠️", jeff.hand() );
+  // }
+
 
 }
+
+
+
