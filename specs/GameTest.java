@@ -23,5 +23,10 @@ public class GameTest {
     assertEquals( "Shuffled 😀", cards.shuffle() );
   }
 
+  @Test
+  public void canDeal() {
+    assertEquals( "A♠️", cards.deal() );
+  }
+
 
 }

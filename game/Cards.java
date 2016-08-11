@@ -3,6 +3,7 @@ import java.util.*;
 
 public class Cards {
 
+  private String dealtCards;
   private ArrayList< String > cards;
   private ArrayList< String > shuffledCards;
 
@@ -12,15 +13,13 @@ public class Cards {
     this.cards.add( "A♥️" );
     this.cards.add( "A♣️" );
     this.cards.add( "A♦️" );
+
+    this.dealtCards = dealtCards;
   }
 
   public int cardLength() {
     return this.cards.size();
   }
-
-  // public String getName() {
-  //   return 
-  // }
 
   public String shuffle() {
     Collections.shuffle( this.cards );
@@ -30,6 +29,15 @@ public class Cards {
       }
     }
     return "Shuffled 😀";
+  }
+
+  public void pickCard() {
+    this.dealtCards = this.cards.remove(0); 
+  }
+
+  public String deal() {
+    pickCard();
+    return this.dealtCards;
   }
 
 
