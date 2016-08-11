@@ -10,11 +10,13 @@ public class GameTest {
   ArrayList expected;
   Cards cards;
   Player jeff;
+  Game game;
 
   @Before
   public void before() {
     cards = new Cards();
     jeff = new Player( "Jeff" );
+    game = new Game();
   }
 
   @Test
@@ -43,6 +45,11 @@ public class GameTest {
     assertEquals( "A♠️", jeff.seeHand().get(0) );
   }
 
+  @Test
+  public void checkPlayers(){
+    game.addPlayer(jeff);
+    assertEquals(1, game.countPlayers());
+  }
 
 }
 
