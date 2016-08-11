@@ -15,7 +15,12 @@ public class GameTest {
 
   @Test
   public void checkCards() {
-    assertEquals( 2, cards.cardLength() );
+    assertEquals( 4, cards.cardLength() );
+  }
+
+  @Test
+  public void checkShuffle() {
+    assertEquals( "Shuffled 😀", cards.shuffle() );
   }
 
 
