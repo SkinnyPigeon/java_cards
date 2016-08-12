@@ -8,12 +8,14 @@ public class Player {
   private ArrayList< String > hand;
   private int chips;
   private int bet;
+  private int playerNumber;
 
-  public Player( String name ) {
+  public Player( String name, int playerNumber ) {
     this.name = name;
     this.hand = new ArrayList< String >();
     this.chips = 500;
     this.bet = 0;
+    this.playerNumber = playerNumber;
   }
 
   public String name() {
@@ -40,6 +42,12 @@ public class Player {
   public int giveBet() {
     return this.bet;
   }
+
+  public int number() {
+    return this.playerNumber;
+  }
+
+
 
 
 

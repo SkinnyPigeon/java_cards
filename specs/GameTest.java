@@ -17,10 +17,10 @@ public class GameTest {
   @Before
   public void before() {
     cards = new Cards();
-    jeff = new Player( "Jeff" );
-    dave = new Player( "Dave" );
-    steve = new Player( "Steve" );
-    game = new Game();
+    jeff = new Player( "Jeff", 1 );
+    dave = new Player( "Dave", 2 );
+    steve = new Player( "Steve", 3 );
+    game = new Game( 3 );
   }
 
   @Test
@@ -44,23 +44,14 @@ public class GameTest {
   }
 
   @Test
+  public void hasNumber() {
+    assertEquals( 3, steve.number() );
+  }
+
+  @Test
   public void hasCard() {
     jeff.takeCard(  cards.deal() );
     assertEquals( "A♠️", jeff.seeHand().get(0) );
-  }
-
-  @Test
-  public void checkPlayers(){
-    game.addPlayer(jeff);
-    assertEquals(1, game.countPlayers());
-  }
-
-  @Test
-  public void gameHasMultiplePlayers() {
-    game.addPlayer( jeff );
-    game.addPlayer( steve );
-    game.addPlayer( dave );
-    assertEquals( 3, game.countPlayers() );
   }
 
   @Test
@@ -79,20 +70,49 @@ public class GameTest {
     assertEquals( 450, jeff.countChips() );
   }
 
+  // @Test
+  // public void gamePotIncreasesWhenPlayerBets() {
+  //   jeff.placeBet( 50 );
+  //   game.addBet( jeff );
+  //   assertEquals( 50, game.showPot() );
+  // }
+
+  // @Test
+  // public void gameCanTakeMulitpleBets() {
+  //   steve.placeBet( 50 );
+  //   game.addBet( steve );    
+  //   jeff.placeBet( 50 );
+  //   game.addBet( jeff );
+  //   assertEquals( 100, game.showPot() );
+  // }
+
   @Test
-  public void gamePotIncreasesWhenPlayerBets() {
-    jeff.placeBet( 50 );
-    game.addBet( jeff.giveBet() );
-    assertEquals( 50, game.showPot() );
+  public void gameKnowsHowManyPlayers() {
+    assertEquals( 3, game.numberOfPlayers() );
   }
 
   @Test
-  public void gameCanTakeMulitpleBets() {
+  public void gameCanTakeTurns() {
+    game.nextTurn();
+    assertEquals( 2, game.turn() );
+  }
+
+  @Test
+  public void gameGoesBackToPlayerOne() {
+    game.nextTurn();
+    game.nextTurn();
+    game.nextTurn();
+    assertEquals( 1, game.turn() );
+  }
+
+  @Test
+  public void gameCanOnlyTakeBetsFromRightPlayer() {
+    game.nextTurn();
     steve.placeBet( 50 );
-    game.addBet( steve.giveBet() );    
-    jeff.placeBet( 50 );
-    game.addBet( jeff.giveBet() );
-    assertEquals( 100, game.showPot() );
+    game.addBet( steve );    
+    dave.placeBet( 50 );
+    game.addBet( dave );
+    assertEquals( 50, game.showPot() );
   }
 
 
