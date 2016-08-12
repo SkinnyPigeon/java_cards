@@ -9,7 +9,7 @@ public class Player {
   private int chips;
   private int bet;
   private int playerNumber;
-  private int score;
+  private double score;
 
   public Player( String name, int playerNumber ) {
     this.name = name;
@@ -24,11 +24,11 @@ public class Player {
     return this.name;
   }
 
-  public int seeScore() {
+  public double seeScore() {
     return this.score;
   }
 
-  public void setScore( int handScore ) {
+  public void setScore( double handScore ) {
     this.score = handScore;
   }
 

@@ -51,7 +51,7 @@ public class GameTest {
 
   @Test
   public void hasNoScoreToStart() {
-    assertEquals( 0, steve.seeScore() );
+    assertEquals( 0, steve.seeScore(), 0.01 );
   }
 
   @Test
@@ -422,7 +422,7 @@ public class GameTest {
     logic.combineCards();
     logic.setScore();
     dave.setScore( logic.awardScore() );
-    assertEquals( 7, dave.seeScore() );
+    assertEquals( 7, dave.seeScore(), 0.01 );
   }
 
   @Test

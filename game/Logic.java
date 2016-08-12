@@ -6,7 +6,7 @@ public class Logic {
   private ArrayList< String > playerCards;
   private ArrayList< String > tableCards;
   private ArrayList< String > processedCards;
-  private int awardScore;
+  private double awardScore;
 
   public Logic( ArrayList playerCards, ArrayList tableCards ) {
     this.playerCards = playerCards;
@@ -15,7 +15,7 @@ public class Logic {
     this.awardScore = 0;
   }
 
-  public int awardScore() {
+  public double awardScore() {
     return this.awardScore;
   }
 
@@ -333,13 +333,6 @@ public class Logic {
     return false;
   }
 
-  public boolean almostRoyalFlush() {
-    if( almostRoyalStraight() == true && flush() == true ) {
-      return true;
-    }
-    return false;
-  }
-
   public boolean furtherFromARoyalFlush() {
     if( furtherFromARoyalStraight() == true && flush() == true ) {
       return true;
@@ -386,29 +379,30 @@ public class Logic {
     } else if ( fullHouse() == true ) {
       this.awardScore = 7;
 
-    } else if ( flush() == true ) {
-      this.awardScore = 6;
-    } else if( almostRoyalFlush() == true ) {
-      this.awardScore = 6;
-    } else if( barelyCloseToARoyalFlush() == true ) {
-      this.awardScore = 6;
-    } else if( isTenARoyalFlush() == true ) {
-      this.awardScore = 6;
-    } else if( lowFlush() == true ) {
-      this.awardScore = 6;
 
-    } else if ( straight() == true ) {
-      this.awardScore = 5;
+    } else if( almostRoyalFlush() == true ) {
+      this.awardScore = 6.9;
+    } else if( barelyCloseToARoyalFlush() == true ) {
+      this.awardScore = 6.8;
+    } else if( isTenARoyalFlush() == true ) {
+      this.awardScore = 6.7;
+    } else if ( flush() == true ) {
+      this.awardScore = 6.6;
+    } else if( lowFlush() == true ) {
+      this.awardScore = 6.5;
+
     } else if ( royalStraight() == true ) {
-      this.awardScore = 5;
+      this.awardScore = 5.9;
     } else if ( almostRoyalStraight() == true ) {
-      this.awardScore = 5;
+      this.awardScore = 5.8;
     } else if ( furtherFromARoyalStraight() == true ) {
-      this.awardScore = 5;
+      this.awardScore = 5.7;
     } else if ( isTenARoyal() == true ) {
-      this.awardScore = 5;
+      this.awardScore = 5.6;
+    } else if ( straight() == true ) {
+      this.awardScore = 5.5;
     } else if ( lowStraight() == true ) {
-      this.awardScore = 5;
+      this.awardScore = 5.4;
 
     } else if ( three() == true ) {
       this.awardScore = 4;
