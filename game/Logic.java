@@ -11,6 +11,13 @@ public class Logic {
     this.tableCards = tableCards;
   }
 
-
+  // public void combineCards() {
+  //   this.playerCards.addAll( this.tableCards );
+  //   for( ArrayList item : this.playerCards ) {
+  //     if( item != null ) {
+  //     System.out.println( item.deal() );
+  //     }
+  //   }
+  // }
 
 }

@@ -13,6 +13,7 @@ public class GameTest {
   Player steve;
   Player dave;
   Game game;
+  Logic logic;
 
   @Before
   public void before() {
@@ -52,6 +53,13 @@ public class GameTest {
   public void hasCard() {
     jeff.takeCard(  cards.deal() );
     assertEquals( "A♠️", jeff.seeHand().get(0) );
+  }
+
+  @Test
+  public void hasTwoCards() {
+    jeff.takeCard(  cards.deal() );
+    jeff.takeCard(  cards.deal() );
+    assertEquals( "A♥️", jeff.seeHand().get(1) );
   }
 
   @Test
@@ -158,6 +166,14 @@ public class GameTest {
     game.handWon( steve );
     assertEquals( 550, steve.countChips() );
   }
+
+  // @Test
+  // public void logicWillTakeCards() {
+  //   jeff.takeCard( cards.deal() );
+  //   steve.takeCard( cards.deal() );
+  //   logic = new Logic( jeff.seeHand(), steve.seeHand() );
+  //   logic.combineCards();
+  // }
 
 }
 
