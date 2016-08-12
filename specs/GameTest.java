@@ -212,6 +212,17 @@ public class GameTest {
     assertEquals( true, logic.pair() );
   }
 
+  @Test
+  public void canSeeThreeOfAKind() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), jeff.seeHand() );
+    logic.combineCards();
+    assertEquals( true, logic.three() );
+  }
+
 }
 
 
