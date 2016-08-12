@@ -5,10 +5,12 @@ public class Logic {
 
   private ArrayList< String > playerCards;
   private ArrayList< String > tableCards;
+  private ArrayList< String > processedCards;
 
   public Logic( ArrayList playerCards, ArrayList tableCards ) {
     this.playerCards = playerCards;
     this.tableCards = tableCards;
+    this.processedCards = new ArrayList< String >();
   }
 
   public void combineCards() {
@@ -107,6 +109,13 @@ public class Logic {
 
   public boolean straightFlush() {
     if( flush() == true && straight() == true ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean fullHouse() {
+    if( pair() == true && three() == true ) {
       return true;
     }
     return false;

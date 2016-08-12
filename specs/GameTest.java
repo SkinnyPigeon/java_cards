@@ -376,6 +376,38 @@ public class GameTest {
     assertEquals( false, logic.straightFlush() );
   }
 
+  @Test
+  public void trueWhenFullHouse() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    logic = new Logic( jeff.seeHand(), dave.seeHand() );
+    logic.combineCards();
+    assertEquals( true, logic.fullHouse() );
+  }
+
+  @Test
+  public void falseWhenNotFullHouse() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), dave.seeHand() );
+    logic.combineCards();
+    assertEquals( false, logic.fullHouse() );
+  }
 
 
 
