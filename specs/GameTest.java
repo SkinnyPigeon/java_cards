@@ -26,7 +26,7 @@ public class GameTest {
 
   @Test
   public void checkCards() {
-    assertEquals( 15, cards.cardLength() );
+    assertEquals( 16, cards.cardLength() );
   }
 
   @Test
@@ -564,12 +564,32 @@ public class GameTest {
     game.takeCard( cards.deal() );
     steve.takeCard( cards.deal() );
     steve.takeCard( cards.deal() );
-    jeff.takeCard( cards.deal() );
-    jeff.takeCard( cards.deal() );
-    jeff.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), game.seeHand() );
     logic.combineCards();
     assertEquals( true, logic.lowStraight() );
+  }
+
+  @Test
+  public void canSeeAFurtherRoyalStraight() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), game.seeHand() );
+    logic.combineCards();
+    assertEquals( true, logic.straight() );
   }
 
 

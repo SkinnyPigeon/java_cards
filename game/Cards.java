@@ -24,6 +24,7 @@ public class Cards {
     this.cards.add( "J♠️" );
     this.cards.add( "10♠️" );
     this.cards.add( "9♠️" );
+    this.cards.add( "8♠️" );
 
     this.dealtCard = dealtCard;
   }

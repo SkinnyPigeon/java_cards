@@ -146,6 +146,16 @@ public class Logic {
     fourthCard = this.playerCards.get( 3 ).charAt( 0 );
     fifthCard = this.playerCards.get( 4 ).charAt( 0 );
 
+    if( firstCard == '1' || secondCard == '1' 
+      || thirdCard == '1' || fourthCard == '1' 
+      || fifthCard == '1' ) {
+      firstCard = '5';
+      secondCard = '6';
+      thirdCard = '7';
+      fourthCard = '8';
+      fifthCard = '9';
+    }
+
     if( firstCard + 1 == secondCard && firstCard + 2 == thirdCard 
       && firstCard + 3 == fourthCard && firstCard + 4 == fifthCard ) {
       return true;
@@ -231,6 +241,26 @@ public class Logic {
     }
     return false;
   }
+
+  // public boolean furtherFromARoyalStraight() {
+  //   char firstCard;
+  //   char secondCard;
+  //   char thirdCard;
+  //   char fourthCard;
+  //   char fifthCard;
+
+  //   firstCard = this.playerCards.get( 0 ).charAt( 0 );
+  //   secondCard = this.playerCards.get( 1 ).charAt( 0 );
+  //   thirdCard = this.playerCards.get( 2 ).charAt( 0 );
+  //   fourthCard = this.playerCards.get( 3 ).charAt( 0 );
+  //   fifthCard = this.playerCards.get( 4 ).charAt( 0 );
+
+  //   if( firstCard == '1' && secondCard == '8' && thirdCard == '9' 
+  //     && fourthCard == 'J' && fifthCard == 'Q' ) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
 
   public boolean almostRoyalFlush() {
     if( almostRoyalStraight() == true && flush() == true ) {
