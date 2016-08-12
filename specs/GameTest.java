@@ -600,11 +600,26 @@ public class GameTest {
     logic = new Logic( steve.seeHand(), game.seeHand() );
     logic.combineCards();
     logic.setScore();
-    System.out.println( logic.seeScore() );
-    steve.awardScore( logic.seeScore() );
-    // assertEquals( true, logic.isTenARoyal() );
-    Integer expected = 670;
-    assertEquals( expected, steve.seeScore() );
+    // System.out.println( logic.seeScore() );
+    // steve.awardScore( logic.seeScore() );
+    assertEquals( true, logic.isTenARoyal() );
+    // Integer expected = 670;
+    // assertEquals( expected, steve.seeScore() );
+  }
+
+  @Test
+  public void checkThatFoursHaveScores() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    logic = new Logic( jeff.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    jeff.awardScore( logic.seeScore() );
+    Integer expected = 800;
+    assertEquals( expected, jeff.seeScore() );
   }
 
   // @Test
