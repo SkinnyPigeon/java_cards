@@ -12,7 +12,7 @@ public class Logic {
     this.playerCards = playerCards;
     this.tableCards = tableCards;
     this.processedCards = new ArrayList< String >();
-    this.awardScore = 0;
+    this.awardScore = awardScore;
   }
 
   public Integer seeScore() {
