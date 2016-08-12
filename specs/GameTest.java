@@ -642,7 +642,7 @@ public class GameTest {
     game.addPlayer( dave );
     game.addPlayer( jeff );
     game.pickWinner();
-    assertEquals( jeff, game.seeWinner() );
+    assertEquals( dave, game.seeWinner() );
     // assertEquals( jeff, game.showPlayers().get(0) );
   }
 

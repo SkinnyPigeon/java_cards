@@ -54,6 +54,7 @@ public class Logic {
   }
 
   public boolean pairThree() {
+    pair();
     char firstCard = this.processedCards.get(0).charAt(0);
     if( pair() == true && firstCard == '3' ) {
       return true;
@@ -62,6 +63,7 @@ public class Logic {
   }
 
   public boolean pairFour() {
+    pair();
     char firstCard = this.processedCards.get(0).charAt(0);
     if( pair() == true && firstCard == '4' ) {
       return true;
@@ -70,6 +72,7 @@ public class Logic {
   }
 
   public boolean pairFive() {
+    pair();
     char firstCard = this.processedCards.get(0).charAt(0);
     if( pair() == true && firstCard == '5' ) {
       return true;
@@ -78,6 +81,7 @@ public class Logic {
   }
 
   public boolean pairSix() {
+    pair();
     char firstCard = this.processedCards.get(0).charAt(0);
     if( pair() == true && firstCard == '6' ) {
       return true;
@@ -86,6 +90,7 @@ public class Logic {
   }
 
   public boolean pairSeven() {
+    pair();
     char firstCard = this.processedCards.get(0).charAt(0);
     if( pair() == true && firstCard == '7' ) {
       return true;
@@ -94,6 +99,7 @@ public class Logic {
   }
 
   public boolean pairEight() {
+    pair();
     char firstCard = this.processedCards.get(0).charAt(0);
     if( pair() == true && firstCard == '8' ) {
       return true;
@@ -102,6 +108,7 @@ public class Logic {
   }
 
   public boolean pairNine() {
+    pair();
     char firstCard = this.processedCards.get(0).charAt(0);
     if( pair() == true && firstCard == '9' ) {
       return true;
@@ -110,6 +117,7 @@ public class Logic {
   }
 
   public boolean pairTen() {
+    pair();
     char firstCard = this.processedCards.get(0).charAt(0);
     if( pair() == true && firstCard == '1' ) {
       return true;
@@ -118,6 +126,7 @@ public class Logic {
   }
 
   public boolean pairJack() {
+    pair();
     char firstCard = this.processedCards.get(0).charAt(0);
     if( pair() == true && firstCard == 'J' ) {
       return true;
@@ -126,6 +135,7 @@ public class Logic {
   }
 
   public boolean pairQueen() {
+    pair();
     char firstCard = this.processedCards.get(0).charAt(0);
     if( pair() == true && firstCard == 'Q' ) {
       return true;
@@ -134,6 +144,7 @@ public class Logic {
   }
 
   public boolean pairKing() {
+    pair();
     char firstCard = this.processedCards.get(0).charAt(0);
     if( pair() == true && firstCard == 'K' ) {
       return true;

@@ -37,14 +37,14 @@ public class Game  {
     }
   }
 
-  // public void pickWinner() {
-  //   Collections.sort( this.winnerArray, this.playerComparator );
-  //   this.handWinner = this.winnerArray.get(0);
-  // }
+  public void pickWinner() {
+    Collections.sort( this.winnerArray, this.playerComparator );
+    this.handWinner = this.winnerArray.get(0);
+  }
 
   // public void pickWinner() {
   //   for( int i = 0; i < this.winnerArray.size(); i++ ) {
-  //     this.highestScore
+  //     this.highestScore ===adklsjalksjdlsjlkajsl;
   //   }
   // }
 
