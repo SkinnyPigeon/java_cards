@@ -38,6 +38,17 @@ public class Logic {
     return 0;
   }
 
+  public int cardChecker( String card ) {
+    if( royalConverter( card ) != 0 ) {
+      royalConverter( card );
+    } else if ( aceConverterHigh( card ) != 0 ) {
+      aceConverterHigh( card );
+    }
+    return Integer.parseInt( card );
+  }
+
+
+
   public void combineCards() {
     this.playerCards.addAll( this.tableCards );
     Collections.sort( this.playerCards );
