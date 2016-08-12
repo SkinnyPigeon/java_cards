@@ -436,7 +436,16 @@ public class GameTest {
     steve.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), jeff.seeHand() );
     logic.combineCards();
-    assertEquals( 14, logic.aceConverter( "A" ) );
+    assertEquals( 14, logic.aceConverterHigh( "A" ) );
+  }
+
+  @Test
+  public void characterConverter3() {
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), jeff.seeHand() );
+    logic.combineCards();
+    assertEquals( 1, logic.aceConverterLow( "A" ) );
   }
 
 

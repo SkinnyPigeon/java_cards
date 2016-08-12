@@ -24,9 +24,16 @@ public class Logic {
     return 0;
   }
 
-  public int aceConverter( String card ) {
+  public int aceConverterHigh( String card ) {
     if( card == "A" ) {
       return 14;
+    }
+    return 0;
+  }
+
+  public int aceConverterLow( String card ) {
+    if( card == "A" ) {
+      return 1;
     }
     return 0;
   }
