@@ -43,6 +43,110 @@ public class Logic {
     return false;
   }
 
+  public boolean pairTwo() {
+    char firstCard = this.processedCards.get(0).charAt(0);
+    if( pair() == true && firstCard == '2' ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean pairThree() {
+    char firstCard = this.processedCards.get(0).charAt(0);
+    if( pair() == true && firstCard == '3' ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean pairFour() {
+    char firstCard = this.processedCards.get(0).charAt(0);
+    if( pair() == true && firstCard == '4' ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean pairFive() {
+    char firstCard = this.processedCards.get(0).charAt(0);
+    if( pair() == true && firstCard == '5' ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean pairSix() {
+    char firstCard = this.processedCards.get(0).charAt(0);
+    if( pair() == true && firstCard == '6' ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean pairSeven() {
+    char firstCard = this.processedCards.get(0).charAt(0);
+    if( pair() == true && firstCard == '7' ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean pairEight() {
+    char firstCard = this.processedCards.get(0).charAt(0);
+    if( pair() == true && firstCard == '8' ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean pairNine() {
+    char firstCard = this.processedCards.get(0).charAt(0);
+    if( pair() == true && firstCard == '9' ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean pairTen() {
+    char firstCard = this.processedCards.get(0).charAt(0);
+    if( pair() == true && firstCard == '1' ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean pairJack() {
+    char firstCard = this.processedCards.get(0).charAt(0);
+    if( pair() == true && firstCard == 'J' ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean pairQueen() {
+    char firstCard = this.processedCards.get(0).charAt(0);
+    if( pair() == true && firstCard == 'Q' ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean pairKing() {
+    char firstCard = this.processedCards.get(0).charAt(0);
+    if( pair() == true && firstCard == 'K' ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean pairAce() {
+    char firstCard = this.processedCards.get(0).charAt(0);
+    if( pair() == true && firstCard == 'A' ) {
+      return true;
+    }
+    return false;
+  }
+
   public boolean twoPair() {
     char firstCard;
     char secondCard;
@@ -374,7 +478,32 @@ public class Logic {
       this.awardScore = 4;
     } else if ( twoPair() == true ) {
       this.awardScore = 3;
-    } else if ( pair() == true ) {
+
+    } else if ( pairAce() == true ) {
+      this.awardScore = 2.9;
+    } else if ( pairKing() == true ) {
+      this.awardScore = 2.85;
+    } else if ( pairQueen() == true ) {
+      this.awardScore = 2.8;
+    } else if ( pairJack() == true ) {
+      this.awardScore = 2.7;
+    } else if ( pairTen() == true ) {
+      this.awardScore = 2.6;
+    } else if ( pairNine() == true ) {
+      this.awardScore = 2.55;
+    } else if ( pairEight() == true ) {
+      this.awardScore = 2.5;
+    } else if ( pairSeven() == true ) {
+      this.awardScore = 2.45;
+    } else if ( pairSix() == true ) {
+      this.awardScore = 2.4;
+    } else if ( pairFive() == true ) {
+      this.awardScore = 2.35;
+    } else if ( pairFour() == true ) {
+      this.awardScore = 2.3;
+    } else if ( pairThree() == true ) {
+      this.awardScore = 2.2;
+    } else if ( pairTwo() == true ) {
       this.awardScore = 2;
 
     } else {
