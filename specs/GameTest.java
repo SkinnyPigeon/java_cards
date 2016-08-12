@@ -116,6 +116,31 @@ public class GameTest {
     assertEquals( 100, game.showPot() );
   }
 
+  @Test
+  public void multipleBetsAndTurns() {
+    jeff.placeBet( 50 );
+    game.addBet( jeff );
+    game.nextTurn();
+    dave.placeBet( 50 );
+    game.addBet( dave );
+    game.nextTurn();
+    steve.placeBet( 50 );
+    game.addBet( steve );
+    game.nextTurn();
+    jeff.placeBet( 25 );
+    game.addBet( jeff );
+    assertEquals( 175, game.showPot() );
+  }
+
+  @Test
+  public void playerCannotBetMoreThanTheyHave() {
+    jeff.placeBet( 475 );
+    game.addBet( jeff );
+    jeff.placeBet( 50 );
+    game.addBet( jeff );
+    assertEquals( 475, game.showPot() );
+  }
+
 }
 
 

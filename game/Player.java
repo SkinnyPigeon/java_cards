@@ -35,8 +35,12 @@ public class Player {
   }
 
   public void placeBet( int chips ) {
-    this.chips -= chips;
-    this.bet = chips;
+    if( this.chips >= chips ) {
+      this.chips -= chips;
+      this.bet = chips; 
+    } else {
+      this.bet = 0;
+    }
   }
 
   public int giveBet() {
