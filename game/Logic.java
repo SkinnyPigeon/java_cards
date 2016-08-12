@@ -6,11 +6,17 @@ public class Logic {
   private ArrayList< String > playerCards;
   private ArrayList< String > tableCards;
   private ArrayList< String > processedCards;
+  private int awardScore;
 
   public Logic( ArrayList playerCards, ArrayList tableCards ) {
     this.playerCards = playerCards;
     this.tableCards = tableCards;
     this.processedCards = new ArrayList< String >();
+    this.awardScore = 0;
+  }
+
+  public int awardScore() {
+    return this.awardScore;
   }
 
   public int royalConverter( String card ) {
@@ -47,8 +53,6 @@ public class Logic {
     return Integer.parseInt( card );
   }
 
-
-
   public void combineCards() {
     this.playerCards.addAll( this.tableCards );
     Collections.sort( this.playerCards );
@@ -66,6 +70,27 @@ public class Logic {
       secondCard = this.playerCards.get( i + 1).charAt( 0 );
       if( firstCard == secondCard ) {
         this.processedCards.add( this.playerCards.remove( i + 1) );
+        this.processedCards.add( this.playerCards.remove( i ) );
+        return true;
+      } 
+    }
+    return false;
+  }
+
+  public boolean twoPair() {
+    char firstCard;
+    char secondCard;
+    char thirdCard;
+    char fourthCard;
+    for( int i = 0; i < this.playerCards.size() - 3; i++ ) {
+      firstCard = this.playerCards.get( i ).charAt( 0 );
+      secondCard = this.playerCards.get( i + 1 ).charAt( 0 );
+      thirdCard = this.playerCards.get( i + 2 ).charAt( 0 );
+      fourthCard = this.playerCards.get( i + 3 ).charAt( 0 );
+      if( firstCard == secondCard && thirdCard == fourthCard ) {
+        this.processedCards.add( this.playerCards.remove( i + 3 ) );
+        this.processedCards.add( this.playerCards.remove( i + 2 ) );
+        this.processedCards.add( this.playerCards.remove( i + 1 ) );
         this.processedCards.add( this.playerCards.remove( i ) );
         return true;
       } 
@@ -160,6 +185,20 @@ public class Logic {
       return true;
     }
     return false;
+  }
+
+  public void setScore() {
+    if( straightFlush() == true ) {
+      this.awardScore = 9;
+    } else if ( four() == true ) {
+      this.awardScore = 8;
+    } else if ( fullHouse() == true ) {
+      this.awardScore = 7;
+    } else if ( flush() == true ) {
+      this.awardScore = 6;
+    } else if ( three() == true ) {
+      this.awardScore = 5;
+    }
   }
 
 

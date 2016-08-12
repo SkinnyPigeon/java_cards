@@ -50,6 +50,11 @@ public class GameTest {
   }
 
   @Test
+  public void hasNoScoreToStart() {
+    assertEquals( 0, steve.seeScore() );
+  }
+
+  @Test
   public void hasCard() {
     jeff.takeCard(  cards.deal() );
     assertEquals( "A♠️", jeff.seeHand().get(0) );
@@ -249,6 +254,20 @@ public class GameTest {
   }
 
   @Test
+  public void trueWhenTwoPairs() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), jeff.seeHand() );
+    logic.combineCards();
+    assertEquals( true, logic.twoPair() );
+  }
+
+  @Test
   public void falseWhenNotFourOfAKind() {
     jeff.takeCard( cards.deal() );
     jeff.takeCard( cards.deal() );
@@ -391,6 +410,22 @@ public class GameTest {
   }
 
   @Test
+  public void pointsAreAwarded() {
+    game.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    logic = new Logic( game.seeCards(), dave.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    dave.setScore( logic.awardScore() );
+    assertEquals( 7, dave.seeScore() );
+  }
+
+  @Test
   public void falseWhenNotFullHouse() {
     jeff.takeCard( cards.deal() );
     jeff.takeCard( cards.deal() );
@@ -472,6 +507,8 @@ public class GameTest {
     game.takeCard( cards.deal() );
     assertEquals( "A♥️", game.seeCards().get(1) );
   }
+
+
 
 
 
