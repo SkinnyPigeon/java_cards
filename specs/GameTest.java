@@ -127,9 +127,9 @@ public class GameTest {
     steve.placeBet( 50 );
     game.addBet( steve );
     game.nextTurn();
-    jeff.placeBet( 25 );
+    jeff.placeBet( 55 );
     game.addBet( jeff );
-    assertEquals( 175, game.showPot() );
+    assertEquals( 205, game.showPot() );
   }
 
   @Test
@@ -139,6 +139,16 @@ public class GameTest {
     jeff.placeBet( 50 );
     game.addBet( jeff );
     assertEquals( 475, game.showPot() );
+  }
+
+  @Test
+  public void playerMustAtLeastEqualLastBet() {
+    jeff.placeBet( 50 );
+    game.addBet( jeff );
+    game.nextTurn();
+    dave.placeBet( 25 );
+    game.addBet( dave );
+    assertEquals( 50 , game.showPot() );
   }
 
 }

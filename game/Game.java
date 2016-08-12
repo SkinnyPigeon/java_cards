@@ -4,6 +4,7 @@ import java.util.*;
 public class Game {
 
   private int pot;
+  private int lastBet;
   private int playerTurn;
   private int noOfPlayers;
   
@@ -11,10 +12,8 @@ public class Game {
     this.pot = 0;
     this.playerTurn = 1;
     this.noOfPlayers = noOfPlayers;
+    this.lastBet = lastBet;
   }
-
-  public void takeTurn(){
-  } 
 
   public int showPot() {
     return this.pot;
@@ -29,8 +28,9 @@ public class Game {
   }
 
   public void addBet( Player player ) {
-    if( playerCheck( player ) == true ) {
+    if( ( playerCheck( player ) == true ) && ( this.lastBet <= player.giveBet() )) {
       this.pot += player.giveBet();
+      this.lastBet = player.giveBet();
     }
   }
 
@@ -49,8 +49,6 @@ public class Game {
       this.playerTurn += 1;
     }
   }
-
-
 
 }
 
