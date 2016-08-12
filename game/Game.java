@@ -50,6 +50,10 @@ public class Game {
     }
   }
 
+  public void handWon( Player player ) {
+    player.winChips( this.pot );
+  }
+
 }
 
 

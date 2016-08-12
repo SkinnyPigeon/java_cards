@@ -151,6 +151,14 @@ public class GameTest {
     assertEquals( 50 , game.showPot() );
   }
 
+  @Test
+  public void gameWillPayPlayerPotOnWin() {
+    jeff.placeBet( 50 );
+    game.addBet( jeff );
+    game.handWon( steve );
+    assertEquals( 550, steve.countChips() );
+  }
+
 }
 
 

@@ -51,7 +51,9 @@ public class Player {
     return this.playerNumber;
   }
 
-
+  public void winChips( int chips ) {
+    this.chips += chips;
+  }
 
 
 
