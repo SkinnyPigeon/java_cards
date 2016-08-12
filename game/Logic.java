@@ -333,6 +333,41 @@ public class Logic {
     return false;
   }
 
+  public boolean almostRoyalFlush() {
+    if( almostRoyalStraight() == true && flush() == true ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean furtherFromARoyalFlush() {
+    if( furtherFromARoyalStraight() == true && flush() == true ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean barelyCloseToARoyalFlush() {
+    if( barelyCloseToARoyalStraight() == true && flush() == true ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean isTenARoyalFlush() {
+    if( isTenARoyal() == true && flush() == true ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean lowFlush() {
+    if( lowStraight() == true && flush() == true ) {
+      return true;
+    }
+    return false;
+  }
+
   public boolean fullHouse() {
     if( three() == true && pair() == true ) {
       return true;
@@ -343,22 +378,45 @@ public class Logic {
   public void setScore() {
     if( royalFlush() == true ) {
       this.awardScore = 10;
+
     } else if( straightFlush() == true ) {
       this.awardScore = 9;
     } else if ( four() == true ) {
       this.awardScore = 8;
     } else if ( fullHouse() == true ) {
       this.awardScore = 7;
+
     } else if ( flush() == true ) {
       this.awardScore = 6;
+    } else if( almostRoyalFlush() == true ) {
+      this.awardScore = 6;
+    } else if( barelyCloseToARoyalFlush() == true ) {
+      this.awardScore = 6;
+    } else if( isTenARoyalFlush() == true ) {
+      this.awardScore = 6;
+    } else if( lowFlush() == true ) {
+      this.awardScore = 6;
+
     } else if ( straight() == true ) {
       this.awardScore = 5;
+    } else if ( royalStraight() == true ) {
+      this.awardScore = 5;
+    } else if ( almostRoyalStraight() == true ) {
+      this.awardScore = 5;
+    } else if ( furtherFromARoyalStraight() == true ) {
+      this.awardScore = 5;
+    } else if ( isTenARoyal() == true ) {
+      this.awardScore = 5;
+    } else if ( lowStraight() == true ) {
+      this.awardScore = 5;
+
     } else if ( three() == true ) {
       this.awardScore = 4;
     } else if ( twoPair() == true ) {
       this.awardScore = 3;
     } else if ( pair() == true ) {
       this.awardScore = 2;
+
     } else {
       this.awardScore = 1;
     }
