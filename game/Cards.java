@@ -16,6 +16,11 @@ public class Cards {
     this.cards.add( "K♠️" );
     this.cards.add( "Q♠️" );
     this.cards.add( "K♥️" );
+    this.cards.add( "2♥️" );
+    this.cards.add( "3♥️" );
+    this.cards.add( "4♥️" );
+    this.cards.add( "5♥️" );
+    this.cards.add( "6♥️" );
 
     this.dealtCard = dealtCard;
   }

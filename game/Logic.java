@@ -65,4 +65,33 @@ public class Logic {
     return false;
   }
 
+  public boolean straight() {
+    char firstCard;
+    char secondCard;
+    char thirdCard;
+    char fourthCard;
+    char fifthCard;
+      firstCard = this.playerCards.get( 0 ).charAt( 0 );
+      secondCard = this.playerCards.get( 1 ).charAt( 0 );
+      thirdCard = this.playerCards.get( 2 ).charAt( 0 );
+      fourthCard = this.playerCards.get( 3 ).charAt( 0 );
+      fifthCard = this.playerCards.get( 4 ).charAt( 0 );
+      if( firstCard + 1 == secondCard && firstCard + 2 == thirdCard 
+        && firstCard + 3 == fourthCard && firstCard + 4 == fifthCard ) {
+        return true;
+    }
+    return false;
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
+
