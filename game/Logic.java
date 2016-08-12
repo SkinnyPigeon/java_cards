@@ -11,13 +11,22 @@ public class Logic {
     this.tableCards = tableCards;
   }
 
-  // public void combineCards() {
-  //   this.playerCards.addAll( this.tableCards );
-  //   for( ArrayList item : this.playerCards ) {
-  //     if( item != null ) {
-  //     System.out.println( item.deal() );
-  //     }
-  //   }
-  // }
+  public void combineCards() {
+    this.playerCards.addAll( this.tableCards );
+    System.out.println( this.playerCards );
+  }
+
+  public ArrayList seeHand() {
+    return this.playerCards;
+  }
+
+  public boolean pair() {
+    for( int i = 0; i < this.playerCards.size() - 1; i++ ) {
+      if( this.playerCards.get(i).charAt( 0 ) == this.playerCards.get(i + 1).charAt( 0 ) ) {
+        return true;
+      }
+    }
+    return false;
+  }
 
 }

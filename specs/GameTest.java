@@ -26,7 +26,7 @@ public class GameTest {
 
   @Test
   public void checkCards() {
-    assertEquals( 4, cards.cardLength() );
+    assertEquals( 5, cards.cardLength() );
   }
 
   @Test
@@ -167,13 +167,35 @@ public class GameTest {
     assertEquals( 550, steve.countChips() );
   }
 
-  // @Test
-  // public void logicWillTakeCards() {
-  //   jeff.takeCard( cards.deal() );
-  //   steve.takeCard( cards.deal() );
-  //   logic = new Logic( jeff.seeHand(), steve.seeHand() );
-  //   logic.combineCards();
-  // }
+  @Test
+  public void logicWillTakeCards() {
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    logic = new Logic( jeff.seeHand(), steve.seeHand() );
+    logic.combineCards();
+    assertEquals( "A♠️", logic.seeHand().get(0) );
+  }
+
+  @Test
+  public void logicCanSeePair() {
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    logic = new Logic( jeff.seeHand(), steve.seeHand() );
+    logic.combineCards();
+    assertEquals( true, logic.pair() );
+  }
+
+  @Test
+  public void logicReturnsFalseToNonMatchedPair() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), dave.seeHand() );
+    logic.combineCards();
+    assertEquals( false, logic.pair() );
+  }
 
 }
 

@@ -13,6 +13,7 @@ public class Cards {
     this.cards.add( "A♥️" );
     this.cards.add( "A♣️" );
     this.cards.add( "A♦️" );
+    this.cards.add( "K♠️" );
 
     this.dealtCard = dealtCard;
   }
