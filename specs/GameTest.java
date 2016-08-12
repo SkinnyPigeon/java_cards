@@ -338,6 +338,44 @@ public class GameTest {
     assertEquals( false, logic.flush() );
   }
 
+  @Test
+  public void trueWhenStraighFlush() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), dave.seeHand() );
+    logic.combineCards();
+    assertEquals( true, logic.straightFlush() );
+  }
+
+  @Test
+  public void falseWhenNotAStraighFlush() {
+    dave.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), dave.seeHand() );
+    logic.combineCards();
+    assertEquals( false, logic.straightFlush() );
+  }
+
 
 
 

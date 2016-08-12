@@ -105,6 +105,13 @@ public class Logic {
     return false;
   }
 
+  public boolean straightFlush() {
+    if( flush() == true && straight() == true ) {
+      return true;
+    }
+    return false;
+  }
+
 
 
 }
