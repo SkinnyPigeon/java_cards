@@ -43,7 +43,6 @@ public class Logic {
     return false;
   }
 
-
   public boolean pairTwo() {
     pair();
     char firstCard = this.processedCards.get(0).charAt(0);
@@ -452,76 +451,76 @@ public boolean fullHouse() {
   return false;
 }
 
-public void setScore() {
+public Integer setScore() {
   if( royalFlush() == true ) {
-    this.awardScore = 1000;
+    return this.awardScore = 1000;
 
   } else if( straightFlush() == true ) {
-    this.awardScore = 900;
+    return this.awardScore = 900;
   } else if ( four() == true ) {
-    this.awardScore = 800;
+    return this.awardScore = 800;
   } else if ( fullHouse() == true ) {
-    this.awardScore = 700;
+    return this.awardScore = 700;
 
 
   } else if( almostRoyalFlush() == true ) {
-    this.awardScore = 690;
+    return this.awardScore = 690;
   } else if( barelyCloseToARoyalFlush() == true ) {
-    this.awardScore = 680;
+    return this.awardScore = 680;
   } else if( isTenARoyalFlush() == true ) {
-    this.awardScore = 670;
+    return this.awardScore = 670;
   } else if ( flush() == true ) {
-    this.awardScore = 660;
+    return this.awardScore = 660;
   } else if( lowFlush() == true ) {
-    this.awardScore = 650;
+    return this.awardScore = 650;
 
   } else if ( royalStraight() == true ) {
-    this.awardScore = 590;
+    return this.awardScore = 590;
   } else if ( almostRoyalStraight() == true ) {
-    this.awardScore = 580;
+    return this.awardScore = 580;
   } else if ( furtherFromARoyalStraight() == true ) {
-    this.awardScore = 570;
+    return this.awardScore = 570;
   } else if ( isTenARoyal() == true ) {
-    this.awardScore = 560;
+    return this.awardScore = 560;
   } else if ( straight() == true ) {
-    this.awardScore = 550;
+    return this.awardScore = 550;
   } else if ( lowStraight() == true ) {
-    this.awardScore = 540;
+    return this.awardScore = 540;
 
   } else if ( three() == true ) {
-    this.awardScore = 400;
+    return this.awardScore = 400;
   } else if ( twoPair() == true ) {
-    this.awardScore = 300;
+    return this.awardScore = 300;
 
   } else if ( pairAce() == true ) {
-    this.awardScore = 290;
+    return this.awardScore = 290;
   } else if ( pairKing() == true ) {
-    this.awardScore = 285;
+    return this.awardScore = 285;
   } else if ( pairQueen() == true ) {
-    this.awardScore = 280;
+    return this.awardScore = 280;
   } else if ( pairJack() == true ) {
-    this.awardScore = 270;
+    return this.awardScore = 270;
   } else if ( pairTen() == true ) {
-    this.awardScore = 260;
+    return this.awardScore = 260;
   } else if ( pairNine() == true ) {
-    this.awardScore = 255;
+    return this.awardScore = 255;
   } else if ( pairEight() == true ) {
-    this.awardScore = 250;
+    return this.awardScore = 250;
   } else if ( pairSeven() == true ) {
-    this.awardScore = 245;
+    return this.awardScore = 245;
   } else if ( pairSix() == true ) {
-    this.awardScore = 240;
+    return this.awardScore = 240;
   } else if ( pairFive() == true ) {
-    this.awardScore = 235;
+    return this.awardScore = 235;
   } else if ( pairFour() == true ) {
-    this.awardScore = 230;
+    return this.awardScore = 230;
   } else if ( pairThree() == true ) {
-    this.awardScore = 220;
+    return this.awardScore = 220;
   } else if ( pairTwo() == true ) {
-    this.awardScore = 200;
+    return this.awardScore = 200;
 
   } else {
-    this.awardScore = 100;
+    return this.awardScore = 100;
   }
 }
 
