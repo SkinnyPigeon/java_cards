@@ -632,7 +632,6 @@ public class GameTest {
     logic = new Logic( steve.seeHand(), game.seeHand() );
     logic.combineCards();
     logic.setScore();
-    System.out.println( logic.seeScore() );
 
     jeff.awardScore( logic.seeScore() );
     logic2 = new Logic( dave.seeHand(), game.seeHand() );
@@ -642,8 +641,10 @@ public class GameTest {
     game.addPlayer( dave );
     game.addPlayer( jeff );
     game.pickWinner();
-    assertEquals( dave, game.seeWinner() );
-    // assertEquals( jeff, game.showPlayers().get(0) );
+    // System.out.println( dave.seeScore() );
+    // System.out.println( jeff.seeScore() );
+
+    assertEquals( jeff, game.seeWinner() );
   }
 
 

@@ -39,7 +39,7 @@ public class Game  {
 
   public void pickWinner() {
     Collections.sort( this.winnerArray, this.playerComparator );
-    this.handWinner = this.winnerArray.get(0);
+    this.handWinner = this.winnerArray.get( this.winnerArray.size() - 1 );
   }
 
   // public void pickWinner() {
