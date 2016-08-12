@@ -39,7 +39,6 @@ public class Cards {
     Collections.shuffle( this.cards );
     for( String card : this.cards ) {
       if( card != null ) {
-        System.out.println( card );
       }
     }
     return "Shuffled 😀";

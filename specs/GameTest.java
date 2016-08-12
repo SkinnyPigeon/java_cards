@@ -632,18 +632,16 @@ public class GameTest {
     logic = new Logic( steve.seeHand(), game.seeHand() );
     logic.combineCards();
     logic.setScore();
-
     jeff.awardScore( logic.seeScore() );
-    logic2 = new Logic( dave.seeHand(), game.seeHand() );
-    logic2.combineCards();
-    logic2.setScore();
-    dave.awardScore( logic2.seeScore() );
+
+    logic = new Logic( dave.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    dave.awardScore( logic.seeScore() );
+
     game.addPlayer( dave );
     game.addPlayer( jeff );
     game.pickWinner();
-    // System.out.println( dave.seeScore() );
-    // System.out.println( jeff.seeScore() );
-
     assertEquals( jeff, game.seeWinner() );
   }
 
