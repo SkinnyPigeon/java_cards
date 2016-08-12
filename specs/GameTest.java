@@ -177,7 +177,7 @@ public class GameTest {
   }
 
   @Test
-  public void logicCanSeePair() {
+  public void trueWhenPair() {
     jeff.takeCard( cards.deal() );
     steve.takeCard( cards.deal() );
     logic = new Logic( jeff.seeHand(), steve.seeHand() );
@@ -186,7 +186,7 @@ public class GameTest {
   }
 
   @Test
-  public void logicReturnsFalseToNonMatchedPair() {
+  public void falseWhenNotPair() {
     jeff.takeCard( cards.deal() );
     jeff.takeCard( cards.deal() );
     jeff.takeCard( cards.deal() );
@@ -213,7 +213,7 @@ public class GameTest {
   }
 
   @Test
-  public void canSeeThreeOfAKind() {
+  public void trueWhenThreeOfAKind() {
     jeff.takeCard( cards.deal() );
     jeff.takeCard( cards.deal() );
     jeff.takeCard( cards.deal() );
@@ -221,6 +221,45 @@ public class GameTest {
     logic = new Logic( steve.seeHand(), jeff.seeHand() );
     logic.combineCards();
     assertEquals( true, logic.three() );
+  }
+
+  @Test
+  public void falseWhenNotThreeOfAKind() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), dave.seeHand() );
+    logic.combineCards();
+    assertEquals( false, logic.three() );
+  }
+
+  @Test
+  public void trueWhenFourOfAKind() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), jeff.seeHand() );
+    logic.combineCards();
+    assertEquals( true, logic.four() );
+  }
+
+  @Test
+  public void falseWhenNotFourOfAKind() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), dave.seeHand() );
+    logic.combineCards();
+    assertEquals( false, logic.four() );
   }
 
 }
