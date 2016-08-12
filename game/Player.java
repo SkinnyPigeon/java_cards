@@ -9,7 +9,7 @@ public class Player {
   private int chips;
   private int bet;
   private int playerNumber;
-  private double score;
+  private Integer score;
 
   public Player( String name, int playerNumber ) {
     this.name = name;
@@ -17,18 +17,18 @@ public class Player {
     this.chips = 500;
     this.bet = 0;
     this.playerNumber = playerNumber;
-    this.score = score;
+    this.score = 0;
   }
 
   public String name() {
     return this.name;
   }
 
-  public double seeScore() {
+  public Integer seeScore() {
     return this.score;
   }
 
-  public void setScore( double handScore ) {
+  public void setScore( Integer handScore ) {
     this.score = handScore;
   }
 

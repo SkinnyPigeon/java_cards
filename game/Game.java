@@ -1,7 +1,7 @@
 package Game;
 import java.util.*;
 
-public class Game {
+public class Game  {
 
   private int pot;
   private int lastBet;
@@ -9,6 +9,7 @@ public class Game {
   private int noOfPlayers;
   private ArrayList< String > sharedCards;
   private ArrayList< Player > winnerArray;
+  // private PlayerComparator playerComparator;
   private Player handWinner;
   
   public Game( int noOfPlayers ){
@@ -19,6 +20,7 @@ public class Game {
     this.sharedCards = new ArrayList< String >();
     this.winnerArray = new ArrayList< Player >();
     this.handWinner = handWinner;
+    // this.playerComparator = new PlayerComparator();
   }
 
   public int showPot() {
@@ -33,6 +35,15 @@ public class Game {
     }
   }
 
+  // public void pickWinner() {
+  //   Collections.sort( this.winnerArray, this.playerComparator );
+  //   this.handWinner = this.winnerArray.get(0);
+  // }
+
+  // public Player seeWinner() {
+  //   return this.handWinner;
+  // }
+
   public void takeCard( String card ) {
     this.sharedCards.add( card );
   }
@@ -44,22 +55,6 @@ public class Game {
   public ArrayList seeHand() {
     return this.sharedCards;
   }
-
-  // @Override
-  // public double compareTo( Player comparestu ) {
-  //   double compareScore( ( Player ) comparestu ).seeScore();
-  //   return comparestu.seeScore() - compareScore;
-  // }
-
-  // public void pickWinner() {
-  //   Collections.sort( this.winnerArray );
-  //   this.handWinner = this.winnerArray.get(0);
-  // }
-
-  // public Player seeWinner() {
-  //   return this.handWinner;
-  // }
-
 
   public void addBet( Player player ) {
     if( ( playerCheck( player ) == true ) && ( this.lastBet <= player.giveBet() )) {
