@@ -193,6 +193,46 @@ public class Logic {
     return false;
   }
 
+  public boolean almostRoyalFlush() {
+    char firstCard;
+    char secondCard;
+    char thirdCard;
+    char fourthCard;
+    char fifthCard;
+
+    firstCard = this.playerCards.get( 0 ).charAt( 0 );
+    secondCard = this.playerCards.get( 1 ).charAt( 0 );
+    thirdCard = this.playerCards.get( 2 ).charAt( 0 );
+    fourthCard = this.playerCards.get( 3 ).charAt( 0 );
+    fifthCard = this.playerCards.get( 4 ).charAt( 0 );
+
+    if( firstCard == '1' && secondCard == '9' && thirdCard == 'J' 
+      && fourthCard == 'K' && fifthCard == 'Q' ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean lowFlush() {
+    char firstCard;
+    char secondCard;
+    char thirdCard;
+    char fourthCard;
+    char fifthCard;
+
+    firstCard = this.playerCards.get( 0 ).charAt( 0 );
+    secondCard = this.playerCards.get( 1 ).charAt( 0 );
+    thirdCard = this.playerCards.get( 2 ).charAt( 0 );
+    fourthCard = this.playerCards.get( 3 ).charAt( 0 );
+    fifthCard = this.playerCards.get( 4 ).charAt( 0 );
+
+    if( firstCard == '2' && secondCard == '3' && thirdCard == '4' 
+      && fourthCard == '5' && fifthCard == 'A' ) {
+      return true;
+    }
+    return false;
+  }
+
   public boolean straightFlush() {
     if( flush() == true && straight() == true ) {
       return true;
@@ -207,12 +247,14 @@ public class Logic {
     return false;
   }
 
-
-
   public void setScore() {
     if( royalFlush() == true ) {
       this.awardScore = 10;
     } else if( straightFlush() == true ) {
+      this.awardScore = 9;
+    } else if( almostRoyalFlush() == true ) {
+      this.awardScore = 9;
+    } else if( lowFlush() == true ) {
       this.awardScore = 9;
     } else if ( four() == true ) {
       this.awardScore = 8;
