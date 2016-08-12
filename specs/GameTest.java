@@ -26,7 +26,7 @@ public class GameTest {
 
   @Test
   public void checkCards() {
-    assertEquals( 16, cards.cardLength() );
+    assertEquals( 18, cards.cardLength() );
   }
 
   @Test
@@ -577,7 +577,7 @@ public class GameTest {
     jeff.takeCard( cards.deal() );
     jeff.takeCard( cards.deal() );
     game.takeCard( cards.deal() );
-    game.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
     jeff.takeCard( cards.deal() );
     jeff.takeCard( cards.deal() );
     jeff.takeCard( cards.deal() );
@@ -589,7 +589,57 @@ public class GameTest {
     game.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), game.seeHand() );
     logic.combineCards();
-    assertEquals( true, logic.straight() );
+    assertEquals( true, logic.furtherFromARoyalStraight() );
+  }
+
+  @Test
+  public void canBarelySeeARoyalStraight() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), game.seeHand() );
+    logic.combineCards();
+    assertEquals( true, logic.barelyCloseToARoyalStraight() );
+  }
+
+  @Test
+  public void canBarelySeeTheTen() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), game.seeHand() );
+    logic.combineCards();
+    assertEquals( true, logic.isTenARoyal() );
   }
 
 
