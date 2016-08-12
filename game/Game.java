@@ -8,7 +8,8 @@ public class Game {
   private int playerTurn;
   private int noOfPlayers;
   private ArrayList< String > sharedCards;
-
+  private ArrayList< Player > pickWinner;
+  private Player handWinner;
   
   public Game( int noOfPlayers ){
     this.pot = 0;
@@ -16,6 +17,8 @@ public class Game {
     this.noOfPlayers = noOfPlayers;
     this.lastBet = lastBet;
     this.sharedCards = new ArrayList< String >();
+    this.pickWinner = new ArrayList< Player >();
+    this.handWinner = handWinner;
   }
 
   public int showPot() {
