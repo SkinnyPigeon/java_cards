@@ -19,40 +19,6 @@ public class Logic {
     return this.awardScore;
   }
 
-  public int royalConverter( String card ) {
-    if( card == "K" ) {
-      return 13;
-    } else if( card == "Q" ) {
-      return 12;
-    } else if( card == "J" ) {
-      return 11;
-    } 
-    return 0;
-  }
-
-  public int aceConverterHigh( String card ) {
-    if( card == "A" ) {
-      return 14;
-    }
-    return 0;
-  }
-
-  public int aceConverterLow( String card ) {
-    if( card == "A" ) {
-      return 1;
-    }
-    return 0;
-  }
-
-  public int cardChecker( String card ) {
-    if( royalConverter( card ) != 0 ) {
-      return royalConverter( card );
-    } else if ( aceConverterHigh( card ) != 0 ) {
-      return aceConverterHigh( card );
-    }
-    return Integer.parseInt( card );
-  }
-
   public void combineCards() {
     this.playerCards.addAll( this.tableCards );
     Collections.sort( this.playerCards );

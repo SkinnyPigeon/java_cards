@@ -456,50 +456,7 @@ public class GameTest {
     assertEquals( false, logic.fullHouse() );
   }
 
-  @Test
-  public void characterConverter() {
-    jeff.takeCard( cards.deal() );
-    steve.takeCard( cards.deal() );
-    logic = new Logic( steve.seeHand(), jeff.seeHand() );
-    logic.combineCards();
-    assertEquals( 13, logic.royalConverter( "K" ) );
-  }
 
-  @Test
-  public void characterConverter2() {
-    jeff.takeCard( cards.deal() );
-    steve.takeCard( cards.deal() );
-    logic = new Logic( steve.seeHand(), jeff.seeHand() );
-    logic.combineCards();
-    assertEquals( 14, logic.aceConverterHigh( "A" ) );
-  }
-
-  @Test
-  public void characterConverter3() {
-    jeff.takeCard( cards.deal() );
-    steve.takeCard( cards.deal() );
-    logic = new Logic( steve.seeHand(), jeff.seeHand() );
-    logic.combineCards();
-    assertEquals( 1, logic.aceConverterLow( "A" ) );
-  }
-
-  @Test
-  public void bigConverter() {
-    jeff.takeCard( cards.deal() );
-    steve.takeCard( cards.deal() );
-    logic = new Logic( steve.seeHand(), jeff.seeHand() );
-    logic.combineCards();
-    assertEquals( 14, logic.cardChecker( "A" ) );
-  }
-
-  @Test
-  public void bigConverter2() {
-    jeff.takeCard( cards.deal() );
-    steve.takeCard( cards.deal() );
-    logic = new Logic( steve.seeHand(), jeff.seeHand() );
-    logic.combineCards();
-    assertEquals( 9, logic.cardChecker( "9" ) );
-  }
 
   @Test
   public void tableCanHaveCards() {
