@@ -13,6 +13,24 @@ public class Logic {
     this.processedCards = new ArrayList< String >();
   }
 
+  public int royalConverter( String card ) {
+    if( card == "K" ) {
+      return 13;
+    } else if( card == "Q" ) {
+      return 12;
+    } else if( card == "J" ) {
+      return 11;
+    } 
+    return 0;
+  }
+
+  public int aceConverter( String card ) {
+    if( card == "A" ) {
+      return 14;
+    }
+    return 0;
+  }
+
   public void combineCards() {
     this.playerCards.addAll( this.tableCards );
     Collections.sort( this.playerCards );
@@ -88,43 +106,43 @@ public class Logic {
     if( firstCard + 1 == secondCard && firstCard + 2 == thirdCard 
       && firstCard + 3 == fourthCard && firstCard + 4 == fifthCard ) {
       return true;
-    }
-    return false;
   }
+  return false;
+}
 
-  public boolean flush() {
-    char firstCard;
-    char secondCard;
-    char thirdCard;
-    char fourthCard;
-    char fifthCard;
+public boolean flush() {
+  char firstCard;
+  char secondCard;
+  char thirdCard;
+  char fourthCard;
+  char fifthCard;
 
-    firstCard = this.playerCards.get( 0 ).charAt( 1 );
-    secondCard = this.playerCards.get( 1 ).charAt( 1 );
-    thirdCard = this.playerCards.get( 2 ).charAt( 1 );
-    fourthCard = this.playerCards.get( 3 ).charAt( 1 );
-    fifthCard = this.playerCards.get( 4 ).charAt( 1 );
+  firstCard = this.playerCards.get( 0 ).charAt( 1 );
+  secondCard = this.playerCards.get( 1 ).charAt( 1 );
+  thirdCard = this.playerCards.get( 2 ).charAt( 1 );
+  fourthCard = this.playerCards.get( 3 ).charAt( 1 );
+  fifthCard = this.playerCards.get( 4 ).charAt( 1 );
 
-    if( firstCard == secondCard && firstCard == thirdCard 
-      && firstCard == fourthCard && firstCard == fifthCard ) {
-      return true;
-    }
-    return false;
+  if( firstCard == secondCard && firstCard == thirdCard 
+    && firstCard == fourthCard && firstCard == fifthCard ) {
+    return true;
+}
+return false;
+}
+
+public boolean straightFlush() {
+  if( flush() == true && straight() == true ) {
+    return true;
   }
+  return false;
+}
 
-  public boolean straightFlush() {
-    if( flush() == true && straight() == true ) {
-      return true;
-    }
-    return false;
+public boolean fullHouse() {
+  if( three() == true && pair() == true ) {
+    return true;
   }
-
-  public boolean fullHouse() {
-    if( three() == true && pair() == true ) {
-      return true;
-    }
-    return false;
-  }
+  return false;
+}
 
 
 

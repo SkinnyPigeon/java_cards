@@ -421,6 +421,24 @@ public class GameTest {
     assertEquals( false, logic.fullHouse() );
   }
 
+  @Test
+  public void characterConverter() {
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), jeff.seeHand() );
+    logic.combineCards();
+    assertEquals( 13, logic.royalConverter( "K" ) );
+  }
+
+  @Test
+  public void characterConverter2() {
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), jeff.seeHand() );
+    logic.combineCards();
+    assertEquals( 14, logic.aceConverter( "A" ) );
+  }
+
 
 
 }
