@@ -409,6 +409,18 @@ public class GameTest {
     assertEquals( false, logic.fullHouse() );
   }
 
+  @Test
+  public void falseWhenCardsCouldBeCountedTwice() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), jeff.seeHand() );
+    logic.combineCards();
+    assertEquals( false, logic.fullHouse() );
+  }
+
 
 
 }

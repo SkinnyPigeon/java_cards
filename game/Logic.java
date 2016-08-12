@@ -29,6 +29,8 @@ public class Logic {
       firstCard = this.playerCards.get( i ).charAt( 0 );
       secondCard = this.playerCards.get( i + 1).charAt( 0 );
       if( firstCard == secondCard ) {
+        this.processedCards.add( this.playerCards.remove( i + 1) );
+        this.processedCards.add( this.playerCards.remove( i ) );
         return true;
       } 
     }
