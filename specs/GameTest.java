@@ -448,14 +448,23 @@ public class GameTest {
     assertEquals( 1, logic.aceConverterLow( "A" ) );
   }
 
-  // @Test
-  // public void bigConverter() {
-  //   jeff.takeCard( cards.deal() );
-  //   steve.takeCard( cards.deal() );
-  //   logic = new Logic( steve.seeHand(), jeff.seeHand() );
-  //   logic.combineCards();
-  //   assertEquals( 1, logic.aceConverterLow( "1" ) );
-  // }
+  @Test
+  public void bigConverter() {
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), jeff.seeHand() );
+    logic.combineCards();
+    assertEquals( 14, logic.cardChecker( "A" ) );
+  }
+
+  @Test
+  public void bigConverter2() {
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), jeff.seeHand() );
+    logic.combineCards();
+    assertEquals( 9, logic.cardChecker( "9" ) );
+  }
 
 
 

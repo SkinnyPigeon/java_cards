@@ -40,9 +40,9 @@ public class Logic {
 
   public int cardChecker( String card ) {
     if( royalConverter( card ) != 0 ) {
-      royalConverter( card );
+      return royalConverter( card );
     } else if ( aceConverterHigh( card ) != 0 ) {
-      aceConverterHigh( card );
+      return aceConverterHigh( card );
     }
     return Integer.parseInt( card );
   }
