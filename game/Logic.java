@@ -44,6 +44,9 @@ public class Logic {
       secondCard = this.playerCards.get( i + 1 ).charAt( 0 );
       thirdCard = this.playerCards.get( i + 2 ).charAt( 0 );
       if( firstCard == secondCard && firstCard == thirdCard ) {
+        this.processedCards.add( this.playerCards.remove( i + 2 ) );
+        this.processedCards.add( this.playerCards.remove( i + 1 ) );
+        this.processedCards.add( this.playerCards.remove( i ) );
         return true;
       } 
     }
@@ -115,7 +118,7 @@ public class Logic {
   }
 
   public boolean fullHouse() {
-    if( pair() == true && three() == true ) {
+    if( three() == true && pair() == true ) {
       return true;
     }
     return false;
