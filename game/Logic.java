@@ -173,7 +173,7 @@ public class Logic {
     return false;
   }
 
-  public boolean royalFlush() {
+  public boolean royalStraight() {
     char firstCard;
     char secondCard;
     char thirdCard;
@@ -193,7 +193,7 @@ public class Logic {
     return false;
   }
 
-  public boolean almostRoyalFlush() {
+  public boolean almostRoyalStraight() {
     char firstCard;
     char secondCard;
     char thirdCard;
@@ -213,7 +213,14 @@ public class Logic {
     return false;
   }
 
-  public boolean lowFlush() {
+  public boolean almostRoyalFlush() {
+    if( almostRoyalStraight() == true && flush() == true ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean lowStraight() {
     char firstCard;
     char secondCard;
     char thirdCard;
@@ -248,13 +255,9 @@ public class Logic {
   }
 
   public void setScore() {
-    if( royalFlush() == true ) {
+    if( royalStraight() == true ) { //fix this
       this.awardScore = 10;
     } else if( straightFlush() == true ) {
-      this.awardScore = 9;
-    } else if( almostRoyalFlush() == true ) {
-      this.awardScore = 9;
-    } else if( lowFlush() == true ) {
       this.awardScore = 9;
     } else if ( four() == true ) {
       this.awardScore = 8;
