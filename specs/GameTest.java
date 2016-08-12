@@ -26,7 +26,7 @@ public class GameTest {
 
   @Test
   public void checkCards() {
-    assertEquals( 5, cards.cardLength() );
+    assertEquals( 7, cards.cardLength() );
   }
 
   @Test
@@ -192,9 +192,24 @@ public class GameTest {
     jeff.takeCard( cards.deal() );
     steve.takeCard( cards.deal() );
     dave.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), dave.seeHand() );
     logic.combineCards();
     assertEquals( false, logic.pair() );
+  }
+
+  @Test
+  public void logicReturnsTrueToCardsAddedInRandomOrder() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), dave.seeHand() );
+    logic.combineCards();
+    assertEquals( true, logic.pair() );
   }
 
 }

@@ -13,7 +13,7 @@ public class Logic {
 
   public void combineCards() {
     this.playerCards.addAll( this.tableCards );
-    System.out.println( this.playerCards );
+    Collections.sort( this.playerCards );
   }
 
   public ArrayList seeHand() {
@@ -21,10 +21,14 @@ public class Logic {
   }
 
   public boolean pair() {
+    char firstCard;
+    char secondCard;
     for( int i = 0; i < this.playerCards.size() - 1; i++ ) {
-      if( this.playerCards.get(i).charAt( 0 ) == this.playerCards.get(i + 1).charAt( 0 ) ) {
+      firstCard = this.playerCards.get(i).charAt( 0 );
+      secondCard = this.playerCards.get(i + 1).charAt( 0 );
+      if( firstCard == secondCard ) {
         return true;
-      }
+      } 
     }
     return false;
   }
