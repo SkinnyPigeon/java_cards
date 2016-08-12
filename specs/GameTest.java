@@ -70,22 +70,6 @@ public class GameTest {
     assertEquals( 450, jeff.countChips() );
   }
 
-  // @Test
-  // public void gamePotIncreasesWhenPlayerBets() {
-  //   jeff.placeBet( 50 );
-  //   game.addBet( jeff );
-  //   assertEquals( 50, game.showPot() );
-  // }
-
-  // @Test
-  // public void gameCanTakeMulitpleBets() {
-  //   steve.placeBet( 50 );
-  //   game.addBet( steve );    
-  //   jeff.placeBet( 50 );
-  //   game.addBet( jeff );
-  //   assertEquals( 100, game.showPot() );
-  // }
-
   @Test
   public void gameKnowsHowManyPlayers() {
     assertEquals( 3, game.numberOfPlayers() );
@@ -115,7 +99,22 @@ public class GameTest {
     assertEquals( 50, game.showPot() );
   }
 
+  @Test
+  public void gamePotIncreasesWhenPlayerBets() {
+    jeff.placeBet( 50 );
+    game.addBet( jeff );
+    assertEquals( 50, game.showPot() );
+  }
 
+  @Test
+  public void gameCanTakeMulitpleBets() {
+    jeff.placeBet( 50 );
+    game.addBet( jeff );
+    game.nextTurn();
+    dave.placeBet( 50 );
+    game.addBet( dave );
+    assertEquals( 100, game.showPot() );
+  }
 
 }
 
