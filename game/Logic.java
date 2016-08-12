@@ -161,10 +161,29 @@ public class Logic {
     char fifthCard;
 
     firstCard = this.playerCards.get( 0 ).charAt( 1 );
+    if( firstCard == '0' ) {
+      firstCard = this.playerCards.get( 0 ).charAt( 2 );
+    }
+
     secondCard = this.playerCards.get( 1 ).charAt( 1 );
+    if( secondCard == '0' ) {
+      secondCard = this.playerCards.get( 1 ).charAt( 2 );
+    }
+
     thirdCard = this.playerCards.get( 2 ).charAt( 1 );
+    if( thirdCard == '0' ) {
+      thirdCard = this.playerCards.get( 2 ).charAt( 2 );
+    }
+
     fourthCard = this.playerCards.get( 3 ).charAt( 1 );
+    if( fourthCard == '0' ) {
+      fourthCard = this.playerCards.get( 3 ).charAt( 2 );
+    }
+
     fifthCard = this.playerCards.get( 4 ).charAt( 1 );
+    if( fifthCard == '0' ) {
+      fifthCard = this.playerCards.get( 4 ).charAt( 2 );
+    }
 
     if( firstCard == secondCard && firstCard == thirdCard 
       && firstCard == fourthCard && firstCard == fifthCard ) {
@@ -240,6 +259,13 @@ public class Logic {
     return false;
   }
 
+  public boolean royalFlush() {
+    if( flush() == true && royalStraight() == true ) {
+      return true;
+    }
+    return false;
+  }
+
   public boolean straightFlush() {
     if( flush() == true && straight() == true ) {
       return true;
@@ -255,7 +281,7 @@ public class Logic {
   }
 
   public void setScore() {
-    if( royalStraight() == true ) { //fix this
+    if( royalFlush() == true ) {
       this.awardScore = 10;
     } else if( straightFlush() == true ) {
       this.awardScore = 9;
