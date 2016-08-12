@@ -8,7 +8,7 @@ public class Game {
   private int playerTurn;
   private int noOfPlayers;
   private ArrayList< String > sharedCards;
-  private ArrayList< Player > pickWinner;
+  private ArrayList< Player > winnerArray;
   private Player handWinner;
   
   public Game( int noOfPlayers ){
@@ -17,7 +17,7 @@ public class Game {
     this.noOfPlayers = noOfPlayers;
     this.lastBet = lastBet;
     this.sharedCards = new ArrayList< String >();
-    this.pickWinner = new ArrayList< Player >();
+    this.winnerArray = new ArrayList< Player >();
     this.handWinner = handWinner;
   }
 
@@ -37,9 +37,29 @@ public class Game {
     this.sharedCards.add( card );
   }
 
+  public void addPlayer( Player player ) {
+    this.winnerArray.add( player );
+  }
+
   public ArrayList seeHand() {
     return this.sharedCards;
   }
+
+  // @Override
+  // public double compareTo( Player comparestu ) {
+  //   double compareScore( ( Player ) comparestu ).seeScore();
+  //   return comparestu.seeScore() - compareScore;
+  // }
+
+  // public void pickWinner() {
+  //   Collections.sort( this.winnerArray );
+  //   this.handWinner = this.winnerArray.get(0);
+  // }
+
+  // public Player seeWinner() {
+  //   return this.handWinner;
+  // }
+
 
   public void addBet( Player player ) {
     if( ( playerCheck( player ) == true ) && ( this.lastBet <= player.giveBet() )) {
