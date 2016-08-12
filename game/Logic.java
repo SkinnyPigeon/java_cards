@@ -173,6 +173,26 @@ public class Logic {
     return false;
   }
 
+  public boolean royalFlush() {
+    char firstCard;
+    char secondCard;
+    char thirdCard;
+    char fourthCard;
+    char fifthCard;
+
+    firstCard = this.playerCards.get( 0 ).charAt( 0 );
+    secondCard = this.playerCards.get( 1 ).charAt( 0 );
+    thirdCard = this.playerCards.get( 2 ).charAt( 0 );
+    fourthCard = this.playerCards.get( 3 ).charAt( 0 );
+    fifthCard = this.playerCards.get( 4 ).charAt( 0 );
+
+    if( firstCard == '1' && secondCard == 'A' && thirdCard == 'J' 
+      && fourthCard == 'K' && fifthCard == 'Q' ) {
+      return true;
+    }
+    return false;
+  }
+
   public boolean straightFlush() {
     if( flush() == true && straight() == true ) {
       return true;
@@ -187,8 +207,12 @@ public class Logic {
     return false;
   }
 
+
+
   public void setScore() {
-    if( straightFlush() == true ) {
+    if( royalFlush() == true ) {
+      this.awardScore = 10;
+    } else if( straightFlush() == true ) {
       this.awardScore = 9;
     } else if ( four() == true ) {
       this.awardScore = 8;
@@ -196,8 +220,16 @@ public class Logic {
       this.awardScore = 7;
     } else if ( flush() == true ) {
       this.awardScore = 6;
-    } else if ( three() == true ) {
+    } else if ( straight() == true ) {
       this.awardScore = 5;
+    } else if ( three() == true ) {
+      this.awardScore = 4;
+    } else if ( twoPair() == true ) {
+      this.awardScore = 3;
+    } else if ( pair() == true ) {
+      this.awardScore = 2;
+    } else {
+      this.awardScore = 1;
     }
   }
 

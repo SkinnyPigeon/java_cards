@@ -26,7 +26,7 @@ public class GameTest {
 
   @Test
   public void checkCards() {
-    assertEquals( 12, cards.cardLength() );
+    assertEquals( 14, cards.cardLength() );
   }
 
   @Test
@@ -260,7 +260,7 @@ public class GameTest {
     dave.takeCard( cards.deal() );
     dave.takeCard( cards.deal() );
     steve.takeCard( cards.deal() );
-    dave.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
     steve.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), jeff.seeHand() );
     logic.combineCards();
@@ -418,7 +418,7 @@ public class GameTest {
     dave.takeCard( cards.deal() );
     steve.takeCard( cards.deal() );
     dave.takeCard( cards.deal() );
-    logic = new Logic( game.seeCards(), dave.seeHand() );
+    logic = new Logic( game.seeHand(), dave.seeHand() );
     logic.combineCards();
     logic.setScore();
     dave.setScore( logic.awardScore() );
@@ -505,7 +505,28 @@ public class GameTest {
   public void tableCanHaveCards() {
     game.takeCard( cards.deal() );
     game.takeCard( cards.deal() );
-    assertEquals( "A♥️", game.seeCards().get(1) );
+    assertEquals( "A♥️", game.seeHand().get(1) );
+  }
+
+  @Test
+  public void canSeeARoyalFlush() {
+    game.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), game.seeHand() );
+    logic.combineCards();
+    assertEquals( true, logic.royalFlush() );
   }
 
 

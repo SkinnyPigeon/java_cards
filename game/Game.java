@@ -34,7 +34,7 @@ public class Game {
     this.sharedCards.add( card );
   }
 
-  public ArrayList seeCards() {
+  public ArrayList seeHand() {
     return this.sharedCards;
   }
 
