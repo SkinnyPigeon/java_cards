@@ -599,12 +599,7 @@ public class GameTest {
     steve.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), game.seeHand() );
     logic.combineCards();
-    logic.setScore();
-    // System.out.println( logic.seeScore() );
-    // steve.awardScore( logic.seeScore() );
     assertEquals( true, logic.isTenARoyal() );
-    // Integer expected = 670;
-    // assertEquals( expected, steve.seeScore() );
   }
 
   @Test
@@ -622,32 +617,34 @@ public class GameTest {
     assertEquals( expected, jeff.seeScore() );
   }
 
-  // @Test
-  // public void gameCanPickWinningPlayer() {
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   steve.takeCard( cards.deal() );
-  //   steve.takeCard( cards.deal() );
-  //   dave.takeCard( cards.deal() );
-  //   game.takeCard( cards.deal() );
-  //   dave.takeCard( cards.deal() );
-  //   logic = new Logic( steve.seeHand(), game.seeHand() );
-  //   logic.combineCards();
-  //   logic.setScore();
-  //   System.out.println( logic.seeScore() );
+  @Test
+  public void gameCanPickWinningPlayer() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
 
-  //   jeff.awardScore( logic.seeScore() );
-  //   logic2 = new Logic( dave.seeHand(), game.seeHand() );
-  //   logic2.combineCards();
-  //   logic2.setScore();
-  //   dave.awardScore( logic2.seeScore() );
-  //   game.addPlayer( jeff );
-  //   game.addPlayer( dave );
-  //   game.pickWinner();
-  //   Integer expected = 290;
-  //   assertEquals( expected, logic.seeScore() );
-  //   assertEquals( jeff, game.seeWinner() );
-  // }
+    logic = new Logic( steve.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    System.out.println( logic.seeScore() );
+
+    jeff.awardScore( logic.seeScore() );
+    logic2 = new Logic( dave.seeHand(), game.seeHand() );
+    logic2.combineCards();
+    logic2.setScore();
+    dave.awardScore( logic2.seeScore() );
+    game.addPlayer( dave );
+    game.addPlayer( jeff );
+    game.pickWinner();
+    assertEquals( jeff, game.seeWinner() );
+    // assertEquals( jeff, game.showPlayers().get(0) );
+  }
 
 
 

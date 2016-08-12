@@ -11,6 +11,7 @@ public class Game  {
   private ArrayList< Player > winnerArray;
   private PlayerComparator playerComparator;
   private Player handWinner;
+  // private Player highestScore;
   
   public Game( int noOfPlayers ){
     this.pot = 0;
@@ -21,6 +22,7 @@ public class Game  {
     this.winnerArray = new ArrayList< Player >();
     this.handWinner = handWinner;
     this.playerComparator = new PlayerComparator();
+    // this.highestScore = highestScore;
   }
 
   public int showPot() {
@@ -35,10 +37,16 @@ public class Game  {
     }
   }
 
-  public void pickWinner() {
-    Collections.sort( this.winnerArray, this.playerComparator );
-    this.handWinner = this.winnerArray.get(0);
-  }
+  // public void pickWinner() {
+  //   Collections.sort( this.winnerArray, this.playerComparator );
+  //   this.handWinner = this.winnerArray.get(0);
+  // }
+
+  // public void pickWinner() {
+  //   for( int i = 0; i < this.winnerArray.size(); i++ ) {
+  //     this.highestScore
+  //   }
+  // }
 
   public Player seeWinner() {
     return this.handWinner;
@@ -50,6 +58,10 @@ public class Game  {
 
   public void addPlayer( Player player ) {
     this.winnerArray.add( player );
+  }
+
+  public ArrayList showPlayers() {
+    return this.winnerArray;
   }
 
   public ArrayList seeHand() {
