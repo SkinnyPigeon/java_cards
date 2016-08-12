@@ -466,6 +466,13 @@ public class GameTest {
     assertEquals( 9, logic.cardChecker( "9" ) );
   }
 
+  @Test
+  public void tableCanHaveCards() {
+    game.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    assertEquals( "A♥️", game.seeCards().get(1) );
+  }
+
 
 
 }

@@ -7,12 +7,15 @@ public class Game {
   private int lastBet;
   private int playerTurn;
   private int noOfPlayers;
+  private ArrayList< String > sharedCards;
+
   
   public Game( int noOfPlayers ){
     this.pot = 0;
     this.playerTurn = 1;
     this.noOfPlayers = noOfPlayers;
     this.lastBet = lastBet;
+    this.sharedCards = new ArrayList< String >();
   }
 
   public int showPot() {
@@ -25,6 +28,14 @@ public class Game {
     } else {
       return false;
     }
+  }
+
+  public void takeCard( String card ) {
+    this.sharedCards.add( card );
+  }
+
+  public ArrayList seeCards() {
+    return this.sharedCards;
   }
 
   public void addBet( Player player ) {
