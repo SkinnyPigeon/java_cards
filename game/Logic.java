@@ -15,7 +15,7 @@ public class Logic {
     this.awardScore = 0;
   }
 
-  public Integer awardScore() {
+  public Integer seeScore() {
     return this.awardScore;
   }
 

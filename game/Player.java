@@ -28,7 +28,7 @@ public class Player {
     return this.score;
   }
 
-  public void setScore( Integer handScore ) {
+  public void awardScore( Integer handScore ) {
     this.score = handScore;
   }
 

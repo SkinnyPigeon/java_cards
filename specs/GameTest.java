@@ -422,7 +422,7 @@ public class GameTest {
     logic = new Logic( game.seeHand(), dave.seeHand() );
     logic.combineCards();
     logic.setScore();
-    dave.setScore( logic.awardScore() );
+    dave.awardScore( logic.seeScore() );
     Integer expected = 700;
     assertEquals( expected, dave.seeScore() );
   }
@@ -601,28 +601,28 @@ public class GameTest {
     assertEquals( true, logic.isTenARoyal() );
   }
 
-  // @Test
-  // public void gameCanPickWinningPlayer() {
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   steve.takeCard( cards.deal() );
-  //   steve.takeCard( cards.deal() );
-  //   dave.takeCard( cards.deal() );
-  //   game.takeCard( cards.deal() );
-  //   dave.takeCard( cards.deal() );
-  //   logic = new Logic( jeff.seeHand(), game.seeHand() );
-  //   logic.combineCards();
-  //   logic.setScore();
-  //   jeff.awardScore( logic.seeScore() );
-  //   logic = new Logic( dave.seeHand(), game.seeHand() );
-  //   logic.combineCards();
-  //   logic.setScore();
-  //   dave.awardScore( logic.seeScore() );
-  //   game.addPlayer( jeff );
-  //   game.addPlayer( dave );
-  //   game.pickWinner();
-  //   assertEquals( jeff, game.seeWinner() );
-  // }
+  @Test
+  public void gameCanPickWinningPlayer() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    logic = new Logic( jeff.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    jeff.awardScore( logic.seeScore() );
+    logic = new Logic( dave.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    dave.awardScore( logic.seeScore() );
+    game.addPlayer( jeff );
+    game.addPlayer( dave );
+    game.pickWinner();
+    assertEquals( jeff, game.seeWinner() );
+  }
 
 
 

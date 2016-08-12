@@ -1,13 +1,12 @@
-// package Game;
-// import java.util.*;
+package Game;
+import java.util.*;
 
-// public class PlayerComparator implements Comparator<Player> {
+public class PlayerComparator implements Comparator<Player> {
 
-//   @Override
-//   public double compare( Player self, Player other ) {
-//     return self.seeScore().compareTo( other.seeScore() );
-//   }
+  public int compare( Player self, Player other ) {
+    return self.seeScore().compareTo( other.seeScore() );
+  }
 
-// }
+}
 
 
