@@ -618,33 +618,33 @@ public class GameTest {
     assertEquals( expected, jeff.seeScore() );
   }
 
-  @Test
-  public void gameCanPickWinningPlayer() {
-    jeff.takeCard( cards.deal() );
-    jeff.takeCard( cards.deal() );
-    steve.takeCard( cards.deal() );
-    steve.takeCard( cards.deal() );
-    dave.takeCard( cards.deal() );
-    game.takeCard( cards.deal() );
-    dave.takeCard( cards.deal() );
-    game.takeCard( cards.deal() );
-    game.takeCard( cards.deal() );
+  // @Test
+  // public void gameCanPickWinningPlayer() {
+  //   jeff.takeCard( cards.deal() );
+  //   jeff.takeCard( cards.deal() );
+  //   steve.takeCard( cards.deal() );
+  //   steve.takeCard( cards.deal() );
+  //   dave.takeCard( cards.deal() );
+  //   game.takeCard( cards.deal() );
+  //   dave.takeCard( cards.deal() );
+  //   game.takeCard( cards.deal() );
+  //   game.takeCard( cards.deal() );
 
-    logic = new Logic( steve.seeHand(), game.seeHand() );
-    logic.combineCards();
-    logic.setScore();
-    jeff.awardScore( logic.seeScore() );
+  //   logic = new Logic( steve.seeHand(), game.seeHand() );
+  //   logic.combineCards();
+  //   logic.setScore();
+  //   jeff.awardScore( logic.seeScore() );
 
-    logic = new Logic( dave.seeHand(), game.seeHand() );
-    logic.combineCards();
-    logic.setScore();
-    dave.awardScore( logic.seeScore() );
+  //   logic = new Logic( dave.seeHand(), game.seeHand() );
+  //   logic.combineCards();
+  //   logic.setScore();
+  //   dave.awardScore( logic.seeScore() );
 
-    game.addPlayer( dave );
-    game.addPlayer( jeff );
-    game.pickWinner();
-    assertEquals( jeff, game.seeWinner() );
-  }
+  //   game.addPlayer( jeff );
+  //   game.addPlayer( dave );
+  //   game.pickWinner();
+  //   assertEquals( jeff, game.seeWinner() );
+  // }
 
   @Test
   public void slimChanceTwoPairsAddTheirScore() {
@@ -762,6 +762,33 @@ public class GameTest {
 
     Integer expected = 6244;
     assertEquals( expected, logic.seeKicker() );
+  }
+
+  @Test
+  public void gameWillPickWinByKicker() {
+    game.takeCard( cards.deal() ); //Ace
+    game.takeCard( cards.deal() ); //Ace
+    game.takeCard( cards.deal() ); //Ace
+    steve.takeCard( cards.deal() ); //Ace
+    jeff.takeCard( cards.deal() ); //King
+    dave.takeCard( cards.deal() ); //Queen
+
+    logic = new Logic( jeff.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    jeff.awardScore( logic.seeScore() );
+    jeff.awardKicker( logic.seeKicker() );
+
+    logic = new Logic( dave.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    dave.awardScore( logic.seeScore() );
+    dave.awardKicker( logic.seeKicker() );
+
+    game.addPlayer( jeff );
+    game.addPlayer( dave );
+    game.pickWinner();
+    assertEquals( jeff, game.seeWinner() );
   }
 
 

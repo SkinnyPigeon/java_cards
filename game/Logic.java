@@ -1937,7 +1937,6 @@ public class Logic {
     char thirdCard;
     char fourthCard;
     char fifthCard;
-
     if( this.playerCards.size() > 4) {
         firstCard = this.playerCards.get( 0 ).charAt( 1 );
         if( firstCard == '0' ) {
@@ -1966,6 +1965,7 @@ public class Logic {
 
       if( firstCard == secondCard && firstCard == thirdCard 
         && firstCard == fourthCard && firstCard == fifthCard ) {
+        countPoints();
         return true;
       }
     }
@@ -2248,7 +2248,6 @@ public class Logic {
   }
 
   public void setScore() {
-    // countPoints();
 
     if( royalFlush() ) {
       this.awardScore = 1000;

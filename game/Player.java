@@ -10,6 +10,7 @@ public class Player {
   private int bet;
   private int playerNumber;
   private Integer score;
+  private Integer kicker;
 
   public Player( String name, int playerNumber ) {
     this.name = name;
@@ -18,6 +19,7 @@ public class Player {
     this.bet = 0;
     this.playerNumber = playerNumber;
     this.score = 0;
+    this.kicker = 0;
   }
 
   public String name() {
@@ -38,6 +40,14 @@ public class Player {
 
   public ArrayList seeHand() {
     return this.hand;
+  }
+
+  public void awardKicker( Integer kickerScore ) {
+    this.kicker = kickerScore;
+  }
+
+  public Integer seeKicker() {
+    return this.kicker;
   }
 
   public int countChips() {
