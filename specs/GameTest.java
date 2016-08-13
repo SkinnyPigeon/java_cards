@@ -426,7 +426,7 @@ public class GameTest {
     logic.setScore();
     System.out.println( logic.seeHand() );
     dave.awardScore( logic.seeScore() );
-    Integer expected = 700;
+    Integer expected = 799;
     assertEquals( expected, dave.seeScore() );
   }
 
@@ -581,24 +581,24 @@ public class GameTest {
 
   @Test
   public void canBarelySeeTheTen() {
-    jeff.takeCard( cards.deal() );
-    jeff.takeCard( cards.deal() );
-    jeff.takeCard( cards.deal() );
-    jeff.takeCard( cards.deal() );
-    jeff.takeCard( cards.deal() );
-    jeff.takeCard( cards.deal() );
-    jeff.takeCard( cards.deal() );
-    jeff.takeCard( cards.deal() );
-    jeff.takeCard( cards.deal() );
-    jeff.takeCard( cards.deal() );
-    jeff.takeCard( cards.deal() );
-    jeff.takeCard( cards.deal() );
-    jeff.takeCard( cards.deal() );
-    steve.takeCard( cards.deal() );
-    game.takeCard( cards.deal() );
-    game.takeCard( cards.deal() );
-    game.takeCard( cards.deal() );
-    steve.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() ); //Ace
+    jeff.takeCard( cards.deal() ); //Ace
+    jeff.takeCard( cards.deal() ); //Ace
+    jeff.takeCard( cards.deal() ); //Ace
+    jeff.takeCard( cards.deal() ); //King
+    jeff.takeCard( cards.deal() ); //Queen
+    jeff.takeCard( cards.deal() ); //King
+    jeff.takeCard( cards.deal() ); //Two
+    jeff.takeCard( cards.deal() ); //Three
+    jeff.takeCard( cards.deal() ); //Four
+    jeff.takeCard( cards.deal() ); //Five
+    jeff.takeCard( cards.deal() ); //Six
+    jeff.takeCard( cards.deal() ); //Jack
+    steve.takeCard( cards.deal() ); //Ten
+    game.takeCard( cards.deal() ); //Nine
+    game.takeCard( cards.deal() ); //Eight
+    game.takeCard( cards.deal() ); //Seven
+    steve.takeCard( cards.deal() ); //Six
     logic = new Logic( steve.seeHand(), game.seeHand() );
     logic.combineCards();
     assertEquals( true, logic.straightSix() );
@@ -682,6 +682,36 @@ public class GameTest {
     jeff.awardScore( logic.seeScore() );
 
     Integer expected = 512;
+    assertEquals( expected, jeff.seeScore() );
+  }
+
+  @Test
+  public void testAcesOverSix() {
+    jeff.takeCard( cards.deal() ); //Ace
+    jeff.takeCard( cards.deal() ); //Ace
+    game.takeCard( cards.deal() ); //Ace
+    dave.takeCard( cards.deal() ); //Ace
+    dave.takeCard( cards.deal() ); //King
+    dave.takeCard( cards.deal() ); //Queen
+    dave.takeCard( cards.deal() ); //King
+    dave.takeCard( cards.deal() ); //Two
+    dave.takeCard( cards.deal() ); //Three
+    dave.takeCard( cards.deal() ); //Four
+    dave.takeCard( cards.deal() ); //Five
+    game.takeCard( cards.deal() ); //Six
+    dave.takeCard( cards.deal() ); //Jack
+    dave.takeCard( cards.deal() ); //Ten
+    dave.takeCard( cards.deal() ); //Nine
+    dave.takeCard( cards.deal() ); //Eight
+    dave.takeCard( cards.deal() ); //Seven
+    game.takeCard( cards.deal() ); //Six
+
+    logic = new Logic( jeff.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    jeff.awardScore( logic.seeScore() );
+
+    Integer expected = 792;
     assertEquals( expected, jeff.seeScore() );
   }
 

@@ -2297,7 +2297,173 @@ public class Logic {
       this.awardScore = 800;
 
     } else if ( fullHouseAceKing() ) {
-      this.awardScore = 700;
+      this.awardScore = 799;
+    } else if ( fullHouseAceQueen() ) {
+      this.awardScore = 798;
+    } else if ( fullHouseAceJack() ) {
+      this.awardScore = 797;
+    } else if ( fullHouseAceTen() ) {
+      this.awardScore = 796;
+    } else if ( fullHouseAceNine() ) {
+      this.awardScore = 795;
+    } else if ( fullHouseAceEight() ) {
+      this.awardScore = 794;
+    } else if ( fullHouseAceSeven() ) {
+      this.awardScore = 793;
+    } else if ( fullHouseAceSix() ) {
+      this.awardScore = 792;
+    } else if ( fullHouseAceFive() ) {
+      this.awardScore = 791;
+    } else if ( fullHouseAceFour() ) {
+      this.awardScore = 790;
+    } else if ( fullHouseAceThree() ) {
+      this.awardScore = 789;
+    } else if ( fullHouseAceTwo() ) {
+      this.awardScore = 788;
+
+    } else if ( fullHouseKingQueen() ) {
+      this.awardScore = 787;
+    } else if ( fullHouseKingJack() ) {
+      this.awardScore = 786;
+    } else if ( fullHouseKingTen() ) {
+      this.awardScore = 785;
+    } else if ( fullHouseKingNine() ) {
+      this.awardScore = 784;
+    } else if ( fullHouseKingEight() ) {
+      this.awardScore = 783;
+    } else if ( fullHouseKingSeven() ) {
+      this.awardScore = 782;
+    } else if ( fullHouseKingSix() ) {
+      this.awardScore = 781;
+    } else if ( fullHouseKingFive() ) {
+      this.awardScore = 780;
+    } else if ( fullHouseKingFour() ) {
+      this.awardScore = 779;
+    } else if ( fullHouseKingThree() ) {
+      this.awardScore = 778;
+    } else if ( fullHouseKingTwo() ) {
+      this.awardScore = 777;
+
+    } else if ( fullHouseQueenJack() ) {
+      this.awardScore = 776;
+    } else if ( fullHouseQueenTen() ) {
+      this.awardScore = 775;
+    } else if ( fullHouseQueenNine() ) {
+      this.awardScore = 774;
+    } else if ( fullHouseQueenEight() ) {
+      this.awardScore = 773;
+    } else if ( fullHouseQueenSeven() ) {
+      this.awardScore = 772;
+    } else if ( fullHouseQueenSix() ) {
+      this.awardScore = 771;
+    } else if ( fullHouseQueenFive() ) {
+      this.awardScore = 770;
+    } else if ( fullHouseQueenFour() ) {
+      this.awardScore = 769;
+    } else if ( fullHouseQueenThree() ) {
+      this.awardScore = 768;
+    } else if ( fullHouseQueenTwo() ) {
+      this.awardScore = 767;
+
+    } else if ( fullHouseJackTen() ) {
+      this.awardScore = 766;
+    } else if ( fullHouseJackNine() ) {
+      this.awardScore = 765;
+    } else if ( fullHouseJackEight() ) {
+      this.awardScore = 764;
+    } else if ( fullHouseJackSeven() ) {
+      this.awardScore = 763;
+    } else if ( fullHouseJackSix() ) {
+      this.awardScore = 762;
+    } else if ( fullHouseJackFive() ) {
+      this.awardScore = 761;
+    } else if ( fullHouseJackFour() ) {
+      this.awardScore = 760;
+    } else if ( fullHouseJackThree() ) {
+      this.awardScore = 759;
+    } else if ( fullHouseJackTwo() ) {
+      this.awardScore = 758;
+
+    } else if ( fullHouseTenNine() ) {
+      this.awardScore = 757;
+    } else if ( fullHouseTenEight() ) {
+      this.awardScore = 756;
+    } else if ( fullHouseTenSeven() ) {
+      this.awardScore = 755;
+    } else if ( fullHouseTenSix() ) {
+      this.awardScore = 754;
+    } else if ( fullHouseTenFive() ) {
+      this.awardScore = 753;
+    } else if ( fullHouseTenFour() ) {
+      this.awardScore = 752;
+    } else if ( fullHouseTenThree() ) {
+      this.awardScore = 751;
+    } else if ( fullHouseTenTwo() ) {
+      this.awardScore = 750;
+
+    } else if ( fullHouseNineEight() ) {
+      this.awardScore = 749;
+    } else if ( fullHouseNineSeven() ) {
+      this.awardScore = 748;
+    } else if ( fullHouseNineSix() ) {
+      this.awardScore = 747;
+    } else if ( fullHouseNineFive() ) {
+      this.awardScore = 746;
+    } else if ( fullHouseNineFour() ) {
+      this.awardScore = 745;
+    } else if ( fullHouseNineThree() ) {
+      this.awardScore = 744;
+    } else if ( fullHouseNineTwo() ) {
+      this.awardScore = 743;
+
+    } else if ( fullHouseEightSeven() ) {
+      this.awardScore = 742;
+    } else if ( fullHouseEightSix() ) {
+      this.awardScore = 741;
+    } else if ( fullHouseEightFive() ) {
+      this.awardScore = 740;
+    } else if ( fullHouseEightFour() ) {
+      this.awardScore = 739;
+    } else if ( fullHouseEightThree() ) {
+      this.awardScore = 738;
+    } else if ( fullHouseEightTwo() ) {
+      this.awardScore = 737;
+
+    } else if ( fullHouseSevenSix() ) {
+      this.awardScore = 736;
+    } else if ( fullHouseSevenFive() ) {
+      this.awardScore = 735;
+    } else if ( fullHouseSevenFour() ) {
+      this.awardScore = 734;
+    } else if ( fullHouseSevenThree() ) {
+      this.awardScore = 733;
+    } else if ( fullHouseSevenTwo() ) {
+      this.awardScore = 732;
+
+    } else if ( fullHouseSixFive() ) {
+      this.awardScore = 731;
+    } else if ( fullHouseSixFour() ) {
+      this.awardScore = 730;
+    } else if ( fullHouseSixThree() ) {
+      this.awardScore = 729;
+    } else if ( fullHouseSixTwo() ) {
+      this.awardScore = 728;
+
+    } else if ( fullHouseFiveFour() ) {
+      this.awardScore = 727;
+    } else if ( fullHouseFiveThree() ) {
+      this.awardScore = 726;
+    } else if ( fullHouseFiveTwo() ) {
+      this.awardScore = 725;
+
+    } else if ( fullHouseFourThree() ) {
+        this.awardScore = 724;
+    } else if ( fullHouseFourTwo() ) {
+        this.awardScore = 723;
+
+    } else if ( fullHouseThreeTwo() ) {
+        this.awardScore = 722;
+
 
     // } else if {
       // all the flushes. Need to work out the kickers
