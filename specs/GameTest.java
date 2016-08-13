@@ -647,20 +647,20 @@ public class GameTest {
 
   @Test
   public void slimChanceTwoPairsAddTheirScore() {
-    jeff.takeCard( cards.deal() );
-    jeff.takeCard( cards.deal() );
-    dave.takeCard( cards.deal() );
-    dave.takeCard( cards.deal() );
-    jeff.takeCard( cards.deal() );
-    game.takeCard( cards.deal() );
-    game.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() ); //Ace
+    jeff.takeCard( cards.deal() ); //Ace
+    dave.takeCard( cards.deal() ); //Ace
+    dave.takeCard( cards.deal() ); //Ace
+    jeff.takeCard( cards.deal() ); //King
+    game.takeCard( cards.deal() ); //Queen
+    game.takeCard( cards.deal() ); //King
 
     logic = new Logic( jeff.seeHand(), game.seeHand() );
     logic.combineCards();
     logic.setScore();
     jeff.awardScore( logic.seeScore() );
 
-    Integer expected = 60;
+    Integer expected = 449;
     assertEquals( expected, jeff.seeScore() );
   }
 
