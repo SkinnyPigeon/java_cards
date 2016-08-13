@@ -53,10 +53,8 @@ public class Logic {
     return false;
   }
 
-  public boolean countPoints() {
+  public void countPoints() {
     char firstCard;
-    System.out.println( this.playerCards );
-
     if( this.playerCards.size() > 0 ) {
       for( int i = 0; i < this.playerCards.size(); i++ ) {
         firstCard = this.playerCards.get( i ).charAt( 0 );
@@ -91,7 +89,6 @@ public class Logic {
       }
     }
     System.out.println( "And Here " + seeKicker() );
-    return true;
   }
 
   public boolean pairTwo() {
@@ -2217,6 +2214,7 @@ public class Logic {
   }
 
   public void setScore() {
+    countPoints();
 
     if( royalFlush() ) {
       this.awardScore = 1000;
@@ -2487,6 +2485,7 @@ public class Logic {
       this.awardScore = 500;
 
     } else if ( pairAceTwo() && pairKingTwo() ) {
+
       this.awardScore = 449;
     } else if ( pairAceTwo() && pairQueenTwo() ) {
       this.awardScore = 448;
@@ -2681,9 +2680,7 @@ public class Logic {
     } else if ( pairTwo() ) {
       this.awardScore = 200;
 
-    } else if( countPoints() ) {
-      this.awardScore = 100;
-    }
+    } 
   }
 
 

@@ -769,18 +769,11 @@ public class GameTest {
     dave.takeCard( cards.deal() ); //Seven
     dave.takeCard( cards.deal() ); //Six
 
-    System.out.println( "Here" + jeff.seeHand() );
-    System.out.println( "Here" + game.seeHand() );
-
     logic = new Logic( jeff.seeHand(), game.seeHand() );
     logic.combineCards();
-    System.out.println( "Here " + logic.seeHand() );
-    
     logic.setScore();
-    System.out.println( "Here " + logic.seeHand() );
 
-
-    Integer expected = 6244;
+    Integer expected = 7273;
     assertEquals( expected, logic.seeKicker() );
   }
 
