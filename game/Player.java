@@ -8,6 +8,8 @@ public class Player {
   private ArrayList< String > hand;
   private int chips;
   private int bet;
+  private int smallBlindValue;
+  private int bigBlindValue;
   private int playerNumber;
   private Integer score;
   private Integer kicker;
@@ -19,7 +21,8 @@ public class Player {
     this.bet = 0;
     this.playerNumber = playerNumber;
     this.score = 0;
-    this.kicker = 0;
+    this.smallBlindValue = 5;
+    this.bigBlindValue = 10;
   }
 
   public String name() {
@@ -61,6 +64,16 @@ public class Player {
     } else {
       this.bet = 0;
     }
+  }
+
+  public int smallBlind() {
+    this.chips -= this.smallBlindValue;
+    return this.smallBlindValue;
+  }
+
+  public int bigBlind() {
+    this.chips -= this.bigBlindValue;
+    return this.bigBlindValue;
   }
 
   public int check() {

@@ -929,7 +929,17 @@ public class GameTest {
     assertEquals( expected, jeff.seeScore() );
   }
 
+  @Test
+  public void playersCanPostSmallBlinds() {
+    jeff.smallBlind();
+    assertEquals( 495, jeff.countChips() );
+  }
 
+  @Test
+  public void playersCanPostBigBlinds() {
+    jeff.bigBlind();
+    assertEquals( 490, jeff.countChips() );
+  }
 
 
 
