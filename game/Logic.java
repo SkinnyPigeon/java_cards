@@ -93,9 +93,11 @@ public class Logic {
 
   public boolean pairTwo() {
     pair();
-    char firstCard = this.processedCards.get(0).charAt(0);
-    if( firstCard == '2' ) {
-      return true;
+    if( this.processedCards.size() > 1) {
+      char firstCard = this.processedCards.get(0).charAt(0);
+      if( firstCard == '2' ) {
+        return true;
+      }
     }
     return false;
   }
