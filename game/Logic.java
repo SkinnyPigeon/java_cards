@@ -38,21 +38,6 @@ public class Logic {
     return this.playerCards;
   }
 
-  public boolean pair() {
-    char firstCard;
-    char secondCard;
-    for( int i = 0; i < this.playerCards.size() - 1; i++ ) {
-      firstCard = this.playerCards.get( i ).charAt( 0 );
-      secondCard = this.playerCards.get( i + 1).charAt( 0 );
-      if( firstCard == secondCard ) {
-        this.processedCards.add( this.playerCards.remove( i + 1) );
-        this.processedCards.add( this.playerCards.remove( i ) );
-        return true;
-      } 
-    }
-    return false;
-  }
-
   public void countPoints() {
     char firstCard;
     if( this.playerCards.size() > 0 ) {
@@ -88,7 +73,21 @@ public class Logic {
         }
       }
     }
-    System.out.println( "And Here " + seeKicker() );
+  }
+
+  public boolean pair() {
+    char firstCard;
+    char secondCard;
+    for( int i = 0; i < this.playerCards.size() - 1; i++ ) {
+      firstCard = this.playerCards.get( i ).charAt( 0 );
+      secondCard = this.playerCards.get( i + 1).charAt( 0 );
+      if( firstCard == secondCard ) {
+        this.processedCards.add( this.playerCards.remove( i + 1) );
+        this.processedCards.add( this.playerCards.remove( i ) );
+        return true;
+      } 
+    }
+    return false;
   }
 
   public boolean pairTwo() {
@@ -1975,17 +1974,18 @@ public class Logic {
     char thirdCard;
     char fourthCard;
     char fifthCard;
+    if( this.playerCards.size() > 4 ) {
+        firstCard = this.playerCards.get( 0 ).charAt( 0 );
+        secondCard = this.playerCards.get( 1 ).charAt( 0 );
+        thirdCard = this.playerCards.get( 2 ).charAt( 0 );
+        fourthCard = this.playerCards.get( 3 ).charAt( 0 );
+        fifthCard = this.playerCards.get( 4 ).charAt( 0 );
 
-    firstCard = this.playerCards.get( 0 ).charAt( 0 );
-    secondCard = this.playerCards.get( 1 ).charAt( 0 );
-    thirdCard = this.playerCards.get( 2 ).charAt( 0 );
-    fourthCard = this.playerCards.get( 3 ).charAt( 0 );
-    fifthCard = this.playerCards.get( 4 ).charAt( 0 );
-
-    if( firstCard == '1' && secondCard == 'A' && thirdCard == 'J' 
-      && fourthCard == 'K' && fifthCard == 'Q' ) {
-      return true;
-  }
+        if( firstCard == '1' && secondCard == 'A' && thirdCard == 'J' 
+          && fourthCard == 'K' && fifthCard == 'Q' ) {
+          return true;
+      }
+    }
   return false;
   }
 
@@ -1995,17 +1995,18 @@ public class Logic {
     char thirdCard;
     char fourthCard;
     char fifthCard;
+    if( this.playerCards.size() > 4 ) {
+      firstCard = this.playerCards.get( 0 ).charAt( 0 );
+      secondCard = this.playerCards.get( 1 ).charAt( 0 );
+      thirdCard = this.playerCards.get( 2 ).charAt( 0 );
+      fourthCard = this.playerCards.get( 3 ).charAt( 0 );
+      fifthCard = this.playerCards.get( 4 ).charAt( 0 );
 
-    firstCard = this.playerCards.get( 0 ).charAt( 0 );
-    secondCard = this.playerCards.get( 1 ).charAt( 0 );
-    thirdCard = this.playerCards.get( 2 ).charAt( 0 );
-    fourthCard = this.playerCards.get( 3 ).charAt( 0 );
-    fifthCard = this.playerCards.get( 4 ).charAt( 0 );
-
-    if( firstCard == '1' && secondCard == '9' && thirdCard == 'J' 
-      && fourthCard == 'K' && fifthCard == 'Q' ) {
-      return true;
-  }
+      if( firstCard == '1' && secondCard == '9' && thirdCard == 'J' 
+        && fourthCard == 'K' && fifthCard == 'Q' ) {
+        return true;
+      }
+    }
   return false;
   }
 
@@ -2015,16 +2016,17 @@ public class Logic {
     char thirdCard;
     char fourthCard;
     char fifthCard;
+    if( this.playerCards.size() > 4 ) {
+      firstCard = this.playerCards.get( 0 ).charAt( 0 );
+      secondCard = this.playerCards.get( 1 ).charAt( 0 );
+      thirdCard = this.playerCards.get( 2 ).charAt( 0 );
+      fourthCard = this.playerCards.get( 3 ).charAt( 0 );
+      fifthCard = this.playerCards.get( 4 ).charAt( 0 );
 
-    firstCard = this.playerCards.get( 0 ).charAt( 0 );
-    secondCard = this.playerCards.get( 1 ).charAt( 0 );
-    thirdCard = this.playerCards.get( 2 ).charAt( 0 );
-    fourthCard = this.playerCards.get( 3 ).charAt( 0 );
-    fifthCard = this.playerCards.get( 4 ).charAt( 0 );
-
-    if( firstCard == '1' && secondCard == '8' && thirdCard == '9' 
-      && fourthCard == 'J' && fifthCard == 'Q' ) {
-      return true;
+      if( firstCard == '1' && secondCard == '8' && thirdCard == '9' 
+        && fourthCard == 'J' && fifthCard == 'Q' ) {
+        return true;
+      }
     }
   return false;
   }
@@ -2035,16 +2037,17 @@ public class Logic {
     char thirdCard;
     char fourthCard;
     char fifthCard;
+    if( this.playerCards.size() > 4 ) {
+      firstCard = this.playerCards.get( 0 ).charAt( 0 );
+      secondCard = this.playerCards.get( 1 ).charAt( 0 );
+      thirdCard = this.playerCards.get( 2 ).charAt( 0 );
+      fourthCard = this.playerCards.get( 3 ).charAt( 0 );
+      fifthCard = this.playerCards.get( 4 ).charAt( 0 );
 
-    firstCard = this.playerCards.get( 0 ).charAt( 0 );
-    secondCard = this.playerCards.get( 1 ).charAt( 0 );
-    thirdCard = this.playerCards.get( 2 ).charAt( 0 );
-    fourthCard = this.playerCards.get( 3 ).charAt( 0 );
-    fifthCard = this.playerCards.get( 4 ).charAt( 0 );
-
-    if( firstCard == '1' && secondCard == '7' && thirdCard == '8' 
-      && fourthCard == '9' && fifthCard == 'J' ) {
-      return true;
+      if( firstCard == '1' && secondCard == '7' && thirdCard == '8' 
+        && fourthCard == '9' && fifthCard == 'J' ) {
+        return true;
+      }
     }
   return false;
   }
@@ -2055,16 +2058,17 @@ public class Logic {
     char thirdCard;
     char fourthCard;
     char fifthCard;
+    if( this.playerCards.size() > 4 ) {
+      firstCard = this.playerCards.get( 0 ).charAt( 0 );
+      secondCard = this.playerCards.get( 1 ).charAt( 0 );
+      thirdCard = this.playerCards.get( 2 ).charAt( 0 );
+      fourthCard = this.playerCards.get( 3 ).charAt( 0 );
+      fifthCard = this.playerCards.get( 4 ).charAt( 0 );
 
-    firstCard = this.playerCards.get( 0 ).charAt( 0 );
-    secondCard = this.playerCards.get( 1 ).charAt( 0 );
-    thirdCard = this.playerCards.get( 2 ).charAt( 0 );
-    fourthCard = this.playerCards.get( 3 ).charAt( 0 );
-    fifthCard = this.playerCards.get( 4 ).charAt( 0 );
-
-    if( firstCard == '1' && secondCard == '6' && thirdCard == '7' 
-      && fourthCard == '8' && fifthCard == '9' ) {
-      return true;
+      if( firstCard == '1' && secondCard == '6' && thirdCard == '7' 
+        && fourthCard == '8' && fifthCard == '9' ) {
+        return true;
+      }
     }
   return false;
   }
