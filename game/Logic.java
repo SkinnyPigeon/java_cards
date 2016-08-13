@@ -756,20 +756,89 @@ public void setScore() {
     this.awardScore = 417;
 
   } else if ( pairJackTwo() == true && pairTenTwo() == true ) {
-    this.awardScore = 222;
+    this.awardScore = 416;
+  } else if ( pairJackTwo() == true && pairNineTwo() == true ) {
+    this.awardScore = 415;
+  } else if ( pairJackTwo() == true && pairEightTwo() == true ) {
+    this.awardScore = 414;
+  } else if ( pairJackTwo() == true && pairSevenTwo() == true ) {
+    this.awardScore = 413;
+  } else if ( pairJackTwo() == true && pairSixTwo() == true ) {
+    this.awardScore = 412;
+  } else if ( pairJackTwo() == true && pairFiveTwo() == true ) {
+    this.awardScore = 411;
+  } else if ( pairJackTwo() == true && pairFourTwo() == true ) {
+    this.awardScore = 410;
+  } else if ( pairJackTwo() == true && pairThreeTwo() == true ) {
+    this.awardScore = 409;
+  } else if ( pairJackTwo() == true && pairTwoTwo() == true ) {
+    this.awardScore = 408;
 
+  } else if ( pairTenTwo() == true && pairNineTwo() == true ) {
+    this.awardScore = 407;
+  } else if ( pairTenTwo() == true && pairEightTwo() == true ) {
+    this.awardScore = 406;
+  } else if ( pairTenTwo() == true && pairSevenTwo() == true ) {
+    this.awardScore = 405;
+  } else if ( pairTenTwo() == true && pairSixTwo() == true ) {
+    this.awardScore = 404;
+  } else if ( pairTenTwo() == true && pairFiveTwo() == true ) {
+    this.awardScore = 403;
+  } else if ( pairTenTwo() == true && pairFourTwo() == true ) {
+    this.awardScore = 402;
+  } else if ( pairTenTwo() == true && pairThreeTwo() == true ) {
+    this.awardScore = 401;
+  } else if ( pairTenTwo() == true && pairTwoTwo() == true ) {
+    this.awardScore = 400;
 
+  } else if ( pairNineTwo() == true && pairEightTwo() == true ) {
+    this.awardScore = 399;
+  } else if ( pairNineTwo() == true && pairSevenTwo() == true ) {
+    this.awardScore = 398;
+  } else if ( pairNineTwo() == true && pairSixTwo() == true ) {
+    this.awardScore = 397;
+  } else if ( pairNineTwo() == true && pairFiveTwo() == true ) {
+    this.awardScore = 396;
+  } else if ( pairNineTwo() == true && pairFourTwo() == true ) {
+    this.awardScore = 395;
+  } else if ( pairNineTwo() == true && pairThreeTwo() == true ) {
+    this.awardScore = 394;
+  } else if ( pairNineTwo() == true && pairTwoTwo() == true ) {
+    this.awardScore = 393;
 
-  } else if ( pairTenTwo() == true ) {
-    this.awardScore = 221;
-  } else if ( pairNineTwo() == true ) {
-    this.awardScore = 220;
-  } else if ( pairEightTwo() == true ) {
-    this.awardScore = 219;
-  } else if ( pairSevenTwo() == true ) {
-    this.awardScore = 218;
-  } else if ( pairSixTwo() == true ) {
-    this.awardScore = 217;
+  } else if ( pairEightTwo() == true && pairSevenTwo() == true ) {
+    this.awardScore = 392;
+  } else if ( pairEightTwo() == true && pairSixTwo() == true ) {
+    this.awardScore = 391;
+  } else if ( pairEightTwo() == true && pairFiveTwo() == true ) {
+    this.awardScore = 390;
+  } else if ( pairEightTwo() == true && pairFourTwo() == true ) {
+    this.awardScore = 389;
+  } else if ( pairEightTwo() == true && pairThreeTwo() == true ) {
+    this.awardScore = 388;
+  } else if ( pairEightTwo() == true && pairTwoTwo() == true ) {
+    this.awardScore = 387;
+
+  } else if ( pairSevenTwo() == true && pairSixTwo() == true ) {
+    this.awardScore = 386;
+  } else if ( pairSevenTwo() == true && pairFiveTwo() == true ) {
+    this.awardScore = 385;
+  } else if ( pairSevenTwo() == true && pairFourTwo() == true ) {
+    this.awardScore = 384;
+  } else if ( pairSevenTwo() == true && pairThreeTwo() == true ) {
+    this.awardScore = 383;
+  } else if ( pairSevenTwo() == true && pairTwoTwo() == true ) {
+    this.awardScore = 382;
+
+  } else if ( pairSixTwo() == true && pairFiveTwo() == true ) {
+    this.awardScore = 381;
+  } else if ( pairSixTwo() == true && pairFourTwo() == true ) {
+    this.awardScore = 380;
+  } else if ( pairSixTwo() == true && pairThreeTwo() == true ) {
+    this.awardScore = 379;
+  } else if ( pairSixTwo() == true && pairTwoTwo() == true ) {
+    this.awardScore = 378;
+
   } else if ( pairFiveTwo() == true ) {
     this.awardScore = 216;
   } else if ( pairFourTwo() == true ) {
