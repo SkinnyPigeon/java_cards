@@ -647,35 +647,37 @@ public class Logic {
     char fourthCard;
     char fifthCard;
 
-    firstCard = this.playerCards.get( 0 ).charAt( 1 );
-    if( firstCard == '0' ) {
-      firstCard = this.playerCards.get( 0 ).charAt( 2 );
-    }
+    if( this.playerCards.size() > 4) {
+        firstCard = this.playerCards.get( 0 ).charAt( 1 );
+        if( firstCard == '0' ) {
+          firstCard = this.playerCards.get( 0 ).charAt( 2 );
+        }
 
-    secondCard = this.playerCards.get( 1 ).charAt( 1 );
-    if( secondCard == '0' ) {
-      secondCard = this.playerCards.get( 1 ).charAt( 2 );
-    }
+        secondCard = this.playerCards.get( 1 ).charAt( 1 );
+        if( secondCard == '0' ) {
+          secondCard = this.playerCards.get( 1 ).charAt( 2 );
+        }
 
-    thirdCard = this.playerCards.get( 2 ).charAt( 1 );
-    if( thirdCard == '0' ) {
-      thirdCard = this.playerCards.get( 2 ).charAt( 2 );
-    }
+        thirdCard = this.playerCards.get( 2 ).charAt( 1 );
+        if( thirdCard == '0' ) {
+          thirdCard = this.playerCards.get( 2 ).charAt( 2 );
+        }
 
-    fourthCard = this.playerCards.get( 3 ).charAt( 1 );
-    if( fourthCard == '0' ) {
-      fourthCard = this.playerCards.get( 3 ).charAt( 2 );
-    }
+        fourthCard = this.playerCards.get( 3 ).charAt( 1 );
+        if( fourthCard == '0' ) {
+          fourthCard = this.playerCards.get( 3 ).charAt( 2 );
+        }
 
-    fifthCard = this.playerCards.get( 4 ).charAt( 1 );
-    if( fifthCard == '0' ) {
-      fifthCard = this.playerCards.get( 4 ).charAt( 2 );
-    }
+        fifthCard = this.playerCards.get( 4 ).charAt( 1 );
+        if( fifthCard == '0' ) {
+          fifthCard = this.playerCards.get( 4 ).charAt( 2 );
+        }
 
-    if( firstCard == secondCard && firstCard == thirdCard 
-      && firstCard == fourthCard && firstCard == fifthCard ) {
-      return true;
-  }
+      if( firstCard == secondCard && firstCard == thirdCard 
+        && firstCard == fourthCard && firstCard == fifthCard ) {
+        return true;
+      }
+    }
   return false;
   }
 
@@ -880,49 +882,70 @@ public class Logic {
   }
 
   public boolean royalFlush() {
-    if( flush() && royalStraight() ) {
+    if( royalStraight() && flush() ) {
       return true;
     }
     return false;
   }
 
-  public boolean flushNine() {
-    if( flush() && straightNine() ) {
+  public boolean straightFlushNine() {
+    if( straightNine() && flush() ) {
       return true;
     }
     return false;
   }
 
-  // public boolean straightFlush() {
-  //   if( flush() && straight() ) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
-
-  public boolean furtherFromARoyalFlush() {
+  public boolean straightFlushEight() {
     if( straightEight() && flush() ) {
       return true;
     }
     return false;
   }
 
-  public boolean barelyCloseToARoyalFlush() {
+  public boolean straightFlushSeven() {
     if( straightSeven() && flush() ) {
       return true;
     }
     return false;
   }
 
-  public boolean isTenARoyalFlush() {
+  public boolean straightFlushSix() {
     if( straightSix() && flush() ) {
       return true;
     }
     return false;
   }
 
-  public boolean lowFlush() {
+  public boolean straightFlushFive() {
+    if( straightFive() && flush() ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean straightFlushFour() {
+    if( straightFour() && flush() ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean straightFlushThree() {
+    if( straightThree() && flush() ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean straightFlushTwo() {
     if( straightTwo() && flush() ) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean straightFlushAce() {
+    if( straightAce() && flush() ) {
       return true;
     }
     return false;
@@ -962,14 +985,14 @@ public class Logic {
 
     // } else if( almostRoyalFlush() ) {
     //   this.awardScore = 690;
-    } else if( barelyCloseToARoyalFlush() ) {
-      this.awardScore = 680;
-    } else if( isTenARoyalFlush() ) {
-      this.awardScore = 670;
-    } else if ( flush() ) {
-      this.awardScore = 660;
-    } else if( lowFlush() ) {
-      this.awardScore = 650;
+    // } else if( barelyCloseToARoyalFlush() ) {
+    //   this.awardScore = 680;
+    // } else if( isTenARoyalFlush() ) {
+    //   this.awardScore = 670;
+    // } else if ( flush() ) {
+    //   this.awardScore = 660;
+    // } else if( lowFlush() ) {
+    //   this.awardScore = 650;
 
     } else if ( royalStraight() ) {
       this.awardScore = 590;
