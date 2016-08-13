@@ -63,6 +63,10 @@ public class Player {
     }
   }
 
+  public int check() {
+    return this.bet;
+  }
+
   public int giveBet() {
     return this.bet;
   }

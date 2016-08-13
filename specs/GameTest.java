@@ -915,6 +915,21 @@ public class GameTest {
     assertEquals( bob, game.seeWinner() );
   }
 
+  @Test
+  public void playersCanCheckCardsBeforeFlop() {
+    jeff.takeCard( cards.deal() ); //Ace
+    jeff.takeCard( cards.deal() ); //Ace
+    logic = new Logic( jeff.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    jeff.awardScore( logic.seeScore() );
+    jeff.awardKicker( logic.seeKicker() );
+
+    Integer expected = 212;
+    assertEquals( expected, jeff.seeScore() );
+  }
+
+
 
 
 
