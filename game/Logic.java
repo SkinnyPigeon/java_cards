@@ -2687,31 +2687,31 @@ public class Logic {
 
 
     } else if ( pairAce() ) {
-      this.awardScore = 212;
+      this.awardScore = 10012;
     } else if ( pairKing() ) {
-      this.awardScore = 211;
+      this.awardScore = 10011;
     } else if ( pairQueen() ) {
-      this.awardScore = 210;
+      this.awardScore = 10010;
     } else if ( pairJack() ) {
-      this.awardScore = 209;
+      this.awardScore = 10009;
     } else if ( pairTen() ) {
-      this.awardScore = 208;
+      this.awardScore = 10008;
     } else if ( pairNine() ) {
-      this.awardScore = 207;
+      this.awardScore = 10007;
     } else if ( pairEight() ) {
-      this.awardScore = 206;
+      this.awardScore = 10006;
     } else if ( pairSeven() ) {
-      this.awardScore = 205;
+      this.awardScore = 10005;
     } else if ( pairSix() ) {
-      this.awardScore = 204;
+      this.awardScore = 10004;
     } else if ( pairFive()) {
-      this.awardScore = 203;
+      this.awardScore = 10003;
     } else if ( pairFour() ) {
-      this.awardScore = 202;
+      this.awardScore = 10002;
     } else if ( pairThree() ) {
-      this.awardScore = 201;
+      this.awardScore = 10001;
     } else if ( pairTwo() ) {
-      this.awardScore = 200;
+      this.awardScore = 10000;
 
     } else {
       this.awardScore = 100;
