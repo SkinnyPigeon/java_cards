@@ -620,25 +620,25 @@ public class Logic {
     return false;
   }
 
-  public boolean straight() {
-    char firstCard;
-    char secondCard;
-    char thirdCard;
-    char fourthCard;
-    char fifthCard;
+  // public boolean straight() {
+  //   char firstCard;
+  //   char secondCard;
+  //   char thirdCard;
+  //   char fourthCard;
+  //   char fifthCard;
 
-    firstCard = this.playerCards.get( 0 ).charAt( 0 );
-    secondCard = this.playerCards.get( 1 ).charAt( 0 );
-    thirdCard = this.playerCards.get( 2 ).charAt( 0 );
-    fourthCard = this.playerCards.get( 3 ).charAt( 0 );
-    fifthCard = this.playerCards.get( 4 ).charAt( 0 );
+  //   firstCard = this.playerCards.get( 0 ).charAt( 0 );
+  //   secondCard = this.playerCards.get( 1 ).charAt( 0 );
+  //   thirdCard = this.playerCards.get( 2 ).charAt( 0 );
+  //   fourthCard = this.playerCards.get( 3 ).charAt( 0 );
+  //   fifthCard = this.playerCards.get( 4 ).charAt( 0 );
 
-    if( firstCard + 1 == secondCard && firstCard + 2 == thirdCard 
-      && firstCard + 3 == fourthCard && firstCard + 4 == fifthCard ) {
-      return true;
-    }
-    return false;
-  }
+  //   if( firstCard + 1 == secondCard && firstCard + 2 == thirdCard 
+  //     && firstCard + 3 == fourthCard && firstCard + 4 == fifthCard ) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
 
   public boolean flush() {
     char firstCard;
@@ -699,7 +699,7 @@ public class Logic {
   return false;
   }
 
-  public boolean almostRoyalStraight() {
+  public boolean straightNine() {
     char firstCard;
     char secondCard;
     char thirdCard;
@@ -719,7 +719,7 @@ public class Logic {
   return false;
   }
 
-  public boolean furtherFromARoyalStraight() {
+  public boolean straightEight() {
     char firstCard;
     char secondCard;
     char thirdCard;
@@ -735,11 +735,11 @@ public class Logic {
     if( firstCard == '1' && secondCard == '8' && thirdCard == '9' 
       && fourthCard == 'J' && fifthCard == 'Q' ) {
       return true;
-  }
+    }
   return false;
   }
 
-  public boolean barelyCloseToARoyalStraight() {
+  public boolean straightSeven() {
     char firstCard;
     char secondCard;
     char thirdCard;
@@ -755,7 +755,7 @@ public class Logic {
     if( firstCard == '1' && secondCard == '7' && thirdCard == '8' 
       && fourthCard == '9' && fifthCard == 'J' ) {
       return true;
-  }
+    }
   return false;
   }
 
@@ -775,15 +775,8 @@ public class Logic {
     if( firstCard == '1' && secondCard == '6' && thirdCard == '7' 
       && fourthCard == '8' && fifthCard == '9' ) {
       return true;
-  }
-  return false;
-  }
-
-  public boolean almostRoyalFlush() {
-    if( almostRoyalStraight() && flush() ) {
-      return true;
     }
-    return false;
+  return false;
   }
 
   public boolean straightFive() {
@@ -859,6 +852,26 @@ public class Logic {
         fourthCard = this.playerCards.get( 3 ).charAt( 0 );
         fifthCard = this.playerCards.get( 4 ).charAt( 0 );
       if( firstCard == '2' && secondCard == '3' && thirdCard == '4' 
+        && fourthCard == '5' && fifthCard == '6' ) {
+        return true;
+      }
+    }
+  return false;
+  }
+
+  public boolean straightAce() {
+    char firstCard;
+    char secondCard;
+    char thirdCard;
+    char fourthCard;
+    char fifthCard;
+    if( this.playerCards.size() > 4 ) {
+        firstCard = this.playerCards.get( 0 ).charAt( 0 );
+        secondCard = this.playerCards.get( 1 ).charAt( 0 );
+        thirdCard = this.playerCards.get( 2 ).charAt( 0 );
+        fourthCard = this.playerCards.get( 3 ).charAt( 0 );
+        fifthCard = this.playerCards.get( 4 ).charAt( 0 );
+      if( firstCard == '2' && secondCard == '3' && thirdCard == '4' 
         && fourthCard == '5' && fifthCard == 'A' ) {
         return true;
       }
@@ -873,22 +886,29 @@ public class Logic {
     return false;
   }
 
-  public boolean straightFlush() {
-    if( flush() && straight() ) {
+  public boolean flushNine() {
+    if( flush() && straightNine() ) {
       return true;
     }
     return false;
   }
 
+  // public boolean straightFlush() {
+  //   if( flush() && straight() ) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
+
   public boolean furtherFromARoyalFlush() {
-    if( furtherFromARoyalStraight() && flush() ) {
+    if( straightEight() && flush() ) {
       return true;
     }
     return false;
   }
 
   public boolean barelyCloseToARoyalFlush() {
-    if( barelyCloseToARoyalStraight() && flush() ) {
+    if( straightSeven() && flush() ) {
       return true;
     }
     return false;
@@ -915,16 +935,33 @@ public class Logic {
     if( royalFlush() ) {
       this.awardScore = 1000;
 
-    } else if( straightFlush() ) {
+    } else if( straightFlushNine() ) {
       this.awardScore = 900;
+    } else if( straightFlushEight() ) {
+      this.awardScore = 900;
+    } else if( straightFlushSeven() ) {
+      this.awardScore = 900;
+    } else if( straightFlushSix() ) {
+      this.awardScore = 900;
+    } else if( straightFlushFive() ) {
+      this.awardScore = 900;
+    } else if( straightFlushFour() ) {
+      this.awardScore = 900;
+    } else if( straightFlushThree() ) {
+      this.awardScore = 900;
+    } else if( straightFlushTwo() ) {
+      this.awardScore = 900;
+    } else if( straightFlushAce() ) {
+      this.awardScore = 900;
+
     } else if ( four() ) {
       this.awardScore = 800;
     } else if ( fullHouseTwoFirst() || fullHouseThreeFirst() ) {
       this.awardScore = 700;
 
 
-    } else if( almostRoyalFlush() ) {
-      this.awardScore = 690;
+    // } else if( almostRoyalFlush() ) {
+    //   this.awardScore = 690;
     } else if( barelyCloseToARoyalFlush() ) {
       this.awardScore = 680;
     } else if( isTenARoyalFlush() ) {
@@ -936,16 +973,24 @@ public class Logic {
 
     } else if ( royalStraight() ) {
       this.awardScore = 590;
-    } else if ( almostRoyalStraight() ) {
+    } else if ( straightNine() ) {
       this.awardScore = 580;
-    } else if ( furtherFromARoyalStraight() ) {
+    } else if ( straightEight() ) {
+      this.awardScore = 570;
+    } else if ( straightSeven() ) {
       this.awardScore = 570;
     } else if ( straightSix() ) {
       this.awardScore = 560;
-    } else if ( straight() ) {
-      this.awardScore = 550;
+    } else if ( straightFive() ) {
+      this.awardScore = 570;
+    } else if ( straightFour() ) {
+      this.awardScore = 570;
+    } else if ( straightThree() ) {
+      this.awardScore = 570;
     } else if ( straightTwo() ) {
       this.awardScore = 540;
+    } else if ( straightAce() ) {
+      this.awardScore = 570;
 
     } else if ( threeAce() ) {
       this.awardScore = 512;
