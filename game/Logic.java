@@ -383,7 +383,6 @@ public class Logic {
         this.processedCards.add( this.playerCards.remove( i + 2 ) );
         this.processedCards.add( this.playerCards.remove( i + 1 ) );
         this.processedCards.add( this.playerCards.remove( i ) );
-        System.out.println( this.processedCards );
         return true;
       }
     }
@@ -619,26 +618,6 @@ public class Logic {
     }
     return false;
   }
-
-  // public boolean straight() {
-  //   char firstCard;
-  //   char secondCard;
-  //   char thirdCard;
-  //   char fourthCard;
-  //   char fifthCard;
-
-  //   firstCard = this.playerCards.get( 0 ).charAt( 0 );
-  //   secondCard = this.playerCards.get( 1 ).charAt( 0 );
-  //   thirdCard = this.playerCards.get( 2 ).charAt( 0 );
-  //   fourthCard = this.playerCards.get( 3 ).charAt( 0 );
-  //   fifthCard = this.playerCards.get( 4 ).charAt( 0 );
-
-  //   if( firstCard + 1 == secondCard && firstCard + 2 == thirdCard 
-  //     && firstCard + 3 == fourthCard && firstCard + 4 == fifthCard ) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
 
   public boolean flush() {
     char firstCard;
@@ -959,40 +938,32 @@ public class Logic {
       this.awardScore = 1000;
 
     } else if( straightFlushNine() ) {
-      this.awardScore = 900;
+      this.awardScore = 990;
     } else if( straightFlushEight() ) {
-      this.awardScore = 900;
+      this.awardScore = 980;
     } else if( straightFlushSeven() ) {
-      this.awardScore = 900;
+      this.awardScore = 970;
     } else if( straightFlushSix() ) {
-      this.awardScore = 900;
+      this.awardScore = 960;
     } else if( straightFlushFive() ) {
-      this.awardScore = 900;
+      this.awardScore = 950;
     } else if( straightFlushFour() ) {
-      this.awardScore = 900;
+      this.awardScore = 940;
     } else if( straightFlushThree() ) {
-      this.awardScore = 900;
+      this.awardScore = 930;
     } else if( straightFlushTwo() ) {
-      this.awardScore = 900;
+      this.awardScore = 920;
     } else if( straightFlushAce() ) {
-      this.awardScore = 900;
+      this.awardScore = 910;
 
     } else if ( four() ) {
       this.awardScore = 800;
     } else if ( fullHouseTwoFirst() || fullHouseThreeFirst() ) {
       this.awardScore = 700;
 
-
-    // } else if( almostRoyalFlush() ) {
-    //   this.awardScore = 690;
-    // } else if( barelyCloseToARoyalFlush() ) {
-    //   this.awardScore = 680;
-    // } else if( isTenARoyalFlush() ) {
-    //   this.awardScore = 670;
-    // } else if ( flush() ) {
-    //   this.awardScore = 660;
-    // } else if( lowFlush() ) {
-    //   this.awardScore = 650;
+    // } else if {
+      // all the flushes. Need to work out the kickers
+    
 
     } else if ( royalStraight() ) {
       this.awardScore = 590;

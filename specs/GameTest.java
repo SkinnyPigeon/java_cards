@@ -360,43 +360,43 @@ public class GameTest {
     assertEquals( false, logic.flush() );
   }
 
-  // @Test
-  // public void trueWhenStraighFlush() {
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   steve.takeCard( cards.deal() );
-  //   steve.takeCard( cards.deal() );
-  //   steve.takeCard( cards.deal() );
-  //   steve.takeCard( cards.deal() );
-  //   dave.takeCard( cards.deal() );
-  //   logic = new Logic( steve.seeHand(), dave.seeHand() );
-  //   logic.combineCards();
-  //   assertEquals( true, logic.straightFlush() );
-  // }
+  @Test
+  public void trueWhenStraighFlush() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), dave.seeHand() );
+    logic.combineCards();
+    assertEquals( true, logic.straightFlushTwo() );
+  }
 
-  // @Test
-  // public void falseWhenNotAStraighFlush() {
-  //   dave.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   steve.takeCard( cards.deal() );
-  //   steve.takeCard( cards.deal() );
-  //   steve.takeCard( cards.deal() );
-  //   steve.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   logic = new Logic( steve.seeHand(), dave.seeHand() );
-  //   logic.combineCards();
-  //   assertEquals( false, logic.straightFlush() );
-  // }
+  @Test
+  public void falseWhenNotAStraighFlush() {
+    dave.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), dave.seeHand() );
+    logic.combineCards();
+    assertEquals( false, logic.straightFlushTwo() );
+  }
 
   @Test
   public void trueWhenFullHouse() {
@@ -491,27 +491,27 @@ public class GameTest {
     assertEquals( true, logic.royalFlush() );
   }
 
-  // @Test
-  // public void canSeeAnAlmostRoyalFlush() {
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   game.takeCard( cards.deal() );
-  //   game.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   steve.takeCard( cards.deal() );
-  //   steve.takeCard( cards.deal() );
-  //   game.takeCard( cards.deal() );
-  //   logic = new Logic( steve.seeHand(), game.seeHand() );
-  //   logic.combineCards();
-  //   assertEquals( true, logic.almostRoyalFlush() );
-  // }
+  @Test
+  public void canSeeAnAlmostRoyalFlush() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    logic = new Logic( steve.seeHand(), game.seeHand() );
+    logic.combineCards();
+    assertEquals( true, logic.straightFlushNine() );
+  }
 
   @Test
   public void canSeeALowStraight() {
