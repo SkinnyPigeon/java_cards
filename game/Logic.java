@@ -326,7 +326,7 @@ public class Logic {
   }
 
   public boolean pairKingTwo() {
-      twoPair();
+    twoPair();
 
     if( this.processedCards.size() > 3 ) {
       char firstCard = this.processedCards.get(0).charAt(0);
@@ -339,7 +339,7 @@ public class Logic {
   }
 
   public boolean pairAceTwo() {
-      twoPair();
+    twoPair();
     if( this.processedCards.size() > 3 ) {
       char firstCard = this.processedCards.get(0).charAt(0);
       char secondCard = this.processedCards.get(2).charAt(0);
@@ -383,11 +383,170 @@ public class Logic {
         this.processedCards.add( this.playerCards.remove( i + 2 ) );
         this.processedCards.add( this.playerCards.remove( i + 1 ) );
         this.processedCards.add( this.playerCards.remove( i ) );
+        System.out.println( this.processedCards );
         return true;
-      } 
+      }
     }
     return false;
   }
+
+  public boolean threeAce() {
+    three();
+    char firstCard;
+    if( this.processedCards.size() > 2 ) {
+      firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == 'A' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean threeKing() {
+    three();
+    char firstCard;
+    if( this.processedCards.size() > 2 ) {
+      firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == 'K' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean threeQueen() {
+    three();
+    char firstCard;
+    if( this.processedCards.size() > 2 ) {
+      firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == 'Q' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean threeJack() {
+    three();
+    char firstCard;
+    if( this.processedCards.size() > 2 ) {
+      firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == 'J' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean threeTen() {
+    three();
+    char firstCard;
+    if( this.processedCards.size() > 2 ) {
+      firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == '1' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean threeNine() {
+    three();
+    char firstCard;
+    if( this.processedCards.size() > 2 ) {
+      firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == '9' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean threeEight() {
+    three();
+    char firstCard;
+    if( this.processedCards.size() > 2 ) {
+      firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == '8' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean threeSeven() {
+    three();
+    char firstCard;
+    if( this.processedCards.size() > 2 ) {
+      firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == '7' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean threeSix() {
+    three();
+    char firstCard;
+    if( this.processedCards.size() > 2 ) {
+      firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == '6' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean threeFive() {
+    three();
+    char firstCard;
+    if( this.processedCards.size() > 2 ) {
+      firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == '5' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean threeFour() {
+    three();
+    char firstCard;
+    if( this.processedCards.size() > 2 ) {
+      firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == '4' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean threeThree() {
+    three();
+    char firstCard;
+    if( this.processedCards.size() > 2 ) {
+      firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == '3' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean threeTwo() {
+    three();
+    char firstCard;
+    if( this.processedCards.size() > 2 ) {
+      firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == '2' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+
 
   public boolean four() {
     char firstCard;
@@ -400,11 +559,75 @@ public class Logic {
       thirdCard = this.playerCards.get( i + 2 ).charAt( 0 );
       fourthCard = this.playerCards.get( i + 3 ).charAt( 0 );
       if( firstCard == secondCard && firstCard == thirdCard && firstCard == fourthCard ) {
+        this.processedCards.add( this.playerCards.remove( i + 3 ) );
+        this.processedCards.add( this.playerCards.remove( i + 2 ) );
+        this.processedCards.add( this.playerCards.remove( i + 1 ) );
+        this.processedCards.add( this.playerCards.remove( i ) );
         return true;
       } 
     }
     return false;
   }
+
+  public boolean fullHousePairFirst() {
+    char firstCard;
+    char secondCard;
+    char thirdCard;
+    char fourthCard;
+    char fifthCard;
+    if( this.playerCards.size() > 4 ) {
+      firstCard = this.playerCards.get( 0 ).charAt( 0 );
+      secondCard = this.playerCards.get( 1 ).charAt( 0 );
+      thirdCard = this.playerCards.get( 2 ).charAt( 0 );
+      fourthCard = this.playerCards.get( 3 ).charAt( 0 );
+      fifthCard = this.playerCards.get( 4 ).charAt( 0 );
+      if( firstCard == secondCard && 
+        thirdCard == fourthCard && thirdCard == fifthCard ) {
+        this.processedCards.add( this.playerCards.remove( 4 ) );
+        this.processedCards.add( this.playerCards.remove( 3 ) );
+        this.processedCards.add( this.playerCards.remove( 2 ) );
+        this.processedCards.add( this.playerCards.remove( 1 ) );
+        this.processedCards.add( this.playerCards.remove( 0 ) );
+        return true;
+      } 
+    }
+    return false;
+  }
+
+  public boolean fullHouseThreeFirst() {
+    char firstCard;
+    char secondCard;
+    char thirdCard;
+    char fourthCard;
+    char fifthCard;
+    if( this.playerCards.size() > 4 ) {
+      firstCard = this.playerCards.get( 0 ).charAt( 0 );
+      secondCard = this.playerCards.get( 1 ).charAt( 0 );
+      thirdCard = this.playerCards.get( 2 ).charAt( 0 );
+      fourthCard = this.playerCards.get( 3 ).charAt( 0 );
+      fifthCard = this.playerCards.get( 4 ).charAt( 0 );
+      if( firstCard == secondCard && firstCard == thirdCard 
+        && fourthCard == fifthCard ) {
+        this.processedCards.add( this.playerCards.remove( 4 ) );
+        this.processedCards.add( this.playerCards.remove( 3 ) );
+        this.processedCards.add( this.playerCards.remove( 2 ) );
+        this.processedCards.add( this.playerCards.remove( 1 ) );
+        this.processedCards.add( this.playerCards.remove( 0 ) );
+        return true;
+      } 
+    }
+    return false;
+  }
+
+  // public boolean fullHouse() {
+  //   if( three() && pair() ) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
+
+
+
 
   public boolean straight() {
     char firstCard;
@@ -634,12 +857,7 @@ public boolean lowFlush() {
   return false;
 }
 
-public boolean fullHouse() {
-  if( three() && pair() ) {
-    return true;
-  }
-  return false;
-}
+
 
 public void setScore() {
 
@@ -650,7 +868,7 @@ public void setScore() {
     this.awardScore = 900;
   } else if ( four() ) {
     this.awardScore = 800;
-  } else if ( fullHouse() ) {
+  } else if ( fullHouseThreeFirst() ) {
     this.awardScore = 700;
 
 
@@ -678,8 +896,37 @@ public void setScore() {
   } else if ( lowStraight() ) {
     this.awardScore = 540;
 
-  } else if ( three() ) {
+  // } else if( three() ) {
+  //   this.awardScore = 500;
+
+  } else if ( threeAce() ) {
+    this.awardScore = 512;
+  } else if ( threeKing() ) {
+    this.awardScore = 511;
+  } else if ( threeQueen() ) {
+    this.awardScore = 510;
+  } else if ( threeJack() ) {
+    this.awardScore = 509;
+  } else if ( threeTen() ) {
+    this.awardScore = 508;
+  } else if ( threeNine() ) {
+    this.awardScore = 507;
+  } else if ( threeEight() ) {
+    this.awardScore = 506;
+  } else if ( threeSeven() ) {
+    this.awardScore = 505;
+  } else if ( threeSix() ) {
+    this.awardScore = 504;
+  } else if ( threeFive() ) {
+    this.awardScore = 503;
+  } else if ( threeFour() ) {
+    this.awardScore = 502;
+  } else if ( threeThree() ) {
+    this.awardScore = 501;
+  } else if ( threeTwo() ) {
     this.awardScore = 500;
+
+
 
   } else if ( pairAceTwo() && pairKingTwo() ) {
     this.awardScore = 449;

@@ -225,6 +225,7 @@ public class GameTest {
     jeff.takeCard( cards.deal() );
     jeff.takeCard( cards.deal() );
     steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), jeff.seeHand() );
     logic.combineCards();
     assertEquals( true, logic.three() );
@@ -408,7 +409,7 @@ public class GameTest {
     dave.takeCard( cards.deal() );
     logic = new Logic( jeff.seeHand(), dave.seeHand() );
     logic.combineCards();
-    assertEquals( true, logic.fullHouse() );
+    assertEquals( true, logic.fullHouseThreeFirst() );
   }
 
   @Test
@@ -423,6 +424,7 @@ public class GameTest {
     logic = new Logic( game.seeHand(), dave.seeHand() );
     logic.combineCards();
     logic.setScore();
+    System.out.println( logic.seeHand() );
     dave.awardScore( logic.seeScore() );
     Integer expected = 700;
     assertEquals( expected, dave.seeScore() );
@@ -444,7 +446,7 @@ public class GameTest {
     dave.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), dave.seeHand() );
     logic.combineCards();
-    assertEquals( false, logic.fullHouse() );
+    assertEquals( false, logic.fullHouseThreeFirst() );
   }
 
   @Test
@@ -456,7 +458,7 @@ public class GameTest {
     steve.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), jeff.seeHand() );
     logic.combineCards();
-    assertEquals( false, logic.fullHouse() );
+    assertEquals( false, logic.fullHouseThreeFirst() );
   }
 
 
@@ -661,6 +663,25 @@ public class GameTest {
     jeff.awardScore( logic.seeScore() );
 
     Integer expected = 449;
+    assertEquals( expected, jeff.seeScore() );
+  }
+
+  @Test
+  public void willGivePointsForThrees() {
+    jeff.takeCard( cards.deal() ); //Ace
+    jeff.takeCard( cards.deal() ); //Ace
+    game.takeCard( cards.deal() ); //Ace
+    dave.takeCard( cards.deal() ); //Ace
+    game.takeCard( cards.deal() ); //King
+    game.takeCard( cards.deal() ); //Queen
+    dave.takeCard( cards.deal() ); //King
+
+    logic = new Logic( jeff.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    jeff.awardScore( logic.seeScore() );
+
+    Integer expected = 512;
     assertEquals( expected, jeff.seeScore() );
   }
 
