@@ -84,6 +84,7 @@ public class Logic {
       if( firstCard == secondCard ) {
         this.processedCards.add( this.playerCards.remove( i + 1) );
         this.processedCards.add( this.playerCards.remove( i ) );
+        countPoints();
         return true;
       } 
     }
@@ -438,6 +439,7 @@ public class Logic {
         this.processedCards.add( this.playerCards.remove( i + 2 ) );
         this.processedCards.add( this.playerCards.remove( i + 1 ) );
         this.processedCards.add( this.playerCards.remove( i ) );
+        countPoints();
         return true;
       } 
     }
@@ -456,6 +458,7 @@ public class Logic {
         this.processedCards.add( this.playerCards.remove( i + 2 ) );
         this.processedCards.add( this.playerCards.remove( i + 1 ) );
         this.processedCards.add( this.playerCards.remove( i ) );
+        countPoints();
         return true;
       }
     }
@@ -635,6 +638,7 @@ public class Logic {
           this.processedCards.add( this.playerCards.remove( i + 2 ) );
           this.processedCards.add( this.playerCards.remove( i + 1 ) );
           this.processedCards.add( this.playerCards.remove( i ) );
+          countPoints();
           return true;
         } 
       }
@@ -2244,7 +2248,7 @@ public class Logic {
   }
 
   public void setScore() {
-    countPoints();
+    // countPoints();
 
     if( royalFlush() ) {
       this.awardScore = 1000;
@@ -2709,8 +2713,9 @@ public class Logic {
       this.awardScore = 201;
     } else if ( pairTwo() ) {
       this.awardScore = 200;
-
-    } 
+    } else {
+      countPoints();
+    }
   }
 
 
