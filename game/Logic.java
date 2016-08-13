@@ -1634,75 +1634,300 @@ public class Logic {
     return false;
   }
 
-  public boolean fullHouseEightSeven() {
+  public boolean fullHouseEightSix() {
     fullHouseTwoFirst();
     fullHouseThreeFirst();
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
       System.out.println( firstCard );
-      if( ( firstCard == '8' && secondCard == '7' ) || 
-            firstCard == '7' && secondCard == '8' ) {
+      if( ( firstCard == '8' && secondCard == '6' ) || 
+            firstCard == '6' && secondCard == '8' ) {
         return true;
       }
     }
     return false;
   }
 
-  public boolean fullHouseEightSeven() {
+  public boolean fullHouseEightFive() {
     fullHouseTwoFirst();
     fullHouseThreeFirst();
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
       System.out.println( firstCard );
-      if( ( firstCard == '8' && secondCard == '7' ) || 
-            firstCard == '7' && secondCard == '8' ) {
+      if( ( firstCard == '8' && secondCard == '5' ) || 
+            firstCard == '5' && secondCard == '8' ) {
         return true;
       }
     }
     return false;
   }
 
-  public boolean fullHouseEightSeven() {
+  public boolean fullHouseEightFour() {
     fullHouseTwoFirst();
     fullHouseThreeFirst();
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
       System.out.println( firstCard );
-      if( ( firstCard == '8' && secondCard == '7' ) || 
-            firstCard == '7' && secondCard == '8' ) {
+      if( ( firstCard == '8' && secondCard == '4' ) || 
+            firstCard == '4' && secondCard == '8' ) {
         return true;
       }
     }
     return false;
   }
 
-  public boolean fullHouseEightSeven() {
+  public boolean fullHouseEightThree() {
     fullHouseTwoFirst();
     fullHouseThreeFirst();
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
       System.out.println( firstCard );
-      if( ( firstCard == '8' && secondCard == '7' ) || 
-            firstCard == '7' && secondCard == '8' ) {
+      if( ( firstCard == '8' && secondCard == '3' ) || 
+            firstCard == '3' && secondCard == '8' ) {
         return true;
       }
     }
     return false;
   }
 
-  public boolean fullHouseEightSeven() {
+  public boolean fullHouseEightTwo() {
     fullHouseTwoFirst();
     fullHouseThreeFirst();
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
       System.out.println( firstCard );
-      if( ( firstCard == '8' && secondCard == '7' ) || 
-            firstCard == '7' && secondCard == '8' ) {
+      if( ( firstCard == '8' && secondCard == '2' ) || 
+            firstCard == '2' && secondCard == '8' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fullHouseSevenSix() {
+    fullHouseTwoFirst();
+    fullHouseThreeFirst();
+    if( this.processedCards.size() > 4 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      char secondCard = this.processedCards.get( 4 ).charAt( 0 );
+      System.out.println( firstCard );
+      if( ( firstCard == '7' && secondCard == '6' ) || 
+            firstCard == '6' && secondCard == '7' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fullHouseSevenFive() {
+    fullHouseTwoFirst();
+    fullHouseThreeFirst();
+    if( this.processedCards.size() > 4 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      char secondCard = this.processedCards.get( 4 ).charAt( 0 );
+      System.out.println( firstCard );
+      if( ( firstCard == '7' && secondCard == '5' ) || 
+            firstCard == '5' && secondCard == '7' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fullHouseSevenFour() {
+    fullHouseTwoFirst();
+    fullHouseThreeFirst();
+    if( this.processedCards.size() > 4 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      char secondCard = this.processedCards.get( 4 ).charAt( 0 );
+      System.out.println( firstCard );
+      if( ( firstCard == '7' && secondCard == '4' ) || 
+            firstCard == '4' && secondCard == '7' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fullHouseSevenThree() {
+    fullHouseTwoFirst();
+    fullHouseThreeFirst();
+    if( this.processedCards.size() > 4 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      char secondCard = this.processedCards.get( 4 ).charAt( 0 );
+      System.out.println( firstCard );
+      if( ( firstCard == '7' && secondCard == '3' ) || 
+            firstCard == '3' && secondCard == '7' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fullHouseSevenTwo() {
+    fullHouseTwoFirst();
+    fullHouseThreeFirst();
+    if( this.processedCards.size() > 4 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      char secondCard = this.processedCards.get( 4 ).charAt( 0 );
+      System.out.println( firstCard );
+      if( ( firstCard == '7' && secondCard == '2' ) || 
+            firstCard == '2' && secondCard == '7' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fullHouseSixFive() {
+    fullHouseTwoFirst();
+    fullHouseThreeFirst();
+    if( this.processedCards.size() > 4 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      char secondCard = this.processedCards.get( 4 ).charAt( 0 );
+      System.out.println( firstCard );
+      if( ( firstCard == '6' && secondCard == '5' ) || 
+            firstCard == '5' && secondCard == '6' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fullHouseSixFour() {
+    fullHouseTwoFirst();
+    fullHouseThreeFirst();
+    if( this.processedCards.size() > 4 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      char secondCard = this.processedCards.get( 4 ).charAt( 0 );
+      System.out.println( firstCard );
+      if( ( firstCard == '6' && secondCard == '4' ) || 
+            firstCard == '4' && secondCard == '6' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fullHouseSixThree() {
+    fullHouseTwoFirst();
+    fullHouseThreeFirst();
+    if( this.processedCards.size() > 4 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      char secondCard = this.processedCards.get( 4 ).charAt( 0 );
+      System.out.println( firstCard );
+      if( ( firstCard == '6' && secondCard == '3' ) || 
+            firstCard == '3' && secondCard == '6' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fullHouseSixTwo() {
+    fullHouseTwoFirst();
+    fullHouseThreeFirst();
+    if( this.processedCards.size() > 4 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      char secondCard = this.processedCards.get( 4 ).charAt( 0 );
+      System.out.println( firstCard );
+      if( ( firstCard == '6' && secondCard == '2' ) || 
+            firstCard == '2' && secondCard == '6' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fullHouseFiveFour() {
+    fullHouseTwoFirst();
+    fullHouseThreeFirst();
+    if( this.processedCards.size() > 4 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      char secondCard = this.processedCards.get( 4 ).charAt( 0 );
+      System.out.println( firstCard );
+      if( ( firstCard == '5' && secondCard == '4' ) || 
+            firstCard == '4' && secondCard == '5' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fullHouseFiveThree() {
+    fullHouseTwoFirst();
+    fullHouseThreeFirst();
+    if( this.processedCards.size() > 4 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      char secondCard = this.processedCards.get( 4 ).charAt( 0 );
+      System.out.println( firstCard );
+      if( ( firstCard == '5' && secondCard == '3' ) || 
+            firstCard == '3' && secondCard == '5' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fullHouseFiveTwo() {
+    fullHouseTwoFirst();
+    fullHouseThreeFirst();
+    if( this.processedCards.size() > 4 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      char secondCard = this.processedCards.get( 4 ).charAt( 0 );
+      System.out.println( firstCard );
+      if( ( firstCard == '5' && secondCard == '2' ) || 
+            firstCard == '2' && secondCard == '5' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fullHouseFourThree() {
+    fullHouseTwoFirst();
+    fullHouseThreeFirst();
+    if( this.processedCards.size() > 4 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      char secondCard = this.processedCards.get( 4 ).charAt( 0 );
+      System.out.println( firstCard );
+      if( ( firstCard == '4' && secondCard == '3' ) || 
+            firstCard == '3' && secondCard == '4' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fullHouseFourTwo() {
+    fullHouseTwoFirst();
+    fullHouseThreeFirst();
+    if( this.processedCards.size() > 4 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      char secondCard = this.processedCards.get( 4 ).charAt( 0 );
+      System.out.println( firstCard );
+      if( ( firstCard == '4' && secondCard == '2' ) || 
+            firstCard == '2' && secondCard == '4' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fullHouseThreeTwo() {
+    fullHouseTwoFirst();
+    fullHouseThreeFirst();
+    if( this.processedCards.size() > 4 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      char secondCard = this.processedCards.get( 4 ).charAt( 0 );
+      System.out.println( firstCard );
+      if( ( firstCard == '3' && secondCard == '2' ) || 
+            firstCard == '2' && secondCard == '3' ) {
         return true;
       }
     }
