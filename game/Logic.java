@@ -711,17 +711,55 @@ public void setScore() {
   } else if ( pairAceTwo() == true && pairTwoTwo() == true) {
     this.awardScore = 438;
 
+  } else if ( pairKingTwo() == true && pairQueenTwo() == true ) {
+    this.awardScore = 437;
+  } else if ( pairKingTwo() == true && pairJackTwo() == true ) {
+    this.awardScore = 436;
+  } else if ( pairKingTwo() == true && pairTenTwo() == true ) {
+    this.awardScore = 435;
+  } else if ( pairKingTwo() == true && pairNineTwo() == true ) {
+    this.awardScore = 434;
+  } else if ( pairKingTwo() == true && pairEightTwo() == true ) {
+    this.awardScore = 433;
+  } else if ( pairKingTwo() == true && pairSevenTwo() == true ) {
+    this.awardScore = 432;
+  } else if ( pairKingTwo() == true && pairSixTwo() == true ) {
+    this.awardScore = 431;
+  } else if ( pairKingTwo() == true && pairFiveTwo() == true ) {
+    this.awardScore = 430;
+  } else if ( pairKingTwo() == true && pairFourTwo() == true ) {
+    this.awardScore = 429;
+  } else if ( pairKingTwo() == true && pairThreeTwo() == true ) {
+    this.awardScore = 428;
+  } else if ( pairKingTwo() == true && pairTwoTwo() == true ) {
+    this.awardScore = 427;    
 
+  } else if ( pairQueenTwo() == true && pairJackTwo() == true ) {
+    this.awardScore = 426;
+  } else if ( pairQueenTwo() == true && pairTenTwo() == true ) {
+    this.awardScore = 425;
+  } else if ( pairQueenTwo() == true && pairNineTwo() == true ) {
+    this.awardScore = 424;
+  } else if ( pairQueenTwo() == true && pairEightTwo() == true ) {
+    this.awardScore = 423;
+  } else if ( pairQueenTwo() == true && pairSevenTwo() == true ) {
+    this.awardScore = 422;
+  } else if ( pairQueenTwo() == true && pairSixTwo() == true ) {
+    this.awardScore = 421;
+  } else if ( pairQueenTwo() == true && pairFiveTwo() == true ) {
+    this.awardScore = 420;
+  } else if ( pairQueenTwo() == true && pairFourTwo() == true ) {
+    this.awardScore = 419;
+  } else if ( pairQueenTwo() == true && pairThreeTwo() == true ) {
+    this.awardScore = 418;
+  } else if ( pairQueenTwo() == true && pairTwoTwo() == true ) {
+    this.awardScore = 417;
 
-  } else if ( pairKingTwo() == true ) {
-    this.awardScore = 224;
-
-
-
-  } else if ( pairQueenTwo() == true ) {
-    this.awardScore = 223;
-  } else if ( pairJackTwo() == true ) {
+  } else if ( pairJackTwo() == true && pairTenTwo() == true ) {
     this.awardScore = 222;
+
+
+
   } else if ( pairTenTwo() == true ) {
     this.awardScore = 221;
   } else if ( pairNineTwo() == true ) {
