@@ -785,11 +785,48 @@ public class GameTest {
     dave.awardScore( logic.seeScore() );
     dave.awardKicker( logic.seeKicker() );
 
-    game.addPlayer( jeff );
     game.addPlayer( dave );
+    game.addPlayer( jeff );
     game.pickWinner();
     assertEquals( jeff, game.seeWinner() );
   }
+
+  @Test
+  public void gameWillPayOutToTheHandWinner() {
+    game.takeCard( cards.deal() ); //Ace
+    game.takeCard( cards.deal() ); //Ace
+    game.takeCard( cards.deal() ); //Ace
+    steve.takeCard( cards.deal() ); //Ace
+    jeff.takeCard( cards.deal() ); //King
+    dave.takeCard( cards.deal() ); //Queen
+
+    jeff.placeBet( 50 );
+    game.addBet( jeff );
+    game.nextTurn();
+    dave.placeBet( 250 );
+    game.addBet( dave );
+
+    System.out.println( game.showPot() ); 
+    logic = new Logic( jeff.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    jeff.awardScore( logic.seeScore() );
+    jeff.awardKicker( logic.seeKicker() );
+
+    logic = new Logic( dave.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    dave.awardScore( logic.seeScore() );
+    dave.awardKicker( logic.seeKicker() );
+
+    game.addPlayer( jeff );
+    game.addPlayer( dave );
+    game.pickWinner();
+    game.handWon( game.seeWinner() );
+    assertEquals( 750, jeff.countChips() );
+
+  }
+
 
 
 
