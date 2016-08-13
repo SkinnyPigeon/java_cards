@@ -839,14 +839,21 @@ public void setScore() {
   } else if ( pairSixTwo() == true && pairTwoTwo() == true ) {
     this.awardScore = 378;
 
-  } else if ( pairFiveTwo() == true ) {
-    this.awardScore = 216;
-  } else if ( pairFourTwo() == true ) {
-    this.awardScore = 215;
-  } else if ( pairThreeTwo() == true ) {
-    this.awardScore = 214;
-  } else if ( pairTwoTwo() == true ) {
-    this.awardScore = 213;
+  } else if ( pairFiveTwo() == true && pairFourTwo() == true ) {
+    this.awardScore = 377;
+  } else if ( pairFiveTwo() == true && pairThreeTwo() == true ) {
+    this.awardScore = 376;
+  } else if ( pairFiveTwo() == true && pairTwoTwo() == true ) {
+    this.awardScore = 375;
+
+  } else if ( pairFourTwo() == true && pairThreeTwo() == true ) {
+    this.awardScore = 374;
+  } else if ( pairFourTwo() == true && pairTwoTwo() == true ) {
+    this.awardScore = 373;
+
+  } else if ( pairThreeTwo() == true && pairTwoTwo() == true ) {
+    this.awardScore = 372;
+
 
   } else if ( pairAce() == true ) {
     this.awardScore = 212;
