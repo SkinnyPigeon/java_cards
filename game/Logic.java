@@ -53,43 +53,46 @@ public class Logic {
     return false;
   }
 
-  // public void countPoints() {
-  //   char firstCard;
-  //   if( this.playerCards.size() > 0 ) {
-  //     for( int i = 0; i < this.playerCards.size(); i++ ) {
-  //       firstCard = this.playerCards.get( i ).charAt( 0 );
-  //       System.out.println( firstCard );
+  public boolean countPoints() {
+    char firstCard;
+    System.out.println( this.playerCards );
 
-  //       if( firstCard == 'A' ) {
-  //         setKicker( 4196 );
-  //       } else if ( firstCard == 'K' ) {
-  //         setKicker( 2048 );
-  //       } else if ( firstCard == 'Q' ) {
-  //         setKicker( 1024 );
-  //       } else if ( firstCard == 'J' ) {
-  //         setKicker( 512 );
-  //       } else if ( firstCard == '1' ) {
-  //         setKicker( 256 );
-  //       } else if ( firstCard == '9' ) {
-  //         setKicker( 128 );
-  //       } else if ( firstCard == '8' ) {
-  //         setKicker( 64 );
-  //       } else if ( firstCard == '7' ) {
-  //         setKicker( 32 );
-  //       } else if ( firstCard == '6' ) {
-  //         setKicker( 16 );
-  //       } else if ( firstCard == '5' ) {
-  //         setKicker( 8 );
-  //       } else if ( firstCard == '4' ) {
-  //         setKicker( 4 );
-  //       } else if ( firstCard == '3' ) {
-  //         setKicker( 2 );
-  //       } else if ( firstCard == '2' ) {
-  //         setKicker( 1 );
-  //       }
-  //     }
-  //   }
-  // }
+    if( this.playerCards.size() > 0 ) {
+      for( int i = 0; i < this.playerCards.size(); i++ ) {
+        firstCard = this.playerCards.get( i ).charAt( 0 );
+
+        if( firstCard == 'A' ) {
+          setKicker( 4196 );
+        } else if ( firstCard == 'K' ) {
+          setKicker( 2048 );
+        } else if ( firstCard == 'Q' ) {
+          setKicker( 1024 );
+        } else if ( firstCard == 'J' ) {
+          setKicker( 512 );
+        } else if ( firstCard == '1' ) {
+          setKicker( 256 );
+        } else if ( firstCard == '9' ) {
+          setKicker( 128 );
+        } else if ( firstCard == '8' ) {
+          setKicker( 64 );
+        } else if ( firstCard == '7' ) {
+          setKicker( 32 );
+        } else if ( firstCard == '6' ) {
+          setKicker( 16 );
+        } else if ( firstCard == '5' ) {
+          setKicker( 8 );
+        } else if ( firstCard == '4' ) {
+          setKicker( 4 );
+        } else if ( firstCard == '3' ) {
+          setKicker( 2 );
+        } else if ( firstCard == '2' ) {
+          setKicker( 1 );
+        }
+      }
+    }
+    System.out.println( "And Here " + seeKicker() );
+    return true;
+  }
 
   public boolean pairTwo() {
     pair();
@@ -779,7 +782,6 @@ public class Logic {
         this.processedCards.add( this.playerCards.remove( 2 ) );
         this.processedCards.add( this.playerCards.remove( 1 ) );
         this.processedCards.add( this.playerCards.remove( 0 ) );
-        System.out.println( this.processedCards );
         return true;
       } 
     }
@@ -805,7 +807,6 @@ public class Logic {
         this.processedCards.add( this.playerCards.remove( 2 ) );
         this.processedCards.add( this.playerCards.remove( 1 ) );
         this.processedCards.add( this.playerCards.remove( 0 ) );
-        System.out.println( this.processedCards );
         return true;
       } 
     }
@@ -818,7 +819,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'A' && secondCard == 'K' ) || 
             firstCard == 'K' && secondCard == 'A' ) {
         return true;
@@ -833,7 +833,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'A' && secondCard == 'Q' ) || 
             firstCard == 'Q' && secondCard == 'A' ) {
         return true;
@@ -848,7 +847,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'A' && secondCard == 'J' ) || 
             firstCard == 'J' && secondCard == 'A' ) {
         return true;
@@ -863,7 +861,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'A' && secondCard == '1' ) || 
             firstCard == '1' && secondCard == 'A' ) {
         return true;
@@ -878,7 +875,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'A' && secondCard == '9' ) || 
             firstCard == '9' && secondCard == 'A' ) {
         return true;
@@ -893,7 +889,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'A' && secondCard == '8' ) || 
             firstCard == '8' && secondCard == 'A' ) {
         return true;
@@ -908,7 +903,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'A' && secondCard == '7' ) || 
             firstCard == '7' && secondCard == 'A' ) {
         return true;
@@ -923,7 +917,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'A' && secondCard == '6' ) || 
             firstCard == '6' && secondCard == 'A' ) {
         return true;
@@ -938,7 +931,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'A' && secondCard == '5' ) || 
             firstCard == '5' && secondCard == 'A' ) {
         return true;
@@ -953,7 +945,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'A' && secondCard == '4' ) || 
             firstCard == '4' && secondCard == 'A' ) {
         return true;
@@ -968,7 +959,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'A' && secondCard == '3' ) || 
             firstCard == '3' && secondCard == 'A' ) {
         return true;
@@ -983,7 +973,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'A' && secondCard == '2' ) || 
             firstCard == '2' && secondCard == 'A' ) {
         return true;
@@ -998,7 +987,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'K' && secondCard == 'Q' ) || 
             firstCard == 'Q' && secondCard == 'K' ) {
         return true;
@@ -1013,7 +1001,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'K' && secondCard == 'J' ) || 
             firstCard == 'J' && secondCard == 'K' ) {
         return true;
@@ -1028,7 +1015,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'K' && secondCard == '1' ) || 
             firstCard == '1' && secondCard == 'K' ) {
         return true;
@@ -1043,7 +1029,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'K' && secondCard == '9' ) || 
             firstCard == '9' && secondCard == 'K' ) {
         return true;
@@ -1058,7 +1043,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'K' && secondCard == '8' ) || 
             firstCard == '8' && secondCard == 'K' ) {
         return true;
@@ -1073,7 +1057,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'K' && secondCard == '7' ) || 
             firstCard == '7' && secondCard == 'K' ) {
         return true;
@@ -1088,7 +1071,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'K' && secondCard == '6' ) || 
             firstCard == '6' && secondCard == 'K' ) {
         return true;
@@ -1103,7 +1085,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'K' && secondCard == '5' ) || 
             firstCard == '5' && secondCard == 'K' ) {
         return true;
@@ -1118,7 +1099,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'K' && secondCard == '4' ) || 
             firstCard == '4' && secondCard == 'K' ) {
         return true;
@@ -1133,7 +1113,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'K' && secondCard == '3' ) || 
             firstCard == '3' && secondCard == 'K' ) {
         return true;
@@ -1148,7 +1127,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'K' && secondCard == '2' ) || 
             firstCard == '2' && secondCard == 'K' ) {
         return true;
@@ -1163,7 +1141,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'Q' && secondCard == 'J' ) || 
             firstCard == 'J' && secondCard == 'Q' ) {
         return true;
@@ -1178,7 +1155,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'Q' && secondCard == '1' ) || 
             firstCard == '1' && secondCard == 'Q' ) {
         return true;
@@ -1193,7 +1169,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'Q' && secondCard == '9' ) || 
             firstCard == '9' && secondCard == 'Q' ) {
         return true;
@@ -1208,7 +1183,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'Q' && secondCard == '8' ) || 
             firstCard == '8' && secondCard == 'Q' ) {
         return true;
@@ -1223,7 +1197,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'Q' && secondCard == '7' ) || 
             firstCard == '7' && secondCard == 'Q' ) {
         return true;
@@ -1238,7 +1211,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'Q' && secondCard == '6' ) || 
             firstCard == '6' && secondCard == 'Q' ) {
         return true;
@@ -1253,7 +1225,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'Q' && secondCard == '5' ) || 
             firstCard == '5' && secondCard == 'Q' ) {
         return true;
@@ -1268,7 +1239,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'Q' && secondCard == '4' ) || 
             firstCard == '4' && secondCard == 'Q' ) {
         return true;
@@ -1283,7 +1253,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'Q' && secondCard == '3' ) || 
             firstCard == '3' && secondCard == 'Q' ) {
         return true;
@@ -1298,7 +1267,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'Q' && secondCard == '2' ) || 
             firstCard == '2' && secondCard == 'Q' ) {
         return true;
@@ -1313,7 +1281,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'J' && secondCard == '1' ) || 
             firstCard == '1' && secondCard == 'J' ) {
         return true;
@@ -1328,7 +1295,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'J' && secondCard == '9' ) || 
             firstCard == '9' && secondCard == 'J' ) {
         return true;
@@ -1343,7 +1309,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'J' && secondCard == '8' ) || 
             firstCard == '8' && secondCard == 'J' ) {
         return true;
@@ -1358,7 +1323,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'J' && secondCard == '7' ) || 
             firstCard == '7' && secondCard == 'J' ) {
         return true;
@@ -1373,7 +1337,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'J' && secondCard == '6' ) || 
             firstCard == '6' && secondCard == 'J' ) {
         return true;
@@ -1388,7 +1351,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'J' && secondCard == '5' ) || 
             firstCard == '5' && secondCard == 'J' ) {
         return true;
@@ -1403,7 +1365,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'J' && secondCard == '4' ) || 
             firstCard == '4' && secondCard == 'J' ) {
         return true;
@@ -1418,7 +1379,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'J' && secondCard == '3' ) || 
             firstCard == '3' && secondCard == 'J' ) {
         return true;
@@ -1433,7 +1393,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == 'J' && secondCard == '2' ) || 
             firstCard == '2' && secondCard == 'J' ) {
         return true;
@@ -1448,7 +1407,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '1' && secondCard == '9' ) || 
             firstCard == '9' && secondCard == '1' ) {
         return true;
@@ -1463,7 +1421,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '1' && secondCard == '8' ) || 
             firstCard == '8' && secondCard == '1' ) {
         return true;
@@ -1478,7 +1435,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '1' && secondCard == '7' ) || 
             firstCard == '7' && secondCard == '1' ) {
         return true;
@@ -1493,7 +1449,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '1' && secondCard == '6' ) || 
             firstCard == '6' && secondCard == '1' ) {
         return true;
@@ -1508,7 +1463,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '1' && secondCard == '5' ) || 
             firstCard == '5' && secondCard == '1' ) {
         return true;
@@ -1523,7 +1477,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '1' && secondCard == '4' ) || 
             firstCard == '4' && secondCard == '1' ) {
         return true;
@@ -1538,7 +1491,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '1' && secondCard == '3' ) || 
             firstCard == '3' && secondCard == '1' ) {
         return true;
@@ -1553,7 +1505,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '1' && secondCard == '2' ) || 
             firstCard == '2' && secondCard == '1' ) {
         return true;
@@ -1568,7 +1519,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '9' && secondCard == '8' ) || 
             firstCard == '8' && secondCard == '9' ) {
         return true;
@@ -1583,7 +1533,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '9' && secondCard == '7' ) || 
             firstCard == '7' && secondCard == '9' ) {
         return true;
@@ -1598,7 +1547,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '9' && secondCard == '6' ) || 
             firstCard == '6' && secondCard == '9' ) {
         return true;
@@ -1613,7 +1561,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '9' && secondCard == '5' ) || 
             firstCard == '5' && secondCard == '9' ) {
         return true;
@@ -1628,7 +1575,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '9' && secondCard == '4' ) || 
             firstCard == '4' && secondCard == '9' ) {
         return true;
@@ -1643,7 +1589,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '9' && secondCard == '3' ) || 
             firstCard == '3' && secondCard == '9' ) {
         return true;
@@ -1658,7 +1603,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '9' && secondCard == '2' ) || 
             firstCard == '2' && secondCard == '9' ) {
         return true;
@@ -1673,7 +1617,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '8' && secondCard == '7' ) || 
             firstCard == '7' && secondCard == '8' ) {
         return true;
@@ -1688,7 +1631,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '8' && secondCard == '6' ) || 
             firstCard == '6' && secondCard == '8' ) {
         return true;
@@ -1703,7 +1645,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '8' && secondCard == '5' ) || 
             firstCard == '5' && secondCard == '8' ) {
         return true;
@@ -1718,7 +1659,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '8' && secondCard == '4' ) || 
             firstCard == '4' && secondCard == '8' ) {
         return true;
@@ -1733,7 +1673,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '8' && secondCard == '3' ) || 
             firstCard == '3' && secondCard == '8' ) {
         return true;
@@ -1748,7 +1687,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '8' && secondCard == '2' ) || 
             firstCard == '2' && secondCard == '8' ) {
         return true;
@@ -1763,7 +1701,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '7' && secondCard == '6' ) || 
             firstCard == '6' && secondCard == '7' ) {
         return true;
@@ -1778,7 +1715,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '7' && secondCard == '5' ) || 
             firstCard == '5' && secondCard == '7' ) {
         return true;
@@ -1793,7 +1729,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '7' && secondCard == '4' ) || 
             firstCard == '4' && secondCard == '7' ) {
         return true;
@@ -1808,7 +1743,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '7' && secondCard == '3' ) || 
             firstCard == '3' && secondCard == '7' ) {
         return true;
@@ -1823,7 +1757,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '7' && secondCard == '2' ) || 
             firstCard == '2' && secondCard == '7' ) {
         return true;
@@ -1838,7 +1771,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '6' && secondCard == '5' ) || 
             firstCard == '5' && secondCard == '6' ) {
         return true;
@@ -1853,7 +1785,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '6' && secondCard == '4' ) || 
             firstCard == '4' && secondCard == '6' ) {
         return true;
@@ -1868,7 +1799,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '6' && secondCard == '3' ) || 
             firstCard == '3' && secondCard == '6' ) {
         return true;
@@ -1883,7 +1813,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '6' && secondCard == '2' ) || 
             firstCard == '2' && secondCard == '6' ) {
         return true;
@@ -1898,7 +1827,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '5' && secondCard == '4' ) || 
             firstCard == '4' && secondCard == '5' ) {
         return true;
@@ -1913,7 +1841,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '5' && secondCard == '3' ) || 
             firstCard == '3' && secondCard == '5' ) {
         return true;
@@ -1928,7 +1855,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '5' && secondCard == '2' ) || 
             firstCard == '2' && secondCard == '5' ) {
         return true;
@@ -1943,7 +1869,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '4' && secondCard == '3' ) || 
             firstCard == '3' && secondCard == '4' ) {
         return true;
@@ -1958,7 +1883,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '4' && secondCard == '2' ) || 
             firstCard == '2' && secondCard == '4' ) {
         return true;
@@ -1973,7 +1897,6 @@ public class Logic {
     if( this.processedCards.size() > 4 ) {
       char firstCard = this.processedCards.get( 0 ).charAt( 0 );
       char secondCard = this.processedCards.get( 4 ).charAt( 0 );
-      System.out.println( firstCard );
       if( ( firstCard == '3' && secondCard == '2' ) || 
             firstCard == '2' && secondCard == '3' ) {
         return true;
@@ -2293,8 +2216,6 @@ public class Logic {
     return false;
   }
 
-
-
   public void setScore() {
 
     if( royalFlush() ) {
@@ -2514,11 +2435,9 @@ public class Logic {
     } else if ( fullHouseThreeTwo() ) {
         this.awardScore = 722;
 
-
     // } else if {
       // all the flushes. Need to work out the kickers
     
-
     } else if ( royalStraight() ) {
       this.awardScore = 590;
     } else if ( straightNine() ) {
@@ -2735,7 +2654,6 @@ public class Logic {
     } else if ( pairThreeTwo() && pairTwoTwo() ) {
       this.awardScore = 372;
 
-
     } else if ( pairAce() ) {
       this.awardScore = 212;
     } else if ( pairKing() ) {
@@ -2763,8 +2681,8 @@ public class Logic {
     } else if ( pairTwo() ) {
       this.awardScore = 200;
 
-    // } else {
-    //   countPoints();
+    } else if( countPoints() ) {
+      this.awardScore = 100;
     }
   }
 

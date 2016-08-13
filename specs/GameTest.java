@@ -424,7 +424,6 @@ public class GameTest {
     logic = new Logic( game.seeHand(), dave.seeHand() );
     logic.combineCards();
     logic.setScore();
-    System.out.println( logic.seeHand() );
     dave.awardScore( logic.seeScore() );
     Integer expected = 799;
     assertEquals( expected, dave.seeScore() );
@@ -715,35 +714,6 @@ public class GameTest {
     assertEquals( expected, jeff.seeScore() );
   }
 
-  // @Test
-  // public void aceAndKingGetPastToKicker() {
-  //   jeff.takeCard( cards.deal() ); //Ace
-  //   dave.takeCard( cards.deal() ); //Ace
-  //   dave.takeCard( cards.deal() ); //Ace
-  //   dave.takeCard( cards.deal() ); //Ace
-  //   jeff.takeCard( cards.deal() ); //King
-  //   game.takeCard( cards.deal() ); //Queen
-  //   dave.takeCard( cards.deal() ); //King
-  //   game.takeCard( cards.deal() ); //Two
-  //   dave.takeCard( cards.deal() ); //Three
-  //   game.takeCard( cards.deal() ); //Four
-  //   dave.takeCard( cards.deal() ); //Five
-  //   dave.takeCard( cards.deal() ); //Six
-  //   dave.takeCard( cards.deal() ); //Jack
-  //   dave.takeCard( cards.deal() ); //Ten
-  //   dave.takeCard( cards.deal() ); //Nine
-  //   dave.takeCard( cards.deal() ); //Eight
-  //   dave.takeCard( cards.deal() ); //Seven
-  //   dave.takeCard( cards.deal() ); //Six
-
-  //   logic = new Logic( jeff.seeHand(), game.seeHand() );
-  //   logic.combineCards();
-  //   logic.setScore();
-
-    // Integer expected = 6244;
-    // assertEquals( expected, logic.seeKicker() );
-  // }
-
   @Test
   public void kickerCanAdd() {
       jeff.takeCard( cards.deal() ); //Ace
@@ -776,6 +746,44 @@ public class GameTest {
       Integer expected = 100;
       assertEquals( expected, logic.seeKicker() );
   }
+
+
+  @Test
+  public void aceAndKingGetPastToKicker() {
+    jeff.takeCard( cards.deal() ); //Ace
+    dave.takeCard( cards.deal() ); //Ace
+    dave.takeCard( cards.deal() ); //Ace
+    dave.takeCard( cards.deal() ); //Ace
+    jeff.takeCard( cards.deal() ); //King
+    game.takeCard( cards.deal() ); //Queen
+    dave.takeCard( cards.deal() ); //King
+    game.takeCard( cards.deal() ); //Two
+    dave.takeCard( cards.deal() ); //Three
+    game.takeCard( cards.deal() ); //Four
+    dave.takeCard( cards.deal() ); //Five
+    dave.takeCard( cards.deal() ); //Six
+    dave.takeCard( cards.deal() ); //Jack
+    dave.takeCard( cards.deal() ); //Ten
+    dave.takeCard( cards.deal() ); //Nine
+    dave.takeCard( cards.deal() ); //Eight
+    dave.takeCard( cards.deal() ); //Seven
+    dave.takeCard( cards.deal() ); //Six
+
+    System.out.println( "Here" + jeff.seeHand() );
+    System.out.println( "Here" + game.seeHand() );
+
+    logic = new Logic( jeff.seeHand(), game.seeHand() );
+    logic.combineCards();
+    System.out.println( "Here " + logic.seeHand() );
+    
+    logic.setScore();
+    System.out.println( "Here " + logic.seeHand() );
+
+
+    Integer expected = 6244;
+    assertEquals( expected, logic.seeKicker() );
+  }
+
 
 
 
