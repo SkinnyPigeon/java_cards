@@ -941,6 +941,23 @@ public class GameTest {
     assertEquals( 490, jeff.countChips() );
   }
 
+  @Test
+  public void playerKnowsTheyveFolded() {
+    jeff.fold();
+    assertEquals( true, jeff.status() );
+  }
+
+  @Test
+  public void gameKnowsWhenSomeoneHasFolded() {
+    jeff.fold();
+    game.nextTurn();
+    game.nextTurn();
+    game.nextTurn();
+    game.foldCheck( jeff );
+    assertEquals( 2, game.turn() );
+  }
+
+
 
 
 

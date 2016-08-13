@@ -65,6 +65,12 @@ public class Game  {
     this.winnerArray.add( player );
   }
 
+  public void foldCheck( Player player ) {
+    if( player.status() == true ) {
+      nextTurn();
+    }
+  }
+
   public ArrayList showPlayers() {
     return this.winnerArray;
   }
