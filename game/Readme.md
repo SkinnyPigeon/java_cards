@@ -105,10 +105,96 @@ With the keys in his pocket no longer scratching him painfully in the leg Jeff s
   game.addBet( jeff );
   game.nextTurn();
 
-"That's the largest bumblebee I've ever seen" thinks dave as he waited patiently for his turn.   
+"That's the largest bumblebee I've ever seen" thinks dave as he waited patiently for his turn. Perhaps taking the bumblebee as a omen of good times to come, as any rational person might also, Dave leaps in for the attack. As he places his bet he sees his opponent develop the most obvious tell he has ever seen.
+
+  dave.placeBet( 250 );
+  game.addBet( dave );
+  game.nextTurn();  
+
+Momentarily distracted while trying to remove what felt like a large bumblebee from his ear Jeff realises it's now or never. He takes one last look at his cards, those on the table and his impossible to read opponent before calling the bet and leaving the result to fate.
+
+  jeff.placeBet( 150 );
+  game.addBet( jeff );
+
+For the longest time the pair just stare at each other. Neither knowing what to do next. Together, however, and without taking an eye off of eachother they glance down at these instructions. 
+
+They must each new up an instance of logic and pass their cards and the ones from the table they wish to use. Once there the logic can then do all the magic and sort out the scores: 
+
+  logic = new Logic( game.seeHand(), jeff.seeHand() ); 
+  logic.combineCards();
+  logic.setScore();
+  jeff.awardScore( logic.seeScore() );
+  jeff.awardKicker( logic.seeKicker() );
+
+  logic = new Logic( game.seeHand(), dave.seeHand() ); 
+  logic.combineCards();
+  logic.setScore();
+  dave.awardScore( logic.seeScore() );
+  dave.awardKicker( logic.seeKicker() );
+
+With their individual hand values now in place the pair look obliviously at each other. Both hands look pretty good. Does Two Pair beat Three of a Kind ( They seemed to ask )?  How will they divide up the chips ( Was likely to also be implied )? Luckily the Game file has some clever sorting algorithms to help these two out:
+
+  game.addPlayer( jeff );
+  game.addPlayer( dave );
+  game.pickWinner();
+  game.handWon( game.seeWinner() );
+
+And with that victory is given. Both Jeff and Dave look at eachother in amazement. A game written in under two days seems to have got it right. They smile and agree that the first hand was just a warm up. Next time it will be for keeps.
 
 
+Those are the basic instructions to get through a game. There is a fold function that each player has that can be called as such:
 
+  jeff.fold()
+
+
+At this point however and until the end of the hand players must be aware that they should call another function in place of any folded player in the same order as they were originally played. In a game of three this would look like:
+
+  jeff.fold();
+  game.nextTurn();
+
+  dave.placeBet( 50 );
+  game.addBet( dave );
+  game.nextTurn();
+
+  steve.placeBet( 55 );
+  game.addBet( steve );
+  game.nextTurn();
+
+  game.foldMaster( jeff );
+
+  dave.placeBet( 10 ).....
+
+The foldMaster() function automatically skips over any player who has folded and in the case that all other players have folded it can be used to award the winnings to the one remaining player:
+
+  jeff.fold();
+  game.nextTurn();
+
+  dave.placeBet( 50 );
+  game.addBet( dave );
+  game.nextTurn();
+
+  steve.fold();
+
+  game.foldMaster( steve );
+  game.foldMaster( jeff );
+  game.foldMaster( dave );
+
+Dave would automatically be awarded the pot.
+
+
+Features I would like to add:
+
+  Some kind of interface. Absolute top of my list. It would make playing a bit easier than playing one of those Hugo games from the late 80's.
+
+  Split pots.
+
+  Network play.
+
+If you have any other requests or bug reports please let me know.
+
+All the best,
+
+  Skinny Pigeon
 
 
 
