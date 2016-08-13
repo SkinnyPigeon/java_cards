@@ -645,6 +645,25 @@ public class GameTest {
     assertEquals( jeff, game.seeWinner() );
   }
 
+  @Test
+  public void slimChanceTwoPairsAddTheirScore() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+
+    logic = new Logic( jeff.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    jeff.awardScore( logic.seeScore() );
+
+    Integer expected = 60;
+    assertEquals( expected, jeff.seeScore() );
+  }
+
 
 
 
