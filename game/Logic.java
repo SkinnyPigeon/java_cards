@@ -545,25 +545,169 @@ public class Logic {
     return false;
   }
 
-
-
   public boolean four() {
     char firstCard;
     char secondCard;
     char thirdCard;
     char fourthCard;
-    for( int i = 0; i < this.playerCards.size() - 3; i++ ) {
-      firstCard = this.playerCards.get( i ).charAt( 0 );
-      secondCard = this.playerCards.get( i + 1 ).charAt( 0 );
-      thirdCard = this.playerCards.get( i + 2 ).charAt( 0 );
-      fourthCard = this.playerCards.get( i + 3 ).charAt( 0 );
-      if( firstCard == secondCard && firstCard == thirdCard && firstCard == fourthCard ) {
-        this.processedCards.add( this.playerCards.remove( i + 3 ) );
-        this.processedCards.add( this.playerCards.remove( i + 2 ) );
-        this.processedCards.add( this.playerCards.remove( i + 1 ) );
-        this.processedCards.add( this.playerCards.remove( i ) );
+    if( this.playerCards.size() > 3 ) {
+      for( int i = 0; i < this.playerCards.size() - 3; i++ ) {
+        firstCard = this.playerCards.get( i ).charAt( 0 );
+        secondCard = this.playerCards.get( i + 1 ).charAt( 0 );
+        thirdCard = this.playerCards.get( i + 2 ).charAt( 0 );
+        fourthCard = this.playerCards.get( i + 3 ).charAt( 0 );
+        if( firstCard == secondCard && firstCard == thirdCard 
+          && firstCard == fourthCard ) {
+          this.processedCards.add( this.playerCards.remove( i + 3 ) );
+          this.processedCards.add( this.playerCards.remove( i + 2 ) );
+          this.processedCards.add( this.playerCards.remove( i + 1 ) );
+          this.processedCards.add( this.playerCards.remove( i ) );
+          return true;
+        } 
+      }
+    }
+    return false;
+  }
+
+  public boolean fourAce() {
+    four();
+    if( this.processedCards.size() > 3 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == 'A' ) {
         return true;
-      } 
+      }
+    }
+    return false;
+  }
+
+  public boolean fourKing() {
+    four();
+    if( this.processedCards.size() > 3 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == 'K' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fourQueen() {
+    four();
+    if( this.processedCards.size() > 3 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == 'Q' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fourJack() {
+    four();
+    if( this.processedCards.size() > 3 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == 'J' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fourTen() {
+    four();
+    if( this.processedCards.size() > 3 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == '1' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fourNine() {
+    four();
+    if( this.processedCards.size() > 3 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == '9' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fourEight() {
+    four();
+    if( this.processedCards.size() > 3 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == '8' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fourSeven() {
+    four();
+    if( this.processedCards.size() > 3 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == '7' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fourSix() {
+    four();
+    if( this.processedCards.size() > 3 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == '6' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fourFive() {
+    four();
+    if( this.processedCards.size() > 3 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == '5' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fourFour() {
+    four();
+    if( this.processedCards.size() > 3 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == '4' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fourThree() {
+    four();
+    if( this.processedCards.size() > 3 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == '3' ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean fourTwo() {
+    four();
+    if( this.processedCards.size() > 3 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      if( firstCard == '2' ) {
+        return true;
+      }
     }
     return false;
   }
@@ -930,8 +1074,6 @@ public class Logic {
     return false;
   }
 
-
-
   public void setScore() {
 
     if( royalFlush() ) {
@@ -956,8 +1098,33 @@ public class Logic {
     } else if( straightFlushAce() ) {
       this.awardScore = 910;
 
-    } else if ( four() ) {
+    } else if ( fourAce() ) {
       this.awardScore = 800;
+    } else if ( fourKing() ) {
+      this.awardScore = 800;
+    } else if ( fourQueen() ) {
+      this.awardScore = 800;
+    } else if ( fourJack() ) {
+      this.awardScore = 800;
+    } else if ( fourTen() ) {
+      this.awardScore = 800;
+    } else if ( fourNine() ) {
+      this.awardScore = 800;
+    } else if ( fourEight() ) {
+      this.awardScore = 800;
+    } else if ( fourSeven() ) {
+      this.awardScore = 800;
+    } else if ( fourSix() ) {
+      this.awardScore = 800;
+    } else if ( fourFive() ) {
+      this.awardScore = 800;
+    } else if ( fourFour() ) {
+      this.awardScore = 800;
+    } else if ( fourThree() ) {
+      this.awardScore = 800;
+    } else if ( fourTwo() ) {
+      this.awardScore = 800;
+
     } else if ( fullHouseTwoFirst() || fullHouseThreeFirst() ) {
       this.awardScore = 700;
 
