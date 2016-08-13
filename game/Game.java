@@ -37,7 +37,6 @@ public class Game  {
     }
   }
 
-
   public void pickWinner() {
     Collections.sort( this.winnerArray, this.playerComparator );
     for( int i = 0; i < this.winnerArray.size() - 1; i++ ) {

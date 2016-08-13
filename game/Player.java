@@ -13,6 +13,7 @@ public class Player {
   private int playerNumber;
   private Integer score;
   private Integer kicker;
+  private boolean folded;
 
   public Player( String name, int playerNumber ) {
     this.name = name;
@@ -23,6 +24,7 @@ public class Player {
     this.score = 0;
     this.smallBlindValue = 5;
     this.bigBlindValue = 10;
+    this.folded = false;
   }
 
   public String name() {
@@ -31,6 +33,18 @@ public class Player {
 
   public Integer seeScore() {
     return this.score;
+  }
+
+  public void fold() {
+    this.folded = true;
+  }
+
+  public void in() {
+    this.folded = false;
+  }
+
+  public boolean status() {
+    return this.folded;
   }
 
   public void awardScore( Integer handScore ) {
@@ -68,11 +82,13 @@ public class Player {
 
   public int smallBlind() {
     this.chips -= this.smallBlindValue;
+    this.bet = this.smallBlindValue;
     return this.smallBlindValue;
   }
 
   public int bigBlind() {
     this.chips -= this.bigBlindValue;
+    this.bet = this.bigBlindValue;
     return this.bigBlindValue;
   }
 
