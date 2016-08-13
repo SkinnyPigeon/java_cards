@@ -715,7 +715,67 @@ public class GameTest {
     assertEquals( expected, jeff.seeScore() );
   }
 
+  // @Test
+  // public void aceAndKingGetPastToKicker() {
+  //   jeff.takeCard( cards.deal() ); //Ace
+  //   dave.takeCard( cards.deal() ); //Ace
+  //   dave.takeCard( cards.deal() ); //Ace
+  //   dave.takeCard( cards.deal() ); //Ace
+  //   jeff.takeCard( cards.deal() ); //King
+  //   game.takeCard( cards.deal() ); //Queen
+  //   dave.takeCard( cards.deal() ); //King
+  //   game.takeCard( cards.deal() ); //Two
+  //   dave.takeCard( cards.deal() ); //Three
+  //   game.takeCard( cards.deal() ); //Four
+  //   dave.takeCard( cards.deal() ); //Five
+  //   dave.takeCard( cards.deal() ); //Six
+  //   dave.takeCard( cards.deal() ); //Jack
+  //   dave.takeCard( cards.deal() ); //Ten
+  //   dave.takeCard( cards.deal() ); //Nine
+  //   dave.takeCard( cards.deal() ); //Eight
+  //   dave.takeCard( cards.deal() ); //Seven
+  //   dave.takeCard( cards.deal() ); //Six
 
+  //   logic = new Logic( jeff.seeHand(), game.seeHand() );
+  //   logic.combineCards();
+  //   logic.setScore();
+
+    // Integer expected = 6244;
+    // assertEquals( expected, logic.seeKicker() );
+  // }
+
+  @Test
+  public void kickerCanAdd() {
+      jeff.takeCard( cards.deal() ); //Ace
+      game.takeCard( cards.deal() ); //Ace
+      game.takeCard( cards.deal() ); //Ace
+      game.takeCard( cards.deal() ); //Ace
+      jeff.takeCard( cards.deal() ); //King
+
+      logic = new Logic( jeff.seeHand(), game.seeHand() );
+      logic.combineCards();
+
+      logic.setKicker( 50 );
+      Integer expected = 50;
+      assertEquals( expected, logic.seeKicker() );
+  }
+
+  @Test
+  public void kickerCanAddMultipleThings() {
+      jeff.takeCard( cards.deal() ); //Ace
+      game.takeCard( cards.deal() ); //Ace
+      game.takeCard( cards.deal() ); //Ace
+      game.takeCard( cards.deal() ); //Ace
+      jeff.takeCard( cards.deal() ); //King
+
+      logic = new Logic( jeff.seeHand(), game.seeHand() );
+      logic.combineCards();
+
+      logic.setKicker( 50 );
+      logic.setKicker( 50 );
+      Integer expected = 100;
+      assertEquals( expected, logic.seeKicker() );
+  }
 
 
 

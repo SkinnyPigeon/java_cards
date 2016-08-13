@@ -7,16 +7,26 @@ public class Logic {
   private ArrayList< String > tableCards;
   private ArrayList< String > processedCards;
   private Integer awardScore;
+  private Integer kickerScore;
 
   public Logic( ArrayList playerCards, ArrayList tableCards ) {
     this.playerCards = playerCards;
     this.tableCards = tableCards;
     this.processedCards = new ArrayList< String >();
     this.awardScore = awardScore;
+    this.kickerScore = 0;
   }
 
   public Integer seeScore() {
     return this.awardScore;
+  }
+
+  public Integer seeKicker() {
+    return this.kickerScore;
+  }
+
+  public void setKicker( Integer points ) {
+    this.kickerScore += points;
   }
 
   public void combineCards() {
@@ -42,6 +52,44 @@ public class Logic {
     }
     return false;
   }
+
+  // public void countPoints() {
+  //   char firstCard;
+  //   if( this.playerCards.size() > 0 ) {
+  //     for( int i = 0; i < this.playerCards.size(); i++ ) {
+  //       firstCard = this.playerCards.get( i ).charAt( 0 );
+  //       System.out.println( firstCard );
+
+  //       if( firstCard == 'A' ) {
+  //         setKicker( 4196 );
+  //       } else if ( firstCard == 'K' ) {
+  //         setKicker( 2048 );
+  //       } else if ( firstCard == 'Q' ) {
+  //         setKicker( 1024 );
+  //       } else if ( firstCard == 'J' ) {
+  //         setKicker( 512 );
+  //       } else if ( firstCard == '1' ) {
+  //         setKicker( 256 );
+  //       } else if ( firstCard == '9' ) {
+  //         setKicker( 128 );
+  //       } else if ( firstCard == '8' ) {
+  //         setKicker( 64 );
+  //       } else if ( firstCard == '7' ) {
+  //         setKicker( 32 );
+  //       } else if ( firstCard == '6' ) {
+  //         setKicker( 16 );
+  //       } else if ( firstCard == '5' ) {
+  //         setKicker( 8 );
+  //       } else if ( firstCard == '4' ) {
+  //         setKicker( 4 );
+  //       } else if ( firstCard == '3' ) {
+  //         setKicker( 2 );
+  //       } else if ( firstCard == '2' ) {
+  //         setKicker( 1 );
+  //       }
+  //     }
+  //   }
+  // }
 
   public boolean pairTwo() {
     pair();
@@ -2245,6 +2293,8 @@ public class Logic {
     return false;
   }
 
+
+
   public void setScore() {
 
     if( royalFlush() ) {
@@ -2687,34 +2737,34 @@ public class Logic {
 
 
     } else if ( pairAce() ) {
-      this.awardScore = 10012;
+      this.awardScore = 212;
     } else if ( pairKing() ) {
-      this.awardScore = 10011;
+      this.awardScore = 211;
     } else if ( pairQueen() ) {
-      this.awardScore = 10010;
+      this.awardScore = 210;
     } else if ( pairJack() ) {
-      this.awardScore = 10009;
+      this.awardScore = 209;
     } else if ( pairTen() ) {
-      this.awardScore = 10008;
+      this.awardScore = 208;
     } else if ( pairNine() ) {
-      this.awardScore = 10007;
+      this.awardScore = 207;
     } else if ( pairEight() ) {
-      this.awardScore = 10006;
+      this.awardScore = 206;
     } else if ( pairSeven() ) {
-      this.awardScore = 10005;
+      this.awardScore = 205;
     } else if ( pairSix() ) {
-      this.awardScore = 10004;
+      this.awardScore = 204;
     } else if ( pairFive()) {
-      this.awardScore = 10003;
+      this.awardScore = 203;
     } else if ( pairFour() ) {
-      this.awardScore = 10002;
+      this.awardScore = 202;
     } else if ( pairThree() ) {
-      this.awardScore = 10001;
+      this.awardScore = 201;
     } else if ( pairTwo() ) {
-      this.awardScore = 10000;
+      this.awardScore = 200;
 
-    } else {
-      this.awardScore = 100;
+    // } else {
+    //   countPoints();
     }
   }
 
