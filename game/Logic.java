@@ -2459,16 +2459,16 @@ public class Logic {
       this.awardScore = 725;
 
     } else if ( fullHouseFourThree() ) {
-        this.awardScore = 724;
+      this.awardScore = 724;
     } else if ( fullHouseFourTwo() ) {
-        this.awardScore = 723;
+      this.awardScore = 723;
 
     } else if ( fullHouseThreeTwo() ) {
-        this.awardScore = 722;
+      this.awardScore = 722;
 
-    // } else if {
-      // all the flushes. Need to work out the kickers
-    
+    } else if ( flush() ) {
+      this.awardScore = 600;
+        
     } else if ( royalStraight() ) {
       this.awardScore = 590;
     } else if ( straightNine() ) {

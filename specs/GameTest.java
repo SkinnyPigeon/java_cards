@@ -806,7 +806,6 @@ public class GameTest {
     dave.placeBet( 250 );
     game.addBet( dave );
 
-    System.out.println( game.showPot() ); 
     logic = new Logic( jeff.seeHand(), game.seeHand() );
     logic.combineCards();
     logic.setScore();
@@ -825,6 +824,46 @@ public class GameTest {
     game.handWon( game.seeWinner() );
     assertEquals( 750, jeff.countChips() );
 
+  }
+
+  @Test
+  public void flushCanBeWonTheRightWay() {
+    jeff.takeCard( cards.deal() ); //Ace
+    dave.takeCard( cards.deal() ); //Ace
+    dave.takeCard( cards.deal() ); //Ace
+    dave.takeCard( cards.deal() ); //Ace
+    steve.takeCard( cards.deal() ); //King
+    dave.takeCard( cards.deal() ); //Queen
+    dave.takeCard( cards.deal() ); //King
+    dave.takeCard( cards.deal() ); //Two
+    dave.takeCard( cards.deal() ); //Three
+    dave.takeCard( cards.deal() ); //Four
+    dave.takeCard( cards.deal() ); //Five
+    dave.takeCard( cards.deal() ); //Six
+    dave.takeCard( cards.deal() ); //Jack
+    game.takeCard( cards.deal() ); //Ten
+    game.takeCard( cards.deal() ); //Nine
+    game.takeCard( cards.deal() ); //Eight
+    jeff.takeCard( cards.deal() ); //Seven
+    steve.takeCard( cards.deal() ); //Six
+
+    logic = new Logic( jeff.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    jeff.awardScore( logic.seeScore() );
+    jeff.awardKicker( logic.seeKicker() );
+
+    logic = new Logic( steve.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    steve.awardScore( logic.seeScore() );
+    steve.awardKicker( logic.seeKicker() );
+
+    game.addPlayer( steve );
+    game.addPlayer( jeff );
+    game.pickWinner();
+    assertEquals( jeff, game.seeWinner() );
+    
   }
 
 
