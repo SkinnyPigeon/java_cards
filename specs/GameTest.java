@@ -528,7 +528,7 @@ public class GameTest {
     steve.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), game.seeHand() );
     logic.combineCards();
-    assertEquals( true, logic.lowStraight() );
+    assertEquals( true, logic.straightTwo() );
   }
 
   @Test
@@ -601,7 +601,7 @@ public class GameTest {
     steve.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), game.seeHand() );
     logic.combineCards();
-    assertEquals( true, logic.isTenARoyal() );
+    assertEquals( true, logic.straightSix() );
   }
 
   @Test
