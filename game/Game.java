@@ -10,6 +10,7 @@ public class Game  {
   private ArrayList< String > sharedCards;
   private ArrayList< Player > winnerArray;
   private PlayerComparator playerComparator;
+  private KickerComparator kickerComparator;
   private Player handWinner;
   
   public Game( int noOfPlayers ){
@@ -21,6 +22,7 @@ public class Game  {
     this.winnerArray = new ArrayList< Player >();
     this.handWinner = handWinner;
     this.playerComparator = new PlayerComparator();
+    this.kickerComparator = new KickerComparator();
   }
 
   public int showPot() {
@@ -35,8 +37,20 @@ public class Game  {
     }
   }
 
+
   public void pickWinner() {
     Collections.sort( this.winnerArray, this.playerComparator );
+    for( int i = 0; i < this.winnerArray.size() - 1; i++ ) {
+      if( ( this.winnerArray.get( i ).seeScore() ).intValue() == ( this.winnerArray.get( i + 1 ).seeScore() ).intValue() ) {
+        pickKicker();
+      } else {
+        this.handWinner = this.winnerArray.get( this.winnerArray.size() - 1 );
+      }
+    }
+  }
+
+  public void pickKicker() {
+    Collections.sort( this.winnerArray, this.kickerComparator );
     this.handWinner = this.winnerArray.get( this.winnerArray.size() - 1 );
   }
 

@@ -618,33 +618,33 @@ public class GameTest {
     assertEquals( expected, jeff.seeScore() );
   }
 
-  // @Test
-  // public void gameCanPickWinningPlayer() {
-  //   jeff.takeCard( cards.deal() );
-  //   jeff.takeCard( cards.deal() );
-  //   steve.takeCard( cards.deal() );
-  //   steve.takeCard( cards.deal() );
-  //   dave.takeCard( cards.deal() );
-  //   game.takeCard( cards.deal() );
-  //   dave.takeCard( cards.deal() );
-  //   game.takeCard( cards.deal() );
-  //   game.takeCard( cards.deal() );
+  @Test
+  public void gameCanPickWinningPlayer() {
+    jeff.takeCard( cards.deal() );
+    jeff.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    steve.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    dave.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
+    game.takeCard( cards.deal() );
 
-  //   logic = new Logic( steve.seeHand(), game.seeHand() );
-  //   logic.combineCards();
-  //   logic.setScore();
-  //   jeff.awardScore( logic.seeScore() );
+    logic = new Logic( steve.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    jeff.awardScore( logic.seeScore() );
 
-  //   logic = new Logic( dave.seeHand(), game.seeHand() );
-  //   logic.combineCards();
-  //   logic.setScore();
-  //   dave.awardScore( logic.seeScore() );
+    logic = new Logic( dave.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    dave.awardScore( logic.seeScore() );
 
-  //   game.addPlayer( jeff );
-  //   game.addPlayer( dave );
-  //   game.pickWinner();
-  //   assertEquals( jeff, game.seeWinner() );
-  // }
+    game.addPlayer( jeff );
+    game.addPlayer( dave );
+    game.pickWinner();
+    assertEquals( jeff, game.seeWinner() );
+  }
 
   @Test
   public void slimChanceTwoPairsAddTheirScore() {
