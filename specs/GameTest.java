@@ -12,6 +12,7 @@ public class GameTest {
   Player jeff;
   Player steve;
   Player dave;
+  Player bob;
   Game game;
   Logic logic;
   Logic logic2;
@@ -864,6 +865,54 @@ public class GameTest {
     game.pickWinner();
     assertEquals( jeff, game.seeWinner() );
     
+  }
+
+  @Test
+  public void pushingMyLuckWithThreePlayers() {
+    bob = new Player( "Bob", 4 );
+
+    game.takeCard( cards.deal() ); //Ace
+    dave.takeCard( cards.deal() ); //Ace
+    dave.takeCard( cards.deal() ); //Ace
+    dave.takeCard( cards.deal() ); //Ace
+    game.takeCard( cards.deal() ); //King
+    game.takeCard( cards.deal() ); //Queen
+    dave.takeCard( cards.deal() ); //King
+    dave.takeCard( cards.deal() ); //Two
+    dave.takeCard( cards.deal() ); //Three
+    dave.takeCard( cards.deal() ); //Four
+    dave.takeCard( cards.deal() ); //Five
+    dave.takeCard( cards.deal() ); //Six
+    bob.takeCard( cards.deal() ); //Jack
+    bob.takeCard( cards.deal() ); //Ten
+    jeff.takeCard( cards.deal() ); //Nine
+    steve.takeCard( cards.deal() ); //Eight
+    jeff.takeCard( cards.deal() ); //Seven
+    steve.takeCard( cards.deal() ); //Six
+
+    logic = new Logic( bob.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    bob.awardScore( logic.seeScore() );
+    bob.awardKicker( logic.seeKicker() );
+
+    logic = new Logic( jeff.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    jeff.awardScore( logic.seeScore() );
+    jeff.awardKicker( logic.seeKicker() );
+
+    logic = new Logic( steve.seeHand(), game.seeHand() );
+    logic.combineCards();
+    logic.setScore();
+    steve.awardScore( logic.seeScore() );
+    steve.awardKicker( logic.seeKicker() );
+
+    game.addPlayer( steve );
+    game.addPlayer( bob );
+    game.addPlayer( jeff );
+    game.pickWinner();
+    assertEquals( bob, game.seeWinner() );
   }
 
 
