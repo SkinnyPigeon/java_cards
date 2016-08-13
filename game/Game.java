@@ -7,6 +7,7 @@ public class Game  {
   private int lastBet;
   private int playerTurn;
   private int noOfPlayers;
+  private int noOfFoldedPlayers;
   private ArrayList< String > sharedCards;
   private ArrayList< Player > winnerArray;
   private PlayerComparator playerComparator;
@@ -17,6 +18,7 @@ public class Game  {
     this.pot = 0;
     this.playerTurn = 1;
     this.noOfPlayers = noOfPlayers;
+    this.noOfFoldedPlayers = 0;
     this.lastBet = lastBet;
     this.sharedCards = new ArrayList< String >();
     this.winnerArray = new ArrayList< Player >();
@@ -67,7 +69,20 @@ public class Game  {
 
   public void foldCheck( Player player ) {
     if( player.status() == true ) {
+      setFoldedPlayerCount();
       nextTurn();
+    }
+  }
+
+  public void setFoldedPlayerCount() {
+    this.noOfFoldedPlayers += 1;
+  }
+
+  public void foldWin( Player player ) {
+    if( this.noOfFoldedPlayers == ( this.noOfPlayers - 1 )) {
+      if( player.status() == false ) {
+        player.winChips( this.pot );
+      }
     }
   }
 
