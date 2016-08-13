@@ -104,108 +104,132 @@ public class Logic {
 
   public boolean pairThree() {
     pair();
-    char firstCard = this.processedCards.get(0).charAt(0);
-    if( firstCard == '3' ) {
-      return true;
+    if( this.processedCards.size() > 1) {
+      char firstCard = this.processedCards.get(0).charAt(0);
+      if( firstCard == '3' ) {
+        return true;
+      }
     }
     return false;
   }
 
   public boolean pairFour() {
     pair();
-    char firstCard = this.processedCards.get(0).charAt(0);
-    if( firstCard == '4' ) {
-      return true;
+    if( this.processedCards.size() > 1) {
+      char firstCard = this.processedCards.get(0).charAt(0);
+      if( firstCard == '4' ) {
+        return true;
+      }
     }
     return false;
   }
 
   public boolean pairFive() {
     pair();
-    char firstCard = this.processedCards.get(0).charAt(0);
-    if( firstCard == '5' ) {
-      return true;
+    if( this.processedCards.size() > 1) {
+      char firstCard = this.processedCards.get(0).charAt(0);
+      if( firstCard == '5' ) {
+        return true;
+      }
     }
     return false;
   }
 
   public boolean pairSix() {
     pair();
-    char firstCard = this.processedCards.get(0).charAt(0);
-    if( firstCard == '6' ) {
-      return true;
+    if( this.processedCards.size() > 1) {
+      char firstCard = this.processedCards.get(0).charAt(0);
+      if( firstCard == '6' ) {
+        return true;
+      }
     }
     return false;
   }
 
   public boolean pairSeven() {
     pair();
-    char firstCard = this.processedCards.get(0).charAt(0);
-    if( firstCard == '7' ) {
-      return true;
+    if( this.processedCards.size() > 1) {
+      char firstCard = this.processedCards.get(0).charAt(0);
+      if( firstCard == '7' ) {
+        return true;
+      }
     }
     return false;
   }
 
   public boolean pairEight() {
     pair();
-    char firstCard = this.processedCards.get(0).charAt(0);
-    if( firstCard == '8' ) {
-      return true;
+    if( this.processedCards.size() > 1) {
+      char firstCard = this.processedCards.get(0).charAt(0);
+      if( firstCard == '8' ) {
+        return true;
+      }
     }
     return false;
   }
 
   public boolean pairNine() {
     pair();
-    char firstCard = this.processedCards.get(0).charAt(0);
-    if( firstCard == '9' ) {
-      return true;
+    if( this.processedCards.size() > 1) {
+      char firstCard = this.processedCards.get(0).charAt(0);
+      if( firstCard == '9' ) {
+        return true;
+      }
     }
     return false;
   }
 
   public boolean pairTen() {
     pair();
-    char firstCard = this.processedCards.get(0).charAt(0);
-    if( firstCard == '1' ) {
-      return true;
+    if( this.processedCards.size() > 1) {
+      char firstCard = this.processedCards.get(0).charAt(0);
+      if( firstCard == '1' ) {
+        return true;
+      }
     }
     return false;
   }
 
   public boolean pairJack() {
     pair();
-    char firstCard = this.processedCards.get(0).charAt(0);
-    if( firstCard == 'J' ) {
-      return true;
+    if( this.processedCards.size() > 1) {
+      char firstCard = this.processedCards.get(0).charAt(0);
+      if( firstCard == 'J' ) {
+        return true;
+      }
     }
     return false;
   }
 
   public boolean pairQueen() {
     pair();
-    char firstCard = this.processedCards.get(0).charAt(0);
-    if( firstCard == 'Q' ) {
-      return true;
+    if( this.processedCards.size() > 1) {
+      char firstCard = this.processedCards.get(0).charAt(0);
+      if( firstCard == 'Q' ) {
+        return true;
+      }
     }
     return false;
   }
 
   public boolean pairKing() {
     pair();
-    char firstCard = this.processedCards.get(0).charAt(0);
-    if( firstCard == 'K' ) {
-      return true;
+    if( this.processedCards.size() > 1) {
+      char firstCard = this.processedCards.get(0).charAt(0);
+      if( firstCard == 'K' ) {
+        return true;
+      }
     }
     return false;
   }
 
   public boolean pairAce() {
     pair();
-    char firstCard = this.processedCards.get(0).charAt(0);
-    if( firstCard == 'A' ) {
-      return true;
+    if( this.processedCards.size() > 1) {
+      char firstCard = this.processedCards.get(0).charAt(0);
+      if( firstCard == 'A' ) {
+        return true;
+      }
     }
     return false;
   }

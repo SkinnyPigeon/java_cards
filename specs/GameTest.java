@@ -750,26 +750,26 @@ public class GameTest {
 
   @Test
   public void aceAndKingGetPastToKicker() {
-    steve.takeCard( cards.deal() ); //Ace
-    steve.takeCard( cards.deal() ); //Ace
+    jeff.takeCard( cards.deal() ); //Ace
     dave.takeCard( cards.deal() ); //Ace
     dave.takeCard( cards.deal() ); //Ace
-    steve.takeCard( cards.deal() ); //King
+    dave.takeCard( cards.deal() ); //Ace
+    jeff.takeCard( cards.deal() ); //King
     game.takeCard( cards.deal() ); //Queen
     dave.takeCard( cards.deal() ); //King
     game.takeCard( cards.deal() ); //Two
     dave.takeCard( cards.deal() ); //Three
     game.takeCard( cards.deal() ); //Four
-    steve.takeCard( cards.deal() ); //Five
-    steve.takeCard( cards.deal() ); //Six
-    steve.takeCard( cards.deal() ); //Jack
+    dave.takeCard( cards.deal() ); //Five
+    dave.takeCard( cards.deal() ); //Six
+    dave.takeCard( cards.deal() ); //Jack
     dave.takeCard( cards.deal() ); //Ten
     dave.takeCard( cards.deal() ); //Nine
     dave.takeCard( cards.deal() ); //Eight
     dave.takeCard( cards.deal() ); //Seven
     dave.takeCard( cards.deal() ); //Six
 
-    logic = new Logic( steve.seeHand(), game.seeHand() );
+    logic = new Logic( jeff.seeHand(), game.seeHand() );
     logic.combineCards();
     logic.setScore();
 
