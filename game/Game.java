@@ -6,6 +6,7 @@ public class Game  {
   private int pot;
   private int lastBet;
   private int playerTurn;
+  private int playerStart;
   private int noOfPlayers;
   private int noOfFoldedPlayers;
   private ArrayList< String > sharedCards;
@@ -17,6 +18,7 @@ public class Game  {
   public Game( int noOfPlayers ){
     this.pot = 0;
     this.playerTurn = 1;
+    this.playerStart = 1;
     this.noOfPlayers = noOfPlayers;
     this.noOfFoldedPlayers = 0;
     this.lastBet = lastBet;
@@ -74,6 +76,11 @@ public class Game  {
     }
   }
 
+  public void foldMaster( Player player ) {
+    foldCheck( player );
+    foldWin( player );
+  }
+
   public void setFoldedPlayerCount() {
     this.noOfFoldedPlayers += 1;
   }
@@ -117,8 +124,17 @@ public class Game  {
     }
   }
 
+  public void startHand() {
+    this.playerTurn = this.playerStart;
+  }
+
   public void handWon( Player player ) {
     player.winChips( this.pot );
+    if( this.playerStart == this.noOfPlayers ) {
+      this.playerStart = 1;
+    } else {
+      this.playerStart += 1;
+    }
   }
 
 }

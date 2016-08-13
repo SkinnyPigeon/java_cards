@@ -973,6 +973,18 @@ public class GameTest {
     assertEquals( 550, steve.countChips() );
   }
 
+  @Test
+  public void foldMasterIsWorking() {
+    jeff.placeBet( 50 );
+    game.addBet( jeff );
+    jeff.fold();
+    dave.fold();
+    game.foldMaster( jeff );
+    game.foldMaster( dave );
+    game.foldMaster( steve );
+    assertEquals( 550, steve.countChips() );
+  }
+
 
 
 
