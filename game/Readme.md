@@ -85,7 +85,7 @@ Three community cards are now dealt to the table.
   game.takeCard( cards.deal() );
 
 
-Dave looks slighly at his cards all the while watching Jeff's shifty eyes. He plays a small bet to feel out Jeff's play style.
+Dave looks slyly at his cards all the while watching Jeff's shifty eyes. He plays a small bet to feel out Jeff's play style.
 
 
   dave.placeBet( 15 );
@@ -133,7 +133,7 @@ With the keys in his pocket no longer scratching him painfully in the leg, Jeff 
   game.nextTurn();
 
 
-"That's the largest bumblebee I've ever seen" thought dave as he waited patiently for his turn. Perhaps taking the bumblebee as a omen of good times to come, as any rational person might also, Dave leaps in for the attack. As he places his bet he sees his opponent develop the most obvious tell he has ever seen.
+"That's the largest bumblebee I've ever seen" thought dave as he waited patiently for his turn. Perhaps taking the bumblebee as a omen of good times to come, as any rational person might do, Dave leaps in for the attack. As he places his bet he sees his opponent develop the most obvious tell he has ever seen.
 
 
   dave.placeBet( 250 );
@@ -150,7 +150,7 @@ Momentarily distracted while trying to remove what felt like an enormous bumbleb
 
 For the longest time the pair just stare at each other. Neither knowing what to do next. Together, however, and without taking their eyes off of each other they glance down at these instructions. 
 
-They must each new up an instance of logic and pass their hand cards and the community cards they wish to use. Once there the logic can then do all the magic and sort out the scores: 
+They must each new up an instance of Logic and pass in their hand cards and the community cards. Once there the Logic can then do all the magic and sort out the scores: 
 
 
   logic = new Logic( game.seeHand(), jeff.seeHand() ); 
@@ -177,7 +177,7 @@ With their individual hand values now in place the pair look obliviously at each
 
 And with that victory is given. Both Jeff and Dave look at eachother in amazement. A game written in under two days seems to have got it right. They smile and agree that the first hand was just a warm up. Next time it will be for keeps.
 
-Those are the basic instructions to get through a game. There is a fold function that each player has that can be called as such:
+Those are the basic instructions to get through a game. There is also a fold() function that each player has that can be called as such:
 
 
   jeff.fold()
