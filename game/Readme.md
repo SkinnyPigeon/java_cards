@@ -225,7 +225,7 @@ Dave would automatically be awarded the pot.
 Features I would like to add:
 
 
-  Some kind of interface. Absolute top of my list. It would make playing a bit easier than playing one of those Hugo games from the late 80's.
+  Some kind of interface. Absolute top of my list. It would make playing a bit easier than playing one of those Hugo games from the late 80's and also enable people to keep their cards hidden.
 
   Bundling of moves to make things a lot smoother and dryer.
 
