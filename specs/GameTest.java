@@ -8,7 +8,7 @@ import Game.*;
 public class GameTest {
 
   ArrayList expected;
-  Cards cards;
+  TestCards cards;
   Player jeff;
   Player steve;
   Player dave;
@@ -19,7 +19,7 @@ public class GameTest {
 
   @Before
   public void before() {
-    cards = new Cards();
+    cards = new TestCards();
     jeff = new Player( "Jeff", 1 );
     dave = new Player( "Dave", 2 );
     steve = new Player( "Steve", 3 );

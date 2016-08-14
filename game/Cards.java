@@ -14,19 +14,53 @@ public class Cards {
     this.cards.add( "A♣️" );
     this.cards.add( "A♦️" );
     this.cards.add( "K♠️" );
-    this.cards.add( "Q♠️" );
     this.cards.add( "K♥️" );
-    this.cards.add( "2♥️" );
-    this.cards.add( "3♥️" );
-    this.cards.add( "4♥️" );
-    this.cards.add( "5♥️" );
-    this.cards.add( "6♥️" );
+    this.cards.add( "K♣️" );
+    this.cards.add( "K♦️" );
+    this.cards.add( "Q♠️" );
+    this.cards.add( "Q♥️" );
+    this.cards.add( "Q♣️" );
+    this.cards.add( "Q♦️" );
     this.cards.add( "J♠️" );
+    this.cards.add( "J♥️" );
+    this.cards.add( "J♣️" );
+    this.cards.add( "J♦️" );
     this.cards.add( "10♠️" );
+    this.cards.add( "10♥️" );
+    this.cards.add( "10♣️" );
+    this.cards.add( "10♦️" );
     this.cards.add( "9♠️" );
+    this.cards.add( "9♥️" );
+    this.cards.add( "9♣️" );
+    this.cards.add( "9♦️" );
     this.cards.add( "8♠️" );
+    this.cards.add( "8♥️" );
+    this.cards.add( "8♣️" );
+    this.cards.add( "8♦️" );
     this.cards.add( "7♠️" );
+    this.cards.add( "7♥️" );
+    this.cards.add( "7♣️" );
+    this.cards.add( "7♦️" );
     this.cards.add( "6♠️" );
+    this.cards.add( "6♥️" );
+    this.cards.add( "6♣️" );
+    this.cards.add( "6♦️" );
+    this.cards.add( "5♠️" );
+    this.cards.add( "5♥️" );
+    this.cards.add( "5♣️" );
+    this.cards.add( "5♦️" );
+    this.cards.add( "4♠️" );
+    this.cards.add( "4♥️" );
+    this.cards.add( "4♣️" );
+    this.cards.add( "4♦️" );
+    this.cards.add( "3♠️" );
+    this.cards.add( "3♥️" );
+    this.cards.add( "3♣️" );
+    this.cards.add( "3♦️" );
+    this.cards.add( "2♠️" );
+    this.cards.add( "2♥️" );
+    this.cards.add( "2♣️" );
+    this.cards.add( "2♦️" );
 
     this.dealtCard = dealtCard;
   }
@@ -41,7 +75,7 @@ public class Cards {
       if( card != null ) {
       }
     }
-    return "Shuffled 😀";
+    return "Shuffled 👻";
   }
 
   public void pickCard() {
