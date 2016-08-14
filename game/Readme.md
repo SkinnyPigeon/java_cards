@@ -117,7 +117,7 @@ With the keys in his pocket no longer scratching him painfully in the leg, Jeff 
   game.nextTurn();
 
 
-"Come on Dave, snap out of it" he says to himself as he realises his mind has drifted to the MbMbaM podcast he was listening on the way to the game. The breifest glance at his opponent's look of dispair and the check he just played is enough to convince Dave that he has the upper hand. However with such a small pot it is time for him to play it cool. He also calmly checks.
+"Come on Dave, snap out of it" he says to himself as he realises his mind has drifted to the MbMbaM podcast he was listening to on the way to the game. The breifest glance at his opponent's look of dispair and the check he just played is enough to convince Dave that he has the upper hand. However with such a small pot it is time for him to play it cool. He also calmly checks.
 
 
   dave.check();
@@ -133,7 +133,7 @@ With the keys in his pocket no longer scratching him painfully in the leg, Jeff 
   game.nextTurn();
 
 
-"That's the largest bumblebee I've ever seen" thought dave as he waited patiently for his turn. Perhaps taking the bumblebee as a omen of good times to come, as any rational person might do, Dave leaps in for the attack. As he places his bet he sees his opponent develop the most obvious tell he has ever seen.
+"That's the largest bumblebee I've ever seen" thought dave as he waited patiently for his turn. Perhaps taking the bumblebee as a omen of forthcoming prosperity, as any rational person might, Dave leaps in for the attack. As he places his bet he sees his opponent develop the most obvious tell he has ever seen.
 
 
   dave.placeBet( 250 );
@@ -166,7 +166,7 @@ They must each new up an instance of Logic and pass in their hand cards and the 
   dave.awardKicker( logic.seeKicker() );
 
 
-With their individual hand values now in place the pair look obliviously at each other. Both hands look pretty good. Does Two Pair beat Three of a Kind ( They seemed to ask )?  How will they divide up the chips ( Was likely to also be implied )? Luckily the Game file has some clever sorting algorithms to help these two out:
+With their individual hand values now in place the pair look obliviously at each other. Both hands look pretty good. Does Two Pair beat Three of a Kind ( they seemed to ask )?  How will they divide up the chips ( was likely to also be implied )? Luckily the Game file has some clever sorting algorithms to help these two out:
 
 
   game.addPlayer( jeff );
@@ -175,9 +175,11 @@ With their individual hand values now in place the pair look obliviously at each
   game.handWon( game.seeWinner() );
 
 
-And with that victory is given. Both Jeff and Dave look at eachother in amazement. A game written in under two days seems to have got it right. They smile and agree that the first hand was just a warm up. Next time it will be for keeps.
+And with that victory is given. Both Jeff and Dave look at each other in amazement. A game written in under two days seems to have got it right. They smile and agree that the first hand was just a warm up. Next time it will be for keeps.
 
-Those are the basic instructions to get through a game. There is also a fold() function that each player has that can be called as such:
+Those are the basic instructions to get through a game. 
+
+There is also a fold() function that each player has that can be called as such:
 
 
   jeff.fold()
