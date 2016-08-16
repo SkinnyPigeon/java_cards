@@ -138,7 +138,6 @@ public class Logic {
     return false;
   }
 
- 
   public boolean three() {
     char firstCard;
     char secondCard;
@@ -158,156 +157,12 @@ public class Logic {
     return false;
   }
 
-  public boolean threeAce() {
+  public boolean threeCheck( char firstNumber ) {
     three();
     char firstCard;
     if( this.processedCards.size() > 2 ) {
-      firstCard = this.processedCards.get( 0 ).charAt( 0 );
-      if( firstCard == 'A' ) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  public boolean threeKing() {
-    three();
-    char firstCard;
-    if( this.processedCards.size() > 2 ) {
-      firstCard = this.processedCards.get( 0 ).charAt( 0 );
-      if( firstCard == 'K' ) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  public boolean threeQueen() {
-    three();
-    char firstCard;
-    if( this.processedCards.size() > 2 ) {
-      firstCard = this.processedCards.get( 0 ).charAt( 0 );
-      if( firstCard == 'Q' ) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  public boolean threeJack() {
-    three();
-    char firstCard;
-    if( this.processedCards.size() > 2 ) {
-      firstCard = this.processedCards.get( 0 ).charAt( 0 );
-      if( firstCard == 'J' ) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  public boolean threeTen() {
-    three();
-    char firstCard;
-    if( this.processedCards.size() > 2 ) {
-      firstCard = this.processedCards.get( 0 ).charAt( 0 );
-      if( firstCard == '1' ) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  public boolean threeNine() {
-    three();
-    char firstCard;
-    if( this.processedCards.size() > 2 ) {
-      firstCard = this.processedCards.get( 0 ).charAt( 0 );
-      if( firstCard == '9' ) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  public boolean threeEight() {
-    three();
-    char firstCard;
-    if( this.processedCards.size() > 2 ) {
-      firstCard = this.processedCards.get( 0 ).charAt( 0 );
-      if( firstCard == '8' ) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  public boolean threeSeven() {
-    three();
-    char firstCard;
-    if( this.processedCards.size() > 2 ) {
-      firstCard = this.processedCards.get( 0 ).charAt( 0 );
-      if( firstCard == '7' ) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  public boolean threeSix() {
-    three();
-    char firstCard;
-    if( this.processedCards.size() > 2 ) {
-      firstCard = this.processedCards.get( 0 ).charAt( 0 );
-      if( firstCard == '6' ) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  public boolean threeFive() {
-    three();
-    char firstCard;
-    if( this.processedCards.size() > 2 ) {
-      firstCard = this.processedCards.get( 0 ).charAt( 0 );
-      if( firstCard == '5' ) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  public boolean threeFour() {
-    three();
-    char firstCard;
-    if( this.processedCards.size() > 2 ) {
-      firstCard = this.processedCards.get( 0 ).charAt( 0 );
-      if( firstCard == '4' ) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  public boolean threeThree() {
-    three();
-    char firstCard;
-    if( this.processedCards.size() > 2 ) {
-      firstCard = this.processedCards.get( 0 ).charAt( 0 );
-      if( firstCard == '3' ) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  public boolean threeTwo() {
-    three();
-    char firstCard;
-    if( this.processedCards.size() > 2 ) {
-      firstCard = this.processedCards.get( 0 ).charAt( 0 );
-      if( firstCard == '2' ) {
+      firstCard = this.processedCards.get(0).charAt(0);
+      if( firstCard == firstNumber ) {
         return true;
       }
     }
@@ -2183,32 +2038,32 @@ public class Logic {
     } else if ( straightAce() ) {
       this.awardScore = 570;
 
-    } else if ( threeAce() ) {
-      this.awardScore = 512;
-    } else if ( threeKing() ) {
-      this.awardScore = 511;
-    } else if ( threeQueen() ) {
-      this.awardScore = 510;
-    } else if ( threeJack() ) {
-      this.awardScore = 509;
-    } else if ( threeTen() ) {
-      this.awardScore = 508;
-    } else if ( threeNine() ) {
-      this.awardScore = 507;
-    } else if ( threeEight() ) {
-      this.awardScore = 506;
-    } else if ( threeSeven() ) {
-      this.awardScore = 505;
-    } else if ( threeSix() ) {
-      this.awardScore = 504;
-    } else if ( threeFive() ) {
-      this.awardScore = 503;
-    } else if ( threeFour() ) {
-      this.awardScore = 502;
-    } else if ( threeThree() ) {
-      this.awardScore = 501;
-    } else if ( threeTwo() ) {
-      this.awardScore = 500;
+    } else if ( threeCheck( 'A' ) ) {
+        this.awardScore = 512;
+    } else if ( threeCheck( 'K' ) ) {
+        this.awardScore = 511;
+    } else if ( threeCheck( 'Q' ) ) {
+        this.awardScore = 510;
+    } else if ( threeCheck( 'J' ) ) {
+        this.awardScore = 509;
+    } else if ( threeCheck( '1' ) ) {
+        this.awardScore = 508;
+    } else if ( threeCheck( '9' ) ) {
+        this.awardScore = 507;
+    } else if ( threeCheck( '8' ) ) {
+        this.awardScore = 506;
+    } else if ( threeCheck( '7' ) ) {
+        this.awardScore = 505;
+    } else if ( threeCheck( '6' ) ) {
+        this.awardScore = 504;
+    } else if ( threeCheck( '5' ) ) {
+        this.awardScore = 503;
+    } else if ( threeCheck( '4' ) ) {
+        this.awardScore = 502;
+    } else if ( threeCheck( '3' ) ) {
+        this.awardScore = 501;
+    } else if ( threeCheck( '2' ) ) {
+        this.awardScore = 500;
 
     } else if ( twoPairCheck( 'A') && twoPairCheck( 'K') ) {
       this.awardScore = 449;
