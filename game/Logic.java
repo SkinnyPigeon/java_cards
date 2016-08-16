@@ -337,121 +337,28 @@ public class Logic {
     return false;
   }
 
-  // public boolean royalFlush() {
-  //   if( royalStraight() && flush() ) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
-
-  // public boolean straightFlushNine() {
-  //   if( straightNine() && flush() ) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
-
-  // public boolean straightFlushEight() {
-  //   if( straightEight() && flush() ) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
-
-  // public boolean straightFlushSeven() {
-  //   if( straightSeven() && flush() ) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
-
-  // public boolean straightFlushSix() {
-  //   if( straightSix() && flush() ) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
-
-  // public boolean straightFlushFive() {
-  //   if( straightFive() && flush() ) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
-
-  // public boolean straightFlushFour() {
-  //   if( straightFour() && flush() ) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
-
-  // public boolean straightFlushThree() {
-  //   if( straightThree() && flush() ) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
-
-  // public boolean straightFlushTwo() {
-  //   if( straightTwo() && flush() ) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
-
-  // public boolean straightFlushAce() {
-  //   if( straightAce() && flush() ) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
-
   public void setScore() {
-
-    // if( royalFlush() ) {
-    //   this.awardScore = 1000;
 
     if( straightFlushCheck( '1', 'A', 'J', 'K', 'Q' ) ) {
       this.awardScore = 1000;
     } else if( straightFlushCheck( '1', '9', 'J', 'K', 'Q' ) ) {
-      this.awardScore = 1000;
+      this.awardScore = 990;
     } else if( straightFlushCheck( '1', '8', '9', 'J', 'Q' ) ) {
-      this.awardScore = 1000;
+      this.awardScore = 980;
     } else if( straightFlushCheck( '1', '7', '8', '9', 'J' ) ) {
-      this.awardScore = 1000;
+      this.awardScore = 970;
     } else if( straightFlushCheck( '1', '6', '7', '8', '9' ) ) {
-      this.awardScore = 1000;
+      this.awardScore = 960;
     } else if( straightFlushCheck( '5', '6', '7', '8', '9' ) ) {
-      this.awardScore = 1000;
+      this.awardScore = 950;
     } else if( straightFlushCheck( '4', '5', '6', '7', '8' ) ) {
-      this.awardScore = 1000;
+      this.awardScore = 940;
     } else if( straightFlushCheck( '3', '4', '5', '6', '7' ) ) {
-      this.awardScore = 1000;
+      this.awardScore = 930;
     } else if( straightFlushCheck( '2', '3', '4', '5', '6' ) ) {
-      this.awardScore = 1000;
+      this.awardScore = 920;
     } else if( straightFlushCheck( '2', '3', '4', '5', 'A' ) ) {
-      this.awardScore = 1000;
-
-
-    // } else if( straightFlushNine() ) {
-    //   this.awardScore = 990;
-    // } else if( straightFlushEight() ) {
-    //   this.awardScore = 980;
-    // } else if( straightFlushSeven() ) {
-    //   this.awardScore = 970;
-    // } else if( straightFlushSix() ) {
-    //   this.awardScore = 960;
-    // } else if( straightFlushFive() ) {
-    //   this.awardScore = 950;
-    // } else if( straightFlushFour() ) {
-    //   this.awardScore = 940;
-    // } else if( straightFlushThree() ) {
-    //   this.awardScore = 930;
-    // } else if( straightFlushTwo() ) {
-    //   this.awardScore = 920;
-    // } else if( straightFlushAce() ) {
-    //   this.awardScore = 910;
+      this.awardScore = 910;
 
     } else if ( fourCheck( 'A' ) ) {
       this.awardScore = 813;
