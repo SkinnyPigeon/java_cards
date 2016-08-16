@@ -255,6 +255,20 @@ public class Logic {
     return false;
   }
 
+  public boolean fullHouseCheck( char firstNumber, char secondNumber ) {
+    fullHouseTwoFirst();
+    fullHouseThreeFirst();
+    if( this.processedCards.size() > 4 ) {
+      char firstCard = this.processedCards.get( 0 ).charAt( 0 );
+      char secondCard = this.processedCards.get( 4 ).charAt( 0 );
+      if( ( firstCard == firstNumber && secondCard == secondNumber ) || 
+            firstCard == secondNumber && secondCard == firstNumber ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   public boolean fullHouseAceKing() {
     fullHouseTwoFirst();
     fullHouseThreeFirst();
@@ -1714,149 +1728,164 @@ public class Logic {
     } else if ( fourCheck( '2' ) ) {
       this.awardScore = 801;
 
-    } else if ( fullHouseAceKing() ) {
+    } else if ( fullHouseCheck( 'A', 'K' ) ) {
       this.awardScore = 799;
-    } else if ( fullHouseAceQueen() ) {
+    } else if ( fullHouseCheck( 'A', 'Q' ) ) {
       this.awardScore = 798;
-    } else if ( fullHouseAceJack() ) {
+    } else if ( fullHouseCheck( 'A', 'J' ) ) {
       this.awardScore = 797;
-    } else if ( fullHouseAceTen() ) {
+    } else if ( fullHouseCheck( 'A', '1' ) ) {
       this.awardScore = 796;
-    } else if ( fullHouseAceNine() ) {
+    } else if ( fullHouseCheck( 'A', '9' ) ) {
       this.awardScore = 795;
-    } else if ( fullHouseAceEight() ) {
+    } else if ( fullHouseCheck( 'A', '8' ) ) {
       this.awardScore = 794;
-    } else if ( fullHouseAceSeven() ) {
+    } else if ( fullHouseCheck( 'A', '7' ) ) {
       this.awardScore = 793;
-    } else if ( fullHouseAceSix() ) {
+    } else if ( fullHouseCheck( 'A', '6' ) ) {
       this.awardScore = 792;
-    } else if ( fullHouseAceFive() ) {
+    } else if ( fullHouseCheck( 'A', '5' ) ) {
       this.awardScore = 791;
-    } else if ( fullHouseAceFour() ) {
+    } else if ( fullHouseCheck( 'A', '4' ) ) {
       this.awardScore = 790;
-    } else if ( fullHouseAceThree() ) {
+    } else if ( fullHouseCheck( 'A', '3' ) ) {
       this.awardScore = 789;
-    } else if ( fullHouseAceTwo() ) {
+    } else if ( fullHouseCheck( 'A', '2' ) ) {
       this.awardScore = 788;
 
-    } else if ( fullHouseKingQueen() ) {
+    } else if ( fullHouseCheck( 'K', 'Q' ) ) {
       this.awardScore = 787;
-    } else if ( fullHouseKingJack() ) {
+    } else if ( fullHouseCheck( 'K', 'J' ) ) {
       this.awardScore = 786;
-    } else if ( fullHouseKingTen() ) {
+    } else if ( fullHouseCheck( 'K', '1' ) ) {
       this.awardScore = 785;
-    } else if ( fullHouseKingNine() ) {
+    } else if ( fullHouseCheck( 'K', '9' ) ) {
       this.awardScore = 784;
-    } else if ( fullHouseKingEight() ) {
+    } else if ( fullHouseCheck( 'K', '8' ) ) {
       this.awardScore = 783;
-    } else if ( fullHouseKingSeven() ) {
+    } else if ( fullHouseCheck( 'K', '7' ) ) {
       this.awardScore = 782;
-    } else if ( fullHouseKingSix() ) {
+    } else if ( fullHouseCheck( 'K', '6' ) ) {
       this.awardScore = 781;
-    } else if ( fullHouseKingFive() ) {
+    } else if ( fullHouseCheck( 'K', '5' ) ) {
       this.awardScore = 780;
-    } else if ( fullHouseKingFour() ) {
+    } else if ( fullHouseCheck( 'K', '4' ) ) {
       this.awardScore = 779;
-    } else if ( fullHouseKingThree() ) {
+    } else if ( fullHouseCheck( 'K', '3' ) ) {
       this.awardScore = 778;
-    } else if ( fullHouseKingTwo() ) {
+    } else if ( fullHouseCheck( 'K', '2' ) ) {
       this.awardScore = 777;
 
-    } else if ( fullHouseQueenJack() ) {
+
+
+    } else if ( fullHouseCheck( 'Q', 'J' ) ) {
       this.awardScore = 776;
-    } else if ( fullHouseQueenTen() ) {
+    } else if ( fullHouseCheck( 'Q', '1' ) ) {
       this.awardScore = 775;
-    } else if ( fullHouseQueenNine() ) {
+    } else if ( fullHouseCheck( 'Q', '9' ) ) {
       this.awardScore = 774;
-    } else if ( fullHouseQueenEight() ) {
+    } else if ( fullHouseCheck( 'Q', '8' ) ) {
       this.awardScore = 773;
-    } else if ( fullHouseQueenSeven() ) {
+    } else if ( fullHouseCheck( 'Q', '7' ) ) {
       this.awardScore = 772;
-    } else if ( fullHouseQueenSix() ) {
+    } else if ( fullHouseCheck( 'Q', '6' ) ) {
       this.awardScore = 771;
-    } else if ( fullHouseQueenFive() ) {
+    } else if ( fullHouseCheck( 'Q', '5' ) ) {
       this.awardScore = 770;
-    } else if ( fullHouseQueenFour() ) {
+    } else if ( fullHouseCheck( 'Q', '4' ) ) {
       this.awardScore = 769;
-    } else if ( fullHouseQueenThree() ) {
+    } else if ( fullHouseCheck( 'Q', '3' ) ) {
       this.awardScore = 768;
-    } else if ( fullHouseQueenTwo() ) {
+    } else if ( fullHouseCheck( 'Q', '2' ) ) {
       this.awardScore = 767;
 
-    } else if ( fullHouseJackTen() ) {
+    } else if ( fullHouseCheck( 'J', '1' ) ) {
       this.awardScore = 766;
-    } else if ( fullHouseJackNine() ) {
+    } else if ( fullHouseCheck( 'J', '9' ) ) {
       this.awardScore = 765;
-    } else if ( fullHouseJackEight() ) {
+    } else if ( fullHouseCheck( 'J', '8' ) ) {
       this.awardScore = 764;
-    } else if ( fullHouseJackSeven() ) {
+    } else if ( fullHouseCheck( 'J', '7' ) ) {
       this.awardScore = 763;
-    } else if ( fullHouseJackSix() ) {
+    } else if ( fullHouseCheck( 'J', '6' ) ) {
       this.awardScore = 762;
-    } else if ( fullHouseJackFive() ) {
+    } else if ( fullHouseCheck( 'J', '5' ) ) {
       this.awardScore = 761;
-    } else if ( fullHouseJackFour() ) {
+    } else if ( fullHouseCheck( 'J', '4' ) ) {
       this.awardScore = 760;
-    } else if ( fullHouseJackThree() ) {
+    } else if ( fullHouseCheck( 'J', '3' ) ) {
       this.awardScore = 759;
-    } else if ( fullHouseJackTwo() ) {
+    } else if ( fullHouseCheck( 'J', '2' ) ) {
       this.awardScore = 758;
 
-    } else if ( fullHouseTenNine() ) {
+
+    } else if ( fullHouseCheck( '1', '9' ) ) {
       this.awardScore = 757;
-    } else if ( fullHouseTenEight() ) {
+    } else if ( fullHouseCheck( '1', '8' ) ) {
       this.awardScore = 756;
-    } else if ( fullHouseTenSeven() ) {
+    } else if ( fullHouseCheck( '1', '7' ) ) {
       this.awardScore = 755;
-    } else if ( fullHouseTenSix() ) {
+    } else if ( fullHouseCheck( '1', '6' ) ) {
       this.awardScore = 754;
-    } else if ( fullHouseTenFive() ) {
+    } else if ( fullHouseCheck( '1', '5' ) ) {
       this.awardScore = 753;
-    } else if ( fullHouseTenFour() ) {
+    } else if ( fullHouseCheck( '1', '4' ) ) {
       this.awardScore = 752;
-    } else if ( fullHouseTenThree() ) {
+    } else if ( fullHouseCheck( '1', '3' ) ) {
       this.awardScore = 751;
-    } else if ( fullHouseTenTwo() ) {
+    } else if ( fullHouseCheck( '1', '2' ) ) {
       this.awardScore = 750;
 
-    } else if ( fullHouseNineEight() ) {
-      this.awardScore = 749;
-    } else if ( fullHouseNineSeven() ) {
+    } else if ( fullHouseCheck( '9', '8' ) ) {
       this.awardScore = 748;
-    } else if ( fullHouseNineSix() ) {
+    } else if ( fullHouseCheck( '9', '7' ) ) {
       this.awardScore = 747;
-    } else if ( fullHouseNineFive() ) {
+    } else if ( fullHouseCheck( '9', '6' ) ) {
       this.awardScore = 746;
-    } else if ( fullHouseNineFour() ) {
+    } else if ( fullHouseCheck( '9', '5' ) ) {
       this.awardScore = 745;
-    } else if ( fullHouseNineThree() ) {
+    } else if ( fullHouseCheck( '9', '4' ) ) {
       this.awardScore = 744;
-    } else if ( fullHouseNineTwo() ) {
+    } else if ( fullHouseCheck( '9', '3' ) ) {
       this.awardScore = 743;
-
-    } else if ( fullHouseEightSeven() ) {
+    } else if ( fullHouseCheck( '9', '2' ) ) {
       this.awardScore = 742;
-    } else if ( fullHouseEightSix() ) {
-      this.awardScore = 741;
-    } else if ( fullHouseEightFive() ) {
-      this.awardScore = 740;
-    } else if ( fullHouseEightFour() ) {
-      this.awardScore = 739;
-    } else if ( fullHouseEightThree() ) {
-      this.awardScore = 738;
-    } else if ( fullHouseEightTwo() ) {
-      this.awardScore = 737;
 
-    } else if ( fullHouseSevenSix() ) {
+    } else if ( fullHouseCheck( '8', '7' ) ) {
+      this.awardScore = 741;
+    } else if ( fullHouseCheck( '8', '6' ) ) {
+      this.awardScore = 739;
+    } else if ( fullHouseCheck( '8', '5' ) ) {
+      this.awardScore = 738;
+    } else if ( fullHouseCheck( '8', '4' ) ) {
+      this.awardScore = 737;
+    } else if ( fullHouseCheck( '8', '3' ) ) {
       this.awardScore = 736;
-    } else if ( fullHouseSevenFive() ) {
+    } else if ( fullHouseCheck( '8', '2' ) ) {
       this.awardScore = 735;
-    } else if ( fullHouseSevenFour() ) {
+
+    } else if ( fullHouseCheck( '7', '6' ) ) {
       this.awardScore = 734;
-    } else if ( fullHouseSevenThree() ) {
+    } else if ( fullHouseCheck( '7', '5' ) ) {
       this.awardScore = 733;
-    } else if ( fullHouseSevenTwo() ) {
+    } else if ( fullHouseCheck( '7', '4' ) ) {
       this.awardScore = 732;
+    } else if ( fullHouseCheck( '7', '3' ) ) {
+      this.awardScore = 731;
+    } else if ( fullHouseCheck( '7', '2' ) ) {
+      this.awardScore = 730;
+
+
+    // } else if ( fullHouseSevenSix() ) {
+    //   this.awardScore = 736;
+    // } else if ( fullHouseSevenFive() ) {
+    //   this.awardScore = 735;
+    // } else if ( fullHouseSevenFour() ) {
+    //   this.awardScore = 734;
+    // } else if ( fullHouseSevenThree() ) {
+    //   this.awardScore = 733;
+    // } else if ( fullHouseSevenTwo() ) {
+    //   this.awardScore = 732;
 
     } else if ( fullHouseSixFive() ) {
       this.awardScore = 731;
