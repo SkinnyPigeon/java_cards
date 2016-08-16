@@ -615,7 +615,7 @@ public class GameTest {
     logic.combineCards();
     logic.setScore();
     jeff.awardScore( logic.seeScore() );
-    Integer expected = 800;
+    Integer expected = 813;
     assertEquals( expected, jeff.seeScore() );
   }
 
