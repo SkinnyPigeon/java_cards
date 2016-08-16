@@ -301,7 +301,7 @@ public class GameTest {
     dave.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), dave.seeHand() );
     logic.combineCards();
-    assertEquals( true, logic.straightTwo() );
+    assertEquals( true, logic.straightCheck( '2', '3', '4', '5', '6' ) );
   }
 
   @Test
@@ -320,7 +320,7 @@ public class GameTest {
     dave.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), dave.seeHand() );
     logic.combineCards();
-    assertEquals( false, logic.straightTwo() );
+    assertEquals( false, logic.straightCheck( '9', '3', '4', '5', '6') );
   }
 
   @Test
@@ -377,7 +377,7 @@ public class GameTest {
     dave.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), dave.seeHand() );
     logic.combineCards();
-    assertEquals( true, logic.straightFlushTwo() );
+    assertEquals( true, logic.straightFlushCheck( '2', '3', '4', '5', '6' ) );
   }
 
   @Test
@@ -396,7 +396,7 @@ public class GameTest {
     jeff.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), dave.seeHand() );
     logic.combineCards();
-    assertEquals( false, logic.straightFlushTwo() );
+    assertEquals( false, logic.straightFlushCheck( '9', '3', '4', '5', '6' ) );
   }
 
   @Test
@@ -488,7 +488,7 @@ public class GameTest {
     steve.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), game.seeHand() );
     logic.combineCards();
-    assertEquals( true, logic.royalFlush() );
+    assertEquals( true, logic.straightFlushCheck( '1', 'A', 'J', 'K', 'Q' ) );
   }
 
   @Test
@@ -510,7 +510,7 @@ public class GameTest {
     game.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), game.seeHand() );
     logic.combineCards();
-    assertEquals( true, logic.straightFlushNine() );
+    assertEquals( true, logic.straightFlushCheck( '1', '9', 'J', 'K', 'Q' ) );
   }
 
   @Test
@@ -528,7 +528,7 @@ public class GameTest {
     steve.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), game.seeHand() );
     logic.combineCards();
-    assertEquals( true, logic.straightAce() );
+    assertEquals( true, logic.straightCheck( '2', '3', '4', '5', 'A' ) );
   }
 
   @Test
@@ -551,7 +551,7 @@ public class GameTest {
     game.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), game.seeHand() );
     logic.combineCards();
-    assertEquals( true, logic.straightEight() );
+    assertEquals( true, logic.straightCheck( '1', '8', '9', 'J', 'Q' ) );
   }
 
   @Test
@@ -576,7 +576,7 @@ public class GameTest {
     jeff.takeCard( cards.deal() );
     logic = new Logic( steve.seeHand(), game.seeHand() );
     logic.combineCards();
-    assertEquals( true, logic.straightSeven() );
+    assertEquals( true, logic.straightCheck( '1', '7', '8', '9', 'J' ) );
   }
 
   @Test
@@ -601,7 +601,7 @@ public class GameTest {
     steve.takeCard( cards.deal() ); //Six
     logic = new Logic( steve.seeHand(), game.seeHand() );
     logic.combineCards();
-    assertEquals( true, logic.straightSix() );
+    assertEquals( true, logic.straightCheck( '1', '6', '7', '8', '9' ) );
   }
 
   @Test

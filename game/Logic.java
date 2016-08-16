@@ -310,304 +310,148 @@ public class Logic {
   return false;
   }
 
-  public boolean royalStraight() {
-    char firstCard;
-    char secondCard;
-    char thirdCard;
-    char fourthCard;
-    char fifthCard;
-    if( this.playerCards.size() > 4 ) {
-        firstCard = this.playerCards.get( 0 ).charAt( 0 );
-        secondCard = this.playerCards.get( 1 ).charAt( 0 );
-        thirdCard = this.playerCards.get( 2 ).charAt( 0 );
-        fourthCard = this.playerCards.get( 3 ).charAt( 0 );
-        fifthCard = this.playerCards.get( 4 ).charAt( 0 );
+  public boolean straightCheck( char firstNumber, char secondNumber, char thirdNumber, char fourthNumber, char fifthNumber ) {
+      char firstCard;
+      char secondCard;
+      char thirdCard;
+      char fourthCard;
+      char fifthCard;
+      if( this.playerCards.size() > 4 ) {
+          firstCard = this.playerCards.get( 0 ).charAt( 0 );
+          secondCard = this.playerCards.get( 1 ).charAt( 0 );
+          thirdCard = this.playerCards.get( 2 ).charAt( 0 );
+          fourthCard = this.playerCards.get( 3 ).charAt( 0 );
+          fifthCard = this.playerCards.get( 4 ).charAt( 0 );
 
-        if( firstCard == '1' && secondCard == 'A' && thirdCard == 'J' 
-          && fourthCard == 'K' && fifthCard == 'Q' ) {
-          return true;
+          if( firstCard == firstNumber && secondCard == secondNumber && thirdCard == thirdNumber && fourthCard == fourthNumber && fifthCard == fifthNumber ) {
+            return true;
+        }
       }
-    }
-  return false;
+    return false;
   }
 
-  public boolean straightNine() {
-    char firstCard;
-    char secondCard;
-    char thirdCard;
-    char fourthCard;
-    char fifthCard;
-    if( this.playerCards.size() > 4 ) {
-      firstCard = this.playerCards.get( 0 ).charAt( 0 );
-      secondCard = this.playerCards.get( 1 ).charAt( 0 );
-      thirdCard = this.playerCards.get( 2 ).charAt( 0 );
-      fourthCard = this.playerCards.get( 3 ).charAt( 0 );
-      fifthCard = this.playerCards.get( 4 ).charAt( 0 );
-
-      if( firstCard == '1' && secondCard == '9' && thirdCard == 'J' 
-        && fourthCard == 'K' && fifthCard == 'Q' ) {
-        return true;
-      }
-    }
-  return false;
-  }
-
-  public boolean straightEight() {
-    char firstCard;
-    char secondCard;
-    char thirdCard;
-    char fourthCard;
-    char fifthCard;
-    if( this.playerCards.size() > 4 ) {
-      firstCard = this.playerCards.get( 0 ).charAt( 0 );
-      secondCard = this.playerCards.get( 1 ).charAt( 0 );
-      thirdCard = this.playerCards.get( 2 ).charAt( 0 );
-      fourthCard = this.playerCards.get( 3 ).charAt( 0 );
-      fifthCard = this.playerCards.get( 4 ).charAt( 0 );
-
-      if( firstCard == '1' && secondCard == '8' && thirdCard == '9' 
-        && fourthCard == 'J' && fifthCard == 'Q' ) {
-        return true;
-      }
-    }
-  return false;
-  }
-
-  public boolean straightSeven() {
-    char firstCard;
-    char secondCard;
-    char thirdCard;
-    char fourthCard;
-    char fifthCard;
-    if( this.playerCards.size() > 4 ) {
-      firstCard = this.playerCards.get( 0 ).charAt( 0 );
-      secondCard = this.playerCards.get( 1 ).charAt( 0 );
-      thirdCard = this.playerCards.get( 2 ).charAt( 0 );
-      fourthCard = this.playerCards.get( 3 ).charAt( 0 );
-      fifthCard = this.playerCards.get( 4 ).charAt( 0 );
-
-      if( firstCard == '1' && secondCard == '7' && thirdCard == '8' 
-        && fourthCard == '9' && fifthCard == 'J' ) {
-        return true;
-      }
-    }
-  return false;
-  }
-
-  public boolean straightSix() {
-    char firstCard;
-    char secondCard;
-    char thirdCard;
-    char fourthCard;
-    char fifthCard;
-    if( this.playerCards.size() > 4 ) {
-      firstCard = this.playerCards.get( 0 ).charAt( 0 );
-      secondCard = this.playerCards.get( 1 ).charAt( 0 );
-      thirdCard = this.playerCards.get( 2 ).charAt( 0 );
-      fourthCard = this.playerCards.get( 3 ).charAt( 0 );
-      fifthCard = this.playerCards.get( 4 ).charAt( 0 );
-
-      if( firstCard == '1' && secondCard == '6' && thirdCard == '7' 
-        && fourthCard == '8' && fifthCard == '9' ) {
-        return true;
-      }
-    }
-  return false;
-  }
-
-  public boolean straightFive() {
-    char firstCard;
-    char secondCard;
-    char thirdCard;
-    char fourthCard;
-    char fifthCard;
-    if( this.playerCards.size() > 4 ) {
-        firstCard = this.playerCards.get( 0 ).charAt( 0 );
-        secondCard = this.playerCards.get( 1 ).charAt( 0 );
-        thirdCard = this.playerCards.get( 2 ).charAt( 0 );
-        fourthCard = this.playerCards.get( 3 ).charAt( 0 );
-        fifthCard = this.playerCards.get( 4 ).charAt( 0 );
-      if( firstCard == '5' && secondCard == '6' && thirdCard == '7' 
-        && fourthCard == '8' && fifthCard == '9' ) {
-        return true;
-      }
-    }
-  return false;
-  }
-
-  public boolean straightFour() {
-    char firstCard;
-    char secondCard;
-    char thirdCard;
-    char fourthCard;
-    char fifthCard;
-    if( this.playerCards.size() > 4 ) {
-        firstCard = this.playerCards.get( 0 ).charAt( 0 );
-        secondCard = this.playerCards.get( 1 ).charAt( 0 );
-        thirdCard = this.playerCards.get( 2 ).charAt( 0 );
-        fourthCard = this.playerCards.get( 3 ).charAt( 0 );
-        fifthCard = this.playerCards.get( 4 ).charAt( 0 );
-      if( firstCard == '4' && secondCard == '5' && thirdCard == '6' 
-        && fourthCard == '7' && fifthCard == '8' ) {
-        return true;
-      }
-    }
-  return false;
-  }
-
-  public boolean straightThree() {
-    char firstCard;
-    char secondCard;
-    char thirdCard;
-    char fourthCard;
-    char fifthCard;
-    if( this.playerCards.size() > 4 ) {
-        firstCard = this.playerCards.get( 0 ).charAt( 0 );
-        secondCard = this.playerCards.get( 1 ).charAt( 0 );
-        thirdCard = this.playerCards.get( 2 ).charAt( 0 );
-        fourthCard = this.playerCards.get( 3 ).charAt( 0 );
-        fifthCard = this.playerCards.get( 4 ).charAt( 0 );
-      if( firstCard == '3' && secondCard == '4' && thirdCard == '5' 
-        && fourthCard == '6' && fifthCard == '7' ) {
-        return true;
-      }
-    }
-  return false;
-  }
-
-  public boolean straightTwo() {
-    char firstCard;
-    char secondCard;
-    char thirdCard;
-    char fourthCard;
-    char fifthCard;
-    if( this.playerCards.size() > 4 ) {
-        firstCard = this.playerCards.get( 0 ).charAt( 0 );
-        secondCard = this.playerCards.get( 1 ).charAt( 0 );
-        thirdCard = this.playerCards.get( 2 ).charAt( 0 );
-        fourthCard = this.playerCards.get( 3 ).charAt( 0 );
-        fifthCard = this.playerCards.get( 4 ).charAt( 0 );
-      if( firstCard == '2' && secondCard == '3' && thirdCard == '4' 
-        && fourthCard == '5' && fifthCard == '6' ) {
-        return true;
-      }
-    }
-  return false;
-  }
-
-  public boolean straightAce() {
-    char firstCard;
-    char secondCard;
-    char thirdCard;
-    char fourthCard;
-    char fifthCard;
-    if( this.playerCards.size() > 4 ) {
-        firstCard = this.playerCards.get( 0 ).charAt( 0 );
-        secondCard = this.playerCards.get( 1 ).charAt( 0 );
-        thirdCard = this.playerCards.get( 2 ).charAt( 0 );
-        fourthCard = this.playerCards.get( 3 ).charAt( 0 );
-        fifthCard = this.playerCards.get( 4 ).charAt( 0 );
-      if( firstCard == '2' && secondCard == '3' && thirdCard == '4' 
-        && fourthCard == '5' && fifthCard == 'A' ) {
-        return true;
-      }
-    }
-  return false;
-  }
-
-  public boolean royalFlush() {
-    if( royalStraight() && flush() ) {
+  public boolean straightFlushCheck( char firstNumber, char secondNumber, char thirdNumber, char fourthNumber, char fifthNumber ) {
+    if( straightCheck( firstNumber, secondNumber, thirdNumber, fourthNumber, fifthNumber) && flush() ) {
       return true;
     }
     return false;
   }
 
-  public boolean straightFlushNine() {
-    if( straightNine() && flush() ) {
-      return true;
-    }
-    return false;
-  }
+  // public boolean royalFlush() {
+  //   if( royalStraight() && flush() ) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
 
-  public boolean straightFlushEight() {
-    if( straightEight() && flush() ) {
-      return true;
-    }
-    return false;
-  }
+  // public boolean straightFlushNine() {
+  //   if( straightNine() && flush() ) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
 
-  public boolean straightFlushSeven() {
-    if( straightSeven() && flush() ) {
-      return true;
-    }
-    return false;
-  }
+  // public boolean straightFlushEight() {
+  //   if( straightEight() && flush() ) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
 
-  public boolean straightFlushSix() {
-    if( straightSix() && flush() ) {
-      return true;
-    }
-    return false;
-  }
+  // public boolean straightFlushSeven() {
+  //   if( straightSeven() && flush() ) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
 
-  public boolean straightFlushFive() {
-    if( straightFive() && flush() ) {
-      return true;
-    }
-    return false;
-  }
+  // public boolean straightFlushSix() {
+  //   if( straightSix() && flush() ) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
 
-  public boolean straightFlushFour() {
-    if( straightFour() && flush() ) {
-      return true;
-    }
-    return false;
-  }
+  // public boolean straightFlushFive() {
+  //   if( straightFive() && flush() ) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
 
-  public boolean straightFlushThree() {
-    if( straightThree() && flush() ) {
-      return true;
-    }
-    return false;
-  }
+  // public boolean straightFlushFour() {
+  //   if( straightFour() && flush() ) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
 
-  public boolean straightFlushTwo() {
-    if( straightTwo() && flush() ) {
-      return true;
-    }
-    return false;
-  }
+  // public boolean straightFlushThree() {
+  //   if( straightThree() && flush() ) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
 
-  public boolean straightFlushAce() {
-    if( straightAce() && flush() ) {
-      return true;
-    }
-    return false;
-  }
+  // public boolean straightFlushTwo() {
+  //   if( straightTwo() && flush() ) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
+
+  // public boolean straightFlushAce() {
+  //   if( straightAce() && flush() ) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
 
   public void setScore() {
 
-    if( royalFlush() ) {
+    // if( royalFlush() ) {
+    //   this.awardScore = 1000;
+
+    if( straightFlushCheck( '1', 'A', 'J', 'K', 'Q' ) ) {
+      this.awardScore = 1000;
+    } else if( straightFlushCheck( '1', '9', 'J', 'K', 'Q' ) ) {
+      this.awardScore = 1000;
+    } else if( straightFlushCheck( '1', '8', '9', 'J', 'Q' ) ) {
+      this.awardScore = 1000;
+    } else if( straightFlushCheck( '1', '7', '8', '9', 'J' ) ) {
+      this.awardScore = 1000;
+    } else if( straightFlushCheck( '1', '6', '7', '8', '9' ) ) {
+      this.awardScore = 1000;
+    } else if( straightFlushCheck( '5', '6', '7', '8', '9' ) ) {
+      this.awardScore = 1000;
+    } else if( straightFlushCheck( '4', '5', '6', '7', '8' ) ) {
+      this.awardScore = 1000;
+    } else if( straightFlushCheck( '3', '4', '5', '6', '7' ) ) {
+      this.awardScore = 1000;
+    } else if( straightFlushCheck( '2', '3', '4', '5', '6' ) ) {
+      this.awardScore = 1000;
+    } else if( straightFlushCheck( '2', '3', '4', '5', 'A' ) ) {
       this.awardScore = 1000;
 
-    } else if( straightFlushNine() ) {
-      this.awardScore = 990;
-    } else if( straightFlushEight() ) {
-      this.awardScore = 980;
-    } else if( straightFlushSeven() ) {
-      this.awardScore = 970;
-    } else if( straightFlushSix() ) {
-      this.awardScore = 960;
-    } else if( straightFlushFive() ) {
-      this.awardScore = 950;
-    } else if( straightFlushFour() ) {
-      this.awardScore = 940;
-    } else if( straightFlushThree() ) {
-      this.awardScore = 930;
-    } else if( straightFlushTwo() ) {
-      this.awardScore = 920;
-    } else if( straightFlushAce() ) {
-      this.awardScore = 910;
+
+    // } else if( straightFlushNine() ) {
+    //   this.awardScore = 990;
+    // } else if( straightFlushEight() ) {
+    //   this.awardScore = 980;
+    // } else if( straightFlushSeven() ) {
+    //   this.awardScore = 970;
+    // } else if( straightFlushSix() ) {
+    //   this.awardScore = 960;
+    // } else if( straightFlushFive() ) {
+    //   this.awardScore = 950;
+    // } else if( straightFlushFour() ) {
+    //   this.awardScore = 940;
+    // } else if( straightFlushThree() ) {
+    //   this.awardScore = 930;
+    // } else if( straightFlushTwo() ) {
+    //   this.awardScore = 920;
+    // } else if( straightFlushAce() ) {
+    //   this.awardScore = 910;
 
     } else if ( fourCheck( 'A' ) ) {
       this.awardScore = 813;
@@ -809,27 +653,27 @@ public class Logic {
 
     } else if ( flush() ) {
       this.awardScore = 600;
-        
-    } else if ( royalStraight() ) {
+
+    } else if ( straightCheck( '1', 'A', 'J', 'K', 'Q' ) ) {
       this.awardScore = 590;
-    } else if ( straightNine() ) {
+    } else if ( straightCheck( '1', '9', 'J', 'K', 'Q' ) ) {
       this.awardScore = 580;
-    } else if ( straightEight() ) {
+    } else if ( straightCheck( '1', '8', '9', 'J', 'Q' ) ) {
       this.awardScore = 570;
-    } else if ( straightSeven() ) {
-      this.awardScore = 570;
-    } else if ( straightSix() ) {
+    } else if ( straightCheck( '1', '7', '8', '9', 'J' ) ) {
       this.awardScore = 560;
-    } else if ( straightFive() ) {
-      this.awardScore = 570;
-    } else if ( straightFour() ) {
-      this.awardScore = 570;
-    } else if ( straightThree() ) {
-      this.awardScore = 570;
-    } else if ( straightTwo() ) {
+    } else if ( straightCheck( '1', '6', '7', '8', '9' ) ) {
+      this.awardScore = 550;
+    } else if ( straightCheck( '5', '6', '7', '8', '9' ) ) {
       this.awardScore = 540;
-    } else if ( straightAce() ) {
-      this.awardScore = 570;
+    } else if ( straightCheck( '4', '5', '6', '7', '8' ) ) {
+      this.awardScore = 530;
+    } else if ( straightCheck( '3', '4', '5', '6', '7' ) ) {
+      this.awardScore = 520;
+    } else if ( straightCheck( '2', '3', '4', '5', '6' ) ) {
+      this.awardScore = 510;
+    } else if ( straightCheck( '2', '3', '4', '5', 'A' ) ) {
+      this.awardScore = 500;
 
     } else if ( threeCheck( 'A' ) ) {
         this.awardScore = 512;
