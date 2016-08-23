@@ -805,6 +805,7 @@ public class Logic {
       this.awardScore = 200;
 
     } else {
+      this.awardScore = 0;
       countPoints();
     }
   }
